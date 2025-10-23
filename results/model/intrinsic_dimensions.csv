@@ -1,0 +1,1227 @@
+,file_name,intrinsic_dimensions,k1,k2
+0,zach_growth_curves_2023-03-27_3_y.npy,2.1936126091449557,10.0,20.0
+1,zhixiang_zy_comb_lt7_day7_gfp_y.npy,4.147554782216099,10.0,20.0
+2,carolyn_11252018_resistome_longterm_TS30_47-2_y.npy,2.1002027897755333,10.0,20.0
+3,carolyn_Plate 91 Trial 3_y.npy,3.0122820322064388,10.0,20.0
+4,zhixiang_zy_comb_lt8_day3_gfp_y.npy,4.02387368693698,10.0,20.0
+5,carolyn_20170904_Fowler_24-46_LB_Carb-5ugml_10000x_y.npy,2.206266647924666,10.0,20.0
+6,carolyn_20170907_Fowler_139-161_LB_Carb-5ugml_10000x_y.npy,2.3667796728875574,10.0,20.0
+7,schluter_ca9512587998e63dcd50b2_y.npy,5.185749869152249,10.0,20.0
+8,zach_other_2020-12-15 mCherry Capsule Supernatant_y.npy,-1,10.0,20.0
+9,zhixiang_zy_comb_lt8_day0_od600_y.npy,2.340700024577318,10.0,20.0
+10,lopatkin_lab_8.3.001_Day21_Day21_Col2_KS_20210812_Day21_Col2_y.npy,1.5262576447358753,10.0,20.0
+11,schluter_0f0e735fb05b8dfd877424_y.npy,5.133381393176844,10.0,20.0
+12,schluter_3bf14dbd427c9a2f06180e_y.npy,4.208935488497812,10.0,20.0
+13,carolyn_20170822_Anderson_1-23_LB_100x_y.npy,2.6396142319538454,10.0,20.0
+14,schluter_8dc3170c78f80dd01a3895_y.npy,5.181591366258526,10.0,20.0
+15,chory_lab_Turbidostat Experiments_20220809_224F 9x1 2320x enrichment_00001_2024-03-25 Absorbances_plate_0_y.npy,7.161368685676309,10.0,20.0
+16,zach_other_2022-01-20 MC4100z1 alh qs-cat_y.npy,2.3284226512057797,10.0,20.0
+17,zhixiang_zy_comb_lt7_day5_od600_y.npy,4.407407434638846,10.0,20.0
+18,zhixiang_gfp_lt_2_rif2_day3_gfp_y.npy,2.7997873928935832,10.0,20.0
+19,zach_other_2019-10-31_BlaM_FJTimer_ePop_y.npy,12.882752460618025,10.0,20.0
+20,cesar_2023-08-27-SulbactamResistant_y.npy,2.396418642301924,10.0,20.0
+21,chory_lab_Kinetics Experiments_2021-08-06 AARS PRANCE pED1a5_pEC182d_2024-03-26 Absorbances_reader_plate_10_y.npy,4.580668655009964,10.0,20.0
+22,schluter_49b563d9c1431d19da341f_y.npy,-1,10.0,20.0
+23,zhixiang_zy_comb_lt10_day0_od600_y.npy,2.2703965338905943,10.0,20.0
+24,schluter_e79d84eae0b4a108703649_y.npy,4.329091010796679,10.0,20.0
+25,chory_lab_Kinetics Experiments_2021-10-29 IPTG 2Hphage pEC223 DRM 174cd_2024-03-26 Absorbances_reader_plate_5_y.npy,3.4825346125039407,10.0,20.0
+26,carolyn_12172018_resistome_longterm_TS30_52-2_y.npy,1.9138786758456396,10.0,20.0
+27,zach_other_2020-12-15 GFP Capsule Supernatant_y.npy,1.6476030285260057,10.0,20.0
+28,zach_growth_curves_2023-03-29_0_y.npy,2.726500081070691,10.0,20.0
+29,carolyn_Plate 33 Trial 1_y.npy,3.997999913964684,10.0,20.0
+30,rohan_216_od600_y.npy,4.654462846814457,10.0,20.0
+31,chory_lab_Turbidostat Experiments_20221106_Linker Turbidostat 1_00001_2024-03-25 Absorbances_plate_0_y.npy,-1,10.0,20.0
+32,chory_lab_Kinetics Experiments_2022-10-12 224D 234a-c 235a-c_2024-03-26 Absorbances_reader_plate_9_y.npy,3.783397849353035,10.0,20.0
+33,cesar_2023-11-03-CAHighBLA-Katherine_y.npy,2.2239822118230292,10.0,20.0
+34,schluter_438217fec2f2b07e73ced4_y.npy,4.347312949725928,10.0,20.0
+35,chory_lab_Kinetics Experiments_2021-07-16_Protease_Turbidostat_IPTG_ATC_replicate2_2024-03-26 Absorbances_reader_plate_3_y.npy,4.643426187648791,10.0,20.0
+36,chory_lab_Kinetics Experiments_2022-04-11 psp AR2 comparison_2024-03-26 Absorbances_reader_plate_1_y.npy,5.493344326034767,10.0,20.0
+37,chory_lab_Turbidostat Experiments_20220806_ScFv 9x1 224f 2430x_00001_2024-03-25 Absorbances_plate_1_y.npy,4.517166389369503,10.0,20.0
+38,chory_lab_Kinetics Experiments_2021-08-05_AARS_PRANCE_2024-03-26 Absorbances_reader_plate_8_y.npy,4.456670254801417,10.0,20.0
+39,schluter_4eb14350975528e03709a6_y.npy,4.2409286365689605,10.0,20.0
+40,chory_lab_Kinetics Experiments_2019-08021_Emma_174b_176abc_20ng_2024-03-26 Absorbances_reader_plate_6_y.npy,5.115768797668428,10.0,20.0
+41,carolyn_ReplacementTrial2_y.npy,2.3469770958201828,10.0,20.0
+42,carolyn_Plate 53 Trial 1_y.npy,3.779085354206337,10.0,20.0
+43,chory_lab_Kinetics Experiments_2022-11-03 Linker Second Test_2024-03-26 Absorbances_reader_plate_3_y.npy,4.660565980722484,10.0,20.0
+44,katie_2024-01-18 ttr ths mixed plate full timecourse_loaner_plate2_y.npy,4.962913916773892,10.0,20.0
+45,chory_lab_Turbidostat Experiments_20220828_ECSP9x4 SD6 SD4_00001_2024-03-25 Absorbances_plate_1_y.npy,6.099045779317797,10.0,20.0
+46,cesar_2023-11-22-DH5mCBio1_y.npy,2.423815605055619,10.0,20.0
+47,dan_22_4_12 mCherry and Pum-ELP MOPS media long term_OD600_y.npy,3.0847158360404787,10.0,20.0
+48,chory_lab_Kinetics Experiments_2022-04-11 psp AR2 comparison_2024-03-26 Absorbances_reader_plate_8_y.npy,3.6049227534710884,10.0,20.0
+49,carolyn_Plate 77 Trial 2_y.npy,3.7616954996628085,10.0,20.0
+50,kyeri_KeioV3_mcherry_20231022_2hpre_betalactams_384_cefo_y.npy,3.9327265318899065,10.0,20.0
+51,schluter_fdd6a16e1797be664b59b5_y.npy,4.255179134232415,10.0,20.0
+52,chory_lab_Kinetics Experiments_2022-08-31 ST05_mCherry_tagging_assay_2024-03-26 Absorbances_reader_plate_2_y.npy,5.863929628553285,10.0,20.0
+53,zhixiang_zy_comb_lt8_day4_od600_y.npy,4.065593820629316,10.0,20.0
+54,chory_lab_Kinetics Experiments_2021-09-20 IPTG 2H phage pEC223_2024-03-26 Absorbances_reader_plate_2_y.npy,5.121950516628606,10.0,20.0
+55,ashwini_ars_240603_gfp_y.npy,1.6640379960402598,10.0,20.0
+56,chory_lab_Kinetics Experiments_2021-09-03 IPTG 2H induction_2024-03-26 Absorbances_reader_plate_2_y.npy,3.783026047860032,10.0,20.0
+57,chory_lab_Kinetics Experiments_2019-1029_2H_protease_2024-03-26 Absorbances_reader_plate_4_y.npy,4.798116844600097,10.0,20.0
+58,carolyn_Plate 81 Trial 3_y.npy,3.1741173352291883,10.0,20.0
+59,carolyn_Plate 1 Trial 1_y.npy,3.859990406244941,10.0,20.0
+60,carolyn_10112018_resistome_longterm_TS30_25-2_y.npy,1.4595506118393258,10.0,20.0
+61,zach_other_2019-09-20 ePop Circuit Generation_y.npy,2.1474949451747958,10.0,20.0
+62,chory_lab_Kinetics Experiments_2019-1030_PylRS_all_2024-03-26 Absorbances_reader_plate_6_y.npy,4.391098106562331,10.0,20.0
+63,lopatkin_lab_8.4.005_day21_8.4.005_Day21_Col11_20211007_8.4.005_Day21_Col11_y.npy,1.800176983110238,10.0,20.0
+64,carolyn_01282019_resistome_longterm_TS30_57-2_y.npy,1.1371151450685661,10.0,20.0
+65,chory_lab_Kinetics Experiments_2021-08-05_AARS_PRANCE_2024-03-26 Absorbances_reader_plate_3_y.npy,4.555981434981022,10.0,20.0
+66,schluter_38ea84bb99bae205f6b2a8_y.npy,4.412870597937125,10.0,20.0
+67,ashwini_ars_240329_gfp_y.npy,1.4115609934501634,10.0,20.0
+68,schluter_f9d0d0ce191445b9763199_y.npy,4.118485651265556,10.0,20.0
+69,schluter_143be57df0b039ef4b3c74_y.npy,6.2389409436417544,10.0,20.0
+70,lopatkin_lab_20210612_8.3.006_BW25113_IC50_1_58_y.npy,1.24853772899743,10.0,20.0
+71,zach_other_2020-06-18 Transformation_y.npy,2.0360323585276734,10.0,20.0
+72,kyeri_FJTimer_MG1655_cas_betalactams_FJT_carbmic_media_gfp_rfp_y.npy,3.0360234332728013,10.0,20.0
+73,carolyn_Plate 7 Trial 3_y.npy,3.9645070948376473,10.0,20.0
+74,lopatkin_lab_8.4.005_day21_8.4.005_Day21_Col9_20220604_Day21_Col9_y.npy,1.8364706046811052,10.0,20.0
+75,lopatkin_lab_8.3.001_Day21_Day21_Col9_MF_20220604_Day21_Col9_y.npy,1.8364706046811052,10.0,20.0
+76,chory_lab_Kinetics Experiments_2021-09-03 IPTG 2H induction_2024-03-26 Absorbances_reader_plate_1_y.npy,3.4038395652662796,10.0,20.0
+77,carolyn_09262018_resistome_longterm_TS30_17-2_y.npy,1.9056748038590783,10.0,20.0
+78,zhixiang_zy_comb_lt8_day6_gfp_y.npy,4.114570572275553,10.0,20.0
+79,schluter_32d4d277a5649b2b3c75e1_y.npy,4.573345129088614,10.0,20.0
+80,carolyn_Plate 57 Trial 2_y.npy,3.2542474414013323,10.0,20.0
+81,chory_lab_Kinetics Experiments_2021-07-06_Emma_T7PRANCE_2024-03-26 Absorbances_reader_plate_3_y.npy,5.68674543983566,10.0,20.0
+82,jia_PA14_mutant_evolution_growth_curves_y.npy,4.212529331329632,10.0,20.0
+83,schluter_8531a283bc1d7346ad4ba1_y.npy,-1,10.0,20.0
+84,carolyn_Plate 83 Trial 2_y.npy,3.7212660242100473,10.0,20.0
+85,carolyn_Plate 17 Trial 3_y.npy,3.3413651303392573,10.0,20.0
+86,chory_lab_Kinetics Experiments_2021-07-12_Protease_IPTG_ATC_firsttest_2024-03-26 Absorbances_reader_plate_1_y.npy,5.2711797997135585,10.0,20.0
+87,chory_lab_Kinetics Experiments_2022-08-22 ST03_RBS_Standardization_2024-03-26 Absorbances_reader_plate_3_y.npy,6.5387844773765895,10.0,20.0
+88,lopatkin_lab_8.4.005_day21_8.4.005_Day21_Col6_20210929_8.4.005_Day21_Col6_y.npy,1.8019510611554563,10.0,20.0
+89,zach_other_2022-09-25 Growth OD600_y.npy,4.062562649212278,10.0,20.0
+90,schluter_fe92a6e334f3ec8a2062e8_y.npy,4.7586525658651,10.0,20.0
+91,chory_lab_Kinetics Experiments_2023-04-10 PRANCE Variant Testing 1_2024-03-26 Absorbances_reader_plate_1_y.npy,3.591609084888913,10.0,20.0
+92,schluter_d80b7783edd2eb82c5253b_y.npy,4.223998098617736,10.0,20.0
+93,chory_lab_Kinetics Experiments_2022-01-19 Massive cloning test 2H_2024-03-26 Absorbances_reader_plate_4_y.npy,3.663446024102305,10.0,20.0
+94,lopatkin_lab_20211208_8.4.008_Multisubtrate_KS_Rep1_Pt1_y.npy,1.9245025995642386,10.0,20.0
+95,dan_23_3_2 M_PEG MstopP_PEG 3hr BD before induction_y.npy,2.783205860721884,10.0,20.0
+96,lopatkin_lab_8.3.001_Day0_Day0_Col3_KS_20210706_Day0_Col3_y.npy,1.714487598530724,10.0,20.0
+97,zhixiang_zy_comb_lt8_day5_od600_y.npy,3.83403063906684,10.0,20.0
+98,cesar_2023-11-02-CA16141_y.npy,3.2063683546676676,10.0,20.0
+99,zhixiang_zy_comb_lt9_day2_gfp_y.npy,2.435483586551659,10.0,20.0
+100,lopatkin_lab_timecourses_all_y.npy,2.9942089548066515,10.0,20.0
+101,kyeri_RIE_top10f_0710_top10f_PG_repeat1_y.npy,2.3015283803584863,10.0,20.0
+102,zach_growth_curves_2022-11-02_0_y.npy,2.6936358880064715,10.0,20.0
+103,schluter_5f951107df9536a898501c_y.npy,5.693476779555332,10.0,20.0
+104,carolyn_Plate 3 Trial 1_y.npy,3.847657246919195,10.0,20.0
+105,chory_lab_Kinetics Experiments_2019-1029_2H_protease_2024-03-26 Absorbances_reader_plate_2_y.npy,4.613911429883473,10.0,20.0
+106,chory_lab_Kinetics Experiments_2022-08-02 Protease_First Test_2024-03-26 Absorbances_reader_plate_4_y.npy,6.090951659415267,10.0,20.0
+107,chory_lab_Turbidostat Experiments_20220825_9x3 SD4 SD6_00001_2024-03-25 Absorbances_plate_0_y.npy,7.648984547651903,10.0,20.0
+108,lynch_lab_Process570_for_upload_y.npy,-1,10.0,20.0
+109,zach_other_2019-11-06_BlaM_y.npy,2.464394396255146,10.0,20.0
+110,carolyn_20170820_Fowler_116-138_100x_y.npy,3.64789881359404,10.0,20.0
+111,carolyn_10262018_resistome_longterm_TS30_37-2_y.npy,1.320197158402767,10.0,20.0
+112,chory_lab_Kinetics Experiments_2021-10-29 IPTG 2Hphage pEC223 DRM 174cd_2024-03-26 Absorbances_reader_plate_4_y.npy,3.512441055631484,10.0,20.0
+113,carolyn_Plate 5 Trial 3_y.npy,4.24553210024618,10.0,20.0
+114,schluter_2a69a16014fd659516e11f_y.npy,3.62687149392579,10.0,20.0
+115,lopatkin_lab_8.4.005_day21_8.4.005_Day21_Col3_20211120_8.4.005_Day21_Col3_y.npy,1.9892858700908003,10.0,20.0
+116,katie_2024-01-18 ttr ths mixed plate full timecourse_J_plate1_y.npy,3.7832674475401644,10.0,20.0
+117,lopatkin_lab_20220201_8.4.009_MultiSubstrate_KS_Rep2_Pt1_REDO_y.npy,2.1075116484543654,10.0,20.0
+118,lopatkin_lab_20220209_8.4.010_Multisubstrate_KS_Rep3_Pt1_y.npy,2.0309180363859087,10.0,20.0
+119,schluter_bd1ad86cf0226b12066f99_y.npy,4.789143283370855,10.0,20.0
+120,carolyn_Plate 63 Trial 3_y.npy,3.2907995079078005,10.0,20.0
+121,carolyn_20170719_Fowler_107-129_LB_10000x_y.npy,2.755298700179174,10.0,20.0
+122,carolyn_20170820_Fowler_70-92_LB_100x_y.npy,3.186954224651324,10.0,20.0
+123,zhixiang_zy_comb_lt7_day1_od600_y.npy,3.562691239161369,10.0,20.0
+124,chory_lab_Kinetics Experiments_2023-04-10 PRANCE Variant Testing 1_2024-03-26 Absorbances_reader_plate_3_y.npy,3.8628666373455136,10.0,20.0
+125,chory_lab_Kinetics Experiments_2019-1030_PylRS_all_2024-03-26 Absorbances_reader_plate_3_y.npy,4.031034072618905,10.0,20.0
+126,cesar_2023-08-28-TazobactamResistant_y.npy,4.738252816961528,10.0,20.0
+127,rohan_180_od600_y.npy,4.405628282077879,10.0,20.0
+128,emrah_20211001_E22-23-25_M9_glucose0p2_CASA0p2_OD600_Longterm_y.npy,3.570236553362426,10.0,20.0
+129,shangying_ethanol_ecoli_20190901_y.npy,3.772832621702017,10.0,20.0
+130,yuanchi_Inc_Osc_01_02142024_1030_y.npy,5.707559410053398,10.0,20.0
+131,carolyn_Plate 49 Trial 2_y.npy,4.03364557564222,10.0,20.0
+132,lynch_lab_Copy of Process_2119_IRIS_for_upload_y.npy,-1,10.0,20.0
+133,chory_lab_Kinetics Experiments_2022-04-11 psp AR2 comparison_2024-03-26 Absorbances_reader_plate_3_y.npy,5.192852666402673,10.0,20.0
+134,lopatkin_lab_8.3.001_Day0_Day0_Col4_KS_20210711_Day0_Col4_y.npy,1.6221789169949312,10.0,20.0
+135,zach_other_2019-10-23_BlaM_FJTimer_y.npy,2.951802874056365,10.0,20.0
+136,schluter_0079d6c0a49b8b6c3daf83_y.npy,3.7141586139514984,10.0,20.0
+137,lopatkin_lab_final_tet_R702_tet_combined_b_y.npy,3.0758771039221475,10.0,20.0
+138,schluter_97ff7c9bcbfed63cb99602_y.npy,4.515168984134644,10.0,20.0
+139,zach_other_2023-04-07 saved by Dan Shapiro TecanJ_y.npy,1.7541251048032451,10.0,20.0
+140,chory_lab_Kinetics Experiments_2022-08-31 ST05_mCherry_tagging_assay_2024-03-26 Absorbances_reader_plate_5_y.npy,6.594828717221916,10.0,20.0
+141,chory_lab_Kinetics Experiments_2019-1030_PylRS_all_2024-03-26 Absorbances_reader_plate_5_y.npy,4.633774578565531,10.0,20.0
+142,carolyn_20170715_Fowler_1-23_LB_10000x_y.npy,3.035958394823858,10.0,20.0
+143,chory_lab_Kinetics Experiments_2021-07-16_Protease_Turbidostat_IPTG_ATC_replicate2_2024-03-26 Absorbances_reader_plate_6_y.npy,4.8054378222051914,10.0,20.0
+144,carolyn_06282018_resistome_longterm_TS30_5-1_y.npy,1.5440077698832082,10.0,20.0
+145,kyeri_KeioV3_mcherry_2022_2023_NCAL_0904_72strains_diffconc_y.npy,4.145435197900417,10.0,20.0
+146,chory_lab_Turbidostat Experiments_20221019_224F 234a 10x1-2_00001_2024-03-25 Absorbances_plate_1_y.npy,-1,10.0,20.0
+147,chory_lab_Kinetics Experiments_2022-08-31 ST05_mCherry_tagging_assay_2024-03-26 Absorbances_reader_plate_4_y.npy,6.006138018433006,10.0,20.0
+148,chory_lab_Turbidostat Experiments_20220517_IPTG_Arab_HookOpt_00001_2024-03-25 Absorbances_plate_0_y.npy,6.716967209505839,10.0,20.0
+149,schluter_a38a19063534f7018afddb_y.npy,4.545928452364063,10.0,20.0
+150,chory_lab_Kinetics Experiments_2019-1031_1H_2H_protease_2024-03-26 Absorbances_reader_plate_5_y.npy,4.685367301471742,10.0,20.0
+151,chory_lab_Kinetics Experiments_2021-09-24 IPTG 2H phage pEC223 DRM_2024-03-26 Absorbances_reader_plate_3_y.npy,4.585736120774093,10.0,20.0
+152,sizhe_2022-11-02 long term p15a-ripk od+mruby 24h_y.npy,1.8762269536384475,10.0,20.0
+153,carolyn_Plate 81 Trial 2_y.npy,3.348530390363064,10.0,20.0
+154,carolyn_Plate 35 Trial 3_y.npy,3.978834056437249,10.0,20.0
+155,lopatkin_lab_20210406_KSstrains3-6-1-4_y.npy,2.3803751363083845,10.0,20.0
+156,carolyn_06082018_resistome_longterm_TS30_3-1_y.npy,1.9744506716945713,10.0,20.0
+157,schluter_91ab664636a9d71093b7a4_y.npy,3.762947365445997,10.0,20.0
+158,chory_lab_Kinetics Experiments_2022-11-03 Linker Second Test_2024-03-26 Absorbances_reader_plate_2_y.npy,5.670100324151095,10.0,20.0
+159,cesar_2023-09-02-CAResistant_y.npy,2.0893230022085656,10.0,20.0
+160,cesar_2023-11-15-Top10mCherryBio2_y.npy,2.6329268712763945,10.0,20.0
+161,schluter_b23587b68b33a798501063_y.npy,3.7496495596904085,10.0,20.0
+162,dan_23_3_14 M_PEG MstopP_PEG long bd high OD start_y.npy,7.188983438422304,10.0,20.0
+163,lopatkin_lab_8.3.001_Day21_Day21_Col6_MF_20210929_Day21_Col6_y.npy,1.8019510611554563,10.0,20.0
+164,chory_lab_Kinetics Experiments_2022-04-11 psp AR2 comparison_2024-03-26 Absorbances_reader_plate_7_y.npy,4.278974154203603,10.0,20.0
+165,lopatkin_lab_8.4.005_day21_8.4.005_Day21_Col12_20210927_8.4.005_Day21_Col12_y.npy,1.9073554101573171,10.0,20.0
+166,lopatkin_lab_final_tet_R100-1_tet_combined_a_y.npy,2.8370930797243727,10.0,20.0
+167,zach_other_2020-08-31 Long-term Reading TOP10F_y.npy,10.027751522562841,10.0,20.0
+168,emrah_20210820_E22_0p2xLB_CAR_OD600_Longterm_All_rearrenged_y.npy,4.018891571804216,10.0,20.0
+169,schluter_4b7d68eb8e17e839014581_y.npy,4.9783746357855145,10.0,20.0
+170,zach_growth_curves_2022-12-02_0_y.npy,2.2369522488555003,10.0,20.0
+171,schluter_a5ef7977287f66548a7f44_y.npy,4.050443399068181,10.0,20.0
+172,kyeri_KeioV3_mcherry_2022_2023_NCAL_0812_72strains_repeat1_y.npy,3.723299587409964,10.0,20.0
+173,zhixiang_zy_comb_lt9_day3_gfp_y.npy,2.476396241049153,10.0,20.0
+174,chory_lab_Turbidostat Experiments_20221107_Linker Repeat 2_00001_2024-03-25 Absorbances_plate_0_y.npy,4.896511605693614,10.0,20.0
+175,carolyn_09052018_resistome_longterm_TS30_10-2_y.npy,1.8552852745840605,10.0,20.0
+176,chory_lab_Turbidostat Experiments_20220516_IPTG_Arab_DoseResponse_00001_2024-03-25 Absorbances_plate_1_y.npy,8.181875186290396,10.0,20.0
+177,chory_lab_Kinetics Experiments_2022-04-11 psp AR2 comparison_2024-03-26 Absorbances_reader_plate_4_y.npy,3.2740632336669147,10.0,20.0
+178,lopatkin_lab_final_tet_RIP113_tet_combined_d_y.npy,4.137995641496649,10.0,20.0
+179,schluter_298378cef00bd2431ceed4_y.npy,4.652258689979181,10.0,20.0
+180,carolyn_Plate 35 Trial 1_y.npy,3.911560571282361,10.0,20.0
+181,chory_lab_Kinetics Experiments_2022-01-19 Massive cloning test 2H_2024-03-26 Absorbances_reader_plate_3_y.npy,3.87000683936145,10.0,20.0
+182,carolyn_Plate 65 Trial 2_y.npy,3.5537550175307504,10.0,20.0
+183,yuanchi_Inc_Osc_01_02152024_1030_y.npy,5.707559410053398,10.0,20.0
+184,chory_lab_Kinetics Experiments_2022-01-19 Massive cloning test 2H_2024-03-26 Absorbances_reader_plate_5_y.npy,2.6546421684707173,10.0,20.0
+185,schluter_ebaa04cc8d02a01648a57b_y.npy,3.9926758889118408,10.0,20.0
+186,carolyn_Plate 51 Trial 3_y.npy,3.6296591236219924,10.0,20.0
+187,chory_lab_Turbidostat Experiments_20230505_spla_test_2_00001_2024-03-25 Absorbances_plate_0_y.npy,3.4409611555018618,10.0,20.0
+188,schluter_398756dc8f5513128ea0c5_y.npy,4.5038751145933835,10.0,20.0
+189,chory_lab_Kinetics Experiments_2022-11-03 Linker Second Test_2024-03-26 Absorbances_reader_plate_1_y.npy,4.004141734921514,10.0,20.0
+190,lynch_lab_Copy of Process_2116_IRIS_for_upload_y.npy,-1,10.0,20.0
+191,chory_lab_Kinetics Experiments_2021-09-20 IPTG 2H phage pEC223_2024-03-26 Absorbances_reader_plate_3_y.npy,5.629221567589664,10.0,20.0
+192,kyeri_FJTimer_MG1655_cas_betalactams_FJT_OD_gfp_rfp_cefo_amx_y.npy,2.208432125085392,10.0,20.0
+193,carolyn_20170906_Fowler_93-115_LB_Carb-5ugml_10000x_y.npy,2.202676139435667,10.0,20.0
+194,schluter_0732f69a60924b8f0152f7_y.npy,4.0769155538778925,20.0,30.0
+195,schluter_4d9e44ac9019c110a71267_y.npy,3.3662610354704525,10.0,20.0
+196,carolyn_09072018_resistome_longterm_TS30_11-2_y.npy,1.6020431736111436,10.0,20.0
+197,zhixiang_zy_comb_lt7_day0_od600_y.npy,2.340700024577318,10.0,20.0
+198,zhixiang_zy_comb_lt9_day4_od600_y.npy,2.529849743818265,10.0,20.0
+199,carolyn_Plate 55 Trial 3_y.npy,4.139010294650267,10.0,20.0
+200,alex_2023-07-03_OD600_alex_y.npy,2.8177188635276473,10.0,20.0
+201,carolyn_20170715_Fowler_24-46_LB_10000x_y.npy,2.453923113541501,10.0,20.0
+202,chory_lab_Kinetics Experiments_2019-1028_VHTA_2H_protease_2024-03-26 Absorbances_reader_plate_3_y.npy,7.448847806378648,10.0,20.0
+203,schluter_bc7e7fe17dd8786aa1f36e_y.npy,-1,10.0,20.0
+204,feilun_blanksubCombinedGrowthCurvesData-DA28102T_y.npy,3.832143288866007,10.0,20.0
+205,ashwini_ars_240326_gfp_y.npy,1.5340597806958465,10.0,20.0
+206,cesar_2023-09-06-CAKanResistant_y.npy,3.9308033062456786,10.0,20.0
+207,sizhe_2023-02-07 long termcdc19_y.npy,4.55566441468963,10.0,20.0
+208,carolyn_20170821_Fowler_162-184_LB_100x_y.npy,2.8285358037760364,10.0,20.0
+209,zhixiang_zy_comb_lt10_day2_od600_y.npy,2.696169733425302,10.0,20.0
+210,zach_other_2019-10-24_MC4100ePop_y.npy,-1,10.0,20.0
+211,chory_lab_Kinetics Experiments_2021-10-01 IPTG 2H phage pEC223 DRM SD5_2024-03-26 Absorbances_reader_plate_1_y.npy,3.4302077682600527,10.0,20.0
+212,zhixiang_zy_comb_lt10_day3_gfp_y.npy,3.778555082302931,10.0,20.0
+213,zach_growth_curves_2023-03-18_0_y.npy,3.130165714751601,10.0,20.0
+214,schluter_dafca5dbb7e43c72a712b9_y.npy,4.821097083384242,10.0,20.0
+215,schluter_2eb7aa207f3a4cce6be6a9_y.npy,4.880294134626945,10.0,20.0
+216,lynch_lab_Copy of PID_25control_IRIS_for_upload_y.npy,-1,10.0,20.0
+217,chory_lab_Kinetics Experiments_2023-04-10 PRANCE Variant Testing 1_2024-03-26 Absorbances_reader_plate_2_y.npy,3.5468699471198035,10.0,20.0
+218,carolyn_01222019_resistome_longterm_TS30_55-2_y.npy,1.7124378234160014,10.0,20.0
+219,chory_lab_Turbidostat Experiments_20221109_Linker Repeat 3_00001_2024-03-25 Absorbances_plate_0_y.npy,4.644358576087335,10.0,20.0
+220,lopatkin_lab_8.4.005_day21_8.4.005_Day21_Col4_20211108_8.4.005_D21C4_y.npy,1.5153535674959107,10.0,20.0
+221,carolyn_09202018_resistome_longterm_TS30_13-2_y.npy,1.725973751716144,10.0,20.0
+222,yuanchi_tetA00_03052024_0855_y.npy,2.443253921037793,10.0,20.0
+223,chory_lab_Kinetics Experiments_2019-1028_VHTA_2H_protease_2024-03-26 Absorbances_reader_plate_2_y.npy,5.812266477081142,10.0,20.0
+224,lopatkin_lab_8.4.005_day21_8.4.005_Day21_Col5_20211108_8.4.005_D21C5_y.npy,1.7087729339785769,10.0,20.0
+225,schluter_8b54a045c87ce289d7e783_y.npy,5.294996584871246,10.0,20.0
+226,chory_lab_Turbidostat Experiments_20220823_SD4 9x3_00001_2024-03-25 Absorbances_plate_0_y.npy,3.964257837750273,10.0,20.0
+227,schluter_248a03139d31f1674db68f_y.npy,5.7643287458725085,10.0,20.0
+228,kyeri_KeioV3_mcherry_20231021_4hpre_betalactams_384_carb_y.npy,3.817583466742801,10.0,20.0
+229,chory_lab_Kinetics Experiments_2021-09-03 IPTG 2H induction_2024-03-26 Absorbances_reader_plate_3_y.npy,3.026387641358461,10.0,20.0
+230,schluter_92c1d6cbc5b53878122f48_y.npy,4.910442563317642,10.0,20.0
+231,chory_lab_Kinetics Experiments_2021-10-29 IPTG 2Hphage pEC223 DRM 174cd_2024-03-26 Absorbances_reader_plate_1_y.npy,3.390263863308537,10.0,20.0
+232,carolyn_20170810_Fowler_208-218_LB_Lambda-MOI-1_10000x_y.npy,2.97647736840242,10.0,20.0
+233,schluter_477934bcebfdecf6548f51_y.npy,4.102850347568033,10.0,20.0
+234,alex_2023-06-15_OD600_alex_y.npy,2.7371170778369933,10.0,20.0
+235,emrah_20240711_E55-E57_NuncEdge_SMcaa8_OD600_Longterm_y.npy,1.824884408975583,10.0,20.0
+236,chory_lab_Kinetics Experiments_2022-08-22 ST03_RBS_Standardization_2024-03-26 Absorbances_reader_plate_7_y.npy,6.465122877996053,10.0,20.0
+237,schluter_739ff0ec46f9fa1f5b33ab_y.npy,-1,10.0,20.0
+238,carolyn_20170716_Fowler_70-92_LB_10000x_y.npy,2.4251196792469325,10.0,20.0
+239,carolyn_ReplacementTrial3_y.npy,2.583964468893551,10.0,20.0
+240,carolyn_Plate 37 Trial 3_y.npy,3.361698623391538,10.0,20.0
+241,carolyn_01292019_resistome_longterm_TS30_58-2_y.npy,1.528060321188371,10.0,20.0
+242,schluter_2c4054d1faef9bf2348b68_y.npy,4.252067970687303,10.0,20.0
+243,kyeri_KeioV3_mcherry_20231013_4hpre_betalactams_384_cefo_y.npy,4.069602410825502,10.0,20.0
+244,zach_growth_curves_2022-11-16_0_y.npy,2.0547747158690672,10.0,20.0
+245,schluter_18aea456f6e212ea6c90ba_y.npy,5.1021852431044525,10.0,20.0
+246,katie_2023-06-28 crosstalk plus mixed plate full timecourse 1_y.npy,3.3697549802765154,10.0,20.0
+247,zach_other_2021-01-05 Overnight Supernatant_y.npy,5.837359542857841,10.0,20.0
+248,zach_other_2022-11-03 Long-term_y.npy,2.4073497849924177,10.0,20.0
+249,carolyn_Plate 61 Trial 3_y.npy,4.529477420660933,10.0,20.0
+250,carolyn_Plate 59 Trial 2_y.npy,3.60854318912305,10.0,20.0
+251,carolyn_Plate 33 Trial 2_y.npy,4.107797202201604,10.0,20.0
+252,jia_Growth curve - varying nutrient exp3_y.npy,2.7381876209624,10.0,20.0
+253,chory_lab_Kinetics Experiments_2021-07-16_Protease_Turbidostat_IPTG_ATC_replicate2_2024-03-26 Absorbances_reader_plate_2_y.npy,5.237459748633007,10.0,20.0
+254,chory_lab_Kinetics Experiments_2021-08-06 AARS PRANCE pED1a5_pEC182d_2024-03-26 Absorbances_reader_plate_2_y.npy,4.2270510137782615,10.0,20.0
+255,schluter_641f43b6587923f941dd3c_y.npy,4.383714372927451,10.0,20.0
+256,cesar_2023-11-02-CADicon029_y.npy,1.841742593510442,10.0,20.0
+257,schluter_29f5d1e6cb5030c5b016f2_y.npy,7.364190823861526,10.0,20.0
+258,emrah_RawTimeCourse_X1_clone1_y.npy,-1,10.0,20.0
+259,ashwini_ars_240409_od_y.npy,3.299551810020323,10.0,20.0
+260,chory_lab_Kinetics Experiments_2022-08-31 ST05_mCherry_tagging_assay_2024-03-26 Absorbances_reader_plate_1_y.npy,6.340431444692658,10.0,20.0
+261,lopatkin_lab_8.4.005_day21_8.4.005_Day21_Col2_20220221_8.4.005_Day21_Col2_y.npy,1.6691047476865215,10.0,20.0
+262,lopatkin_lab_20210622_exp5.1.018_y.npy,1.7041306683649566,10.0,20.0
+263,chory_lab_Kinetics Experiments_2021-09-16 aTc 2H phage_2024-03-26 Absorbances_reader_plate_1_y.npy,3.3105701684895763,10.0,20.0
+264,carolyn_10302018_resistome_longterm_TS30_40-2_y.npy,1.28136066376126,10.0,20.0
+265,schluter_f1610b7f6f986abb88f0e2_y.npy,-1,10.0,20.0
+266,zhixiang_gfp_lt_1_test2_od600_y.npy,2.471432188534,10.0,20.0
+267,zach_other_2020-08-14 MC4100Z1 ePop with fluorescence_y.npy,9.89924146119488,10.0,20.0
+268,kyeri_RIE_top10f_0726_top10f_PG_NAMNAG_2_y.npy,2.101014547954327,10.0,20.0
+269,katie_2023-03-23 mixed plate full timecourse 1_y.npy,3.2876729139629743,10.0,20.0
+270,zach_other_2019-11-21_ePopBlaM_and_ePopFJT_y.npy,8.340921195415152,10.0,20.0
+271,katie_2023-11-04 amyloid strains growth rate_y.npy,2.672066425940314,10.0,20.0
+272,carolyn_Plate 31 Trial 3_y.npy,3.2337926997410134,10.0,20.0
+273,schluter_8a6abaffc11bf51c265600_y.npy,5.080298893678266,10.0,20.0
+274,chory_lab_Kinetics Experiments_2021-09-16 aTc 2H phage_2024-03-26 Absorbances_reader_plate_3_y.npy,3.9124938079702374,10.0,20.0
+275,schluter_fb60a8dfaaeedb22efd8cb_y.npy,8.175088336069262,10.0,20.0
+276,chory_lab_Turbidostat Experiments_20221112_Linker Repeat 4b_00002_2024-03-25 Absorbances_plate_1_y.npy,6.6405270800051985,10.0,20.0
+277,carolyn_11152018_resistome_longterm_TS30_44-2_y.npy,3.0170051607909074,10.0,20.0
+278,carolyn_07172018_resistome_longterm_TS30_6-2_y.npy,1.3218045614073495,10.0,20.0
+279,zhixiang_gfp_lt_2_rif2_day3_od600_y.npy,2.252359964255047,10.0,20.0
+280,carolyn_Plate 31 Trial 2_y.npy,3.662714476940509,10.0,20.0
+281,carolyn_08312018_resistome_longterm_TS30_8-2_y.npy,2.266507790959967,10.0,20.0
+282,schluter_9d3dc44674fe5ddc51d508_y.npy,4.423709772130061,10.0,20.0
+283,carolyn_20170811_Anderson_47-59_LB_Lambda-MOI-1_10000x_y.npy,2.100033372500724,10.0,20.0
+284,carolyn_12122018_resistome_longterm_TS30_51-2_y.npy,1.2930241408658596,10.0,20.0
+285,lopatkin_lab_8.3.001_Day21_Day21_Col4_KS_20210922_Day21_Col4_y.npy,1.4493930602421818,10.0,20.0
+286,carolyn_20170904_Fowler_47-69_LB_Carb-5ugml_10000x_y.npy,2.2134028033555193,10.0,20.0
+287,carolyn_10152018_resistome_longterm_TS30_29-2_y.npy,1.8128934744114802,10.0,20.0
+288,carolyn_Plate 43 Trial 1_y.npy,3.524099502846401,10.0,20.0
+289,lynch_lab_Promoters_BioLector_OD_Corr_Promoter_Data_batch_1_y.npy,1.885152276305343,10.0,20.0
+290,zach_growth_curves_2023-03-22_2_y.npy,2.3777830985885355,10.0,20.0
+291,chory_lab_Kinetics Experiments_2022-08-31 ST05_mCherry_tagging_assay_2024-03-26 Absorbances_reader_plate_6_y.npy,6.074739426340733,10.0,20.0
+292,schluter_7aff3de4f710e8057e2698_y.npy,5.30292882003917,10.0,20.0
+293,carolyn_Plate 85 Trial 1_y.npy,3.218814628403368,10.0,20.0
+294,carolyn_01202019_resistome_longterm_TS30_54-2_y.npy,1.9822985325085682,10.0,20.0
+295,cesar_2023-11-01-CADicon055_y.npy,2.191628693822168,10.0,20.0
+296,lopatkin_lab_final_tet_pB10_tet_combined_b_y.npy,2.089274738028372,10.0,20.0
+297,carolyn_Plate 25 Trial 3_y.npy,4.128040611733191,10.0,20.0
+298,chory_lab_Kinetics Experiments_2022-11-03 Linker Second Test_2024-03-26 Absorbances_reader_plate_5_y.npy,5.154990030460583,10.0,20.0
+299,carolyn_10292018_resistome_longterm_TS30_39-2_y.npy,1.6581756138669477,10.0,20.0
+300,dongheon_20230717_DA28202_NahRAM_mR3_IDP_DL_y.npy,2.4766493181951064,10.0,20.0
+301,zach_other_2021-09-16 ALH QS-CAT_y.npy,2.020373344074995,10.0,20.0
+302,chory_lab_Kinetics Experiments_2021-07-16_Protease_Turbidostat_IPTG_ATC_replicate2_2024-03-26 Absorbances_reader_plate_1_y.npy,4.84330599999884,10.0,20.0
+303,emrah_20210823_E22_1xLB_CAR_OD600_Longterm_rearrenged_y.npy,3.279657856188085,10.0,20.0
+304,chory_lab_Kinetics Experiments_2021-07-14_Protease_Turbidostat_IPTG_ATC_firsttest_2024-03-26 Absorbances_reader_plate_3_y.npy,4.643842086491059,10.0,20.0
+305,lopatkin_lab_final_tet_RIP113_tet_combined_a_y.npy,2.3597173968233967,10.0,20.0
+306,zhixiang_zy_comb_lt10_day1_gfp_y.npy,4.076530354492314,10.0,20.0
+307,zach_growth_curves_2023-04-01_1_y.npy,2.8567580649747457,10.0,20.0
+308,feilunconsortia_auxotroph_data_rep1_y.npy,6.168068730265039,10.0,20.0
+309,emrah_RawTimeCourse_Ch49_y.npy,-1,10.0,20.0
+310,chory_lab_Kinetics Experiments_2021-10-29 IPTG 2Hphage pEC223 DRM 174cd_2024-03-26 Absorbances_reader_plate_3_y.npy,3.492673775590578,10.0,20.0
+311,carolyn_20170722_Fowler_196-218_LB_10000x_y.npy,2.0506707568803453,10.0,20.0
+312,schluter_8967f73958c863550cfc3e_y.npy,-1,10.0,20.0
+313,lopatkin_lab_20210613_exp5.1.015_y.npy,1.7590424801314901,10.0,20.0
+314,lopatkin_lab_20210624_8.4.003_EvolChar_Day0_Col1_y.npy,1.5143947059023934,10.0,20.0
+315,chory_lab_Kinetics Experiments_2021-07-07_Emma_T7PRANCE_2024-03-26 Absorbances_reader_plate_3_y.npy,4.059901896039867,10.0,20.0
+316,schluter_a9ccb3575b661fc75b1e51_y.npy,4.157624444755604,10.0,20.0
+317,carolyn_10242018_resistome_longterm_TS30_35-2_y.npy,2.0889507108634637,10.0,20.0
+318,carolyn_Plate 67 Trial 1_y.npy,3.262190229558159,10.0,20.0
+319,schluter_dd9e2e0709a2beaa745376_y.npy,4.330122662561913,10.0,20.0
+320,chory_lab_Kinetics Experiments_2019-08023_Emma_174_176_177_2024-03-26 Absorbances_reader_plate_2_y.npy,3.965883085600117,10.0,20.0
+321,chory_lab_Turbidostat Experiments_20230508_224D_238_239_preIPTG_00002_2024-03-25 Absorbances_plate_1_y.npy,4.519217597693058,10.0,20.0
+322,lynch_lab_Process457_for_upload_y.npy,-1,10.0,20.0
+323,carolyn_Plate 9 Trial 2_y.npy,3.7775332904859975,10.0,20.0
+324,lopatkin_lab_8.3.001_Day0_Day0_Col2_KS_20210630_Day0_Col2_y.npy,1.931081034322056,10.0,20.0
+325,sizhe_2024-04-30 longterm od mch amyloid growth curves 30c nano_y.npy,1.9383075775149834,10.0,20.0
+326,carolyn_20170716_Fowler_47-69_LB_10000x_y.npy,2.363271501584286,10.0,20.0
+327,lopatkin_lab_20210616_exp5.1.016_y.npy,1.9209250580721018,10.0,20.0
+328,ashwini_ars_240611_od_y.npy,2.689486699849822,10.0,20.0
+329,schluter_bf8a70efecd47606c9032a_y.npy,4.949539219025116,10.0,20.0
+330,lynch_lab_DMC_Ferm_276_for_upload_y.npy,-1,10.0,20.0
+331,chory_lab_Turbidostat Experiments_20220513_Arabinose IPTG test_00001_2024-03-25 Absorbances_plate_0_y.npy,4.818757620176296,10.0,20.0
+332,lopatkin_lab_20210325_KSstrains4-8-6-2_y.npy,2.3095342305112614,10.0,20.0
+333,chory_lab_Turbidostat Experiments_20220825_9x3 SD4 SD6_00001_2024-03-25 Absorbances_plate_1_y.npy,5.437974286891331,10.0,20.0
+334,schluter_2314663ceda58b12364a02_y.npy,5.316865979712481,10.0,20.0
+335,katie_2023-12-04 mixed plate full timecourse_tecanJ_KD_y.npy,3.5269783139590247,10.0,20.0
+336,zach_other_2021-11-14 MG1655 top10 alh_y.npy,1.944236730321625,10.0,20.0
+337,zhixiang_zy_comb_lt10_day1_od600_y.npy,2.7978935827277986,10.0,20.0
+338,chory_lab_Kinetics Experiments_2021-07-07_Emma_T7PRANCE_2024-03-26 Absorbances_reader_plate_2_y.npy,4.664762396738326,10.0,20.0
+339,lynch_lab_DMC_Ferm_285_for_upload_y.npy,-1,10.0,20.0
+340,schluter_2e3b0fd2aa4aba04d72f8a_y.npy,-1,10.0,20.0
+341,zhixiang_zy_comb_lt9_day4_gfp_y.npy,2.6108853988348995,10.0,20.0
+342,chory_lab_Turbidostat Experiments_20220911_244fstar_233_Test1_00001_2024-03-25 Absorbances_plate_0_y.npy,6.369743490783793,10.0,20.0
+343,zhixiang_zy_comb_lt9_day1_od600_y.npy,2.7699100529954532,10.0,20.0
+344,cesar_2023-11-03-CAD055-Katherine_y.npy,2.391527428323,10.0,20.0
+345,carolyn_Plate 57 Trial 3_y.npy,3.431411804807288,10.0,20.0
+346,cesar_2023-11-20-DH5GFPBio3_y.npy,3.4264829289638232,10.0,20.0
+347,chory_lab_Turbidostat Experiments_20221017_234a 235ab replicates_00001_2024-03-25 Absorbances_plate_1_y.npy,6.133329894380217,10.0,20.0
+348,carolyn_20170819_Fowler_47-69_100x_y.npy,3.070156148005782,10.0,20.0
+349,lynch_lab_Promoters_BioLector_OD_Corr_Promoter_Data_batch_2_y.npy,2.0745334332996843,10.0,20.0
+350,schluter_5a8fe6a8423fe2076c6822_y.npy,5.094646794106618,10.0,20.0
+351,carolyn_Plate 5 Trial 1_y.npy,4.517673212867117,10.0,20.0
+352,carolyn_Plate 75 Trial 3_y.npy,3.3497781757986886,10.0,20.0
+353,chory_lab_Kinetics Experiments_2022-08-22 ST03_RBS_Standardization_2024-03-26 Absorbances_reader_plate_4_y.npy,7.026274204743012,10.0,20.0
+354,carolyn_Plate 33 Trial 3_y.npy,3.6139352070151687,10.0,20.0
+355,zach_other_2022-06-17 longterm_y.npy,6.394511701018964,10.0,20.0
+356,zach_growth_curves_2023-03-15_2_y.npy,2.290936714974099,10.0,20.0
+357,schluter_ff0027e7de97671e2a4218_y.npy,5.219029507650595,10.0,20.0
+358,alex_2023-06-09_OD600_alex_y.npy,2.293220016605605,10.0,20.0
+359,chory_lab_Kinetics Experiments_2021-07-07_Emma_T7PRANCE_2024-03-26 Absorbances_reader_plate_4_y.npy,4.070257800423977,10.0,20.0
+360,carolyn_20170910_Anderson_24-46_LB_Carb-5ugml_10000x_y.npy,2.3195841125119467,10.0,20.0
+361,zhixiang_zy_comb_lt8_day8_gfp_y.npy,4.1544481599546,10.0,20.0
+362,carolyn_Plate 23 Trial 2_y.npy,3.4706725387511685,10.0,20.0
+363,zach_other_2021-11-21-BH5alpha top10 alh_y.npy,2.2294515159549593,10.0,20.0
+364,carolyn_10022018_resistome_longterm_TS30_22-2_y.npy,1.4068145876096696,10.0,20.0
+365,chory_lab_Turbidostat Experiments_20230428_VM_splA_PRANCE_verification_00001_2024-03-25 Absorbances_plate_0_y.npy,4.244231038864592,10.0,20.0
+366,zach_growth_curves_2023-04-01_3_y.npy,2.8561855277326558,10.0,20.0
+367,lopatkin_lab_8.3.001_Day0_Day0_Col9_MF_20220607_Day0_Col9_y.npy,1.6769138995600863,10.0,20.0
+368,chory_lab_Turbidostat Experiments_20220816_224F 9x1 232A-C enrichment test_00001_2024-03-25 Absorbances_plate_0_y.npy,4.911495541217248,10.0,20.0
+369,carolyn_Plate 87 Trial 3_y.npy,3.913595096393941,10.0,20.0
+370,grayson_231220_growth_curves_marine_y.npy,2.0069150548512966,10.0,20.0
+371,carolyn_20170821_Fowler_139-161_LB_100x_y.npy,2.790438469296822,10.0,20.0
+372,lopatkin_lab_8.3.001_Day21_Day21_Col11_MF_20211007_Day21_Col11_y.npy,1.800176983110238,10.0,20.0
+373,carolyn_Plate 21 Trial 1_y.npy,3.408358140171411,10.0,20.0
+374,schluter_a3c2ab3e5102cdad6b44d9_y.npy,4.512252249540702,10.0,20.0
+375,carolyn_10122018_resistome_longterm_TS30_26-2_y.npy,1.4061440343305383,10.0,20.0
+376,schluter_b3bf4d77d87908e868485c_y.npy,4.0877921119167695,10.0,20.0
+377,carolyn_Plate 21 Trial 2_y.npy,3.5734895691506354,10.0,20.0
+378,carolyn_Plate 7 Trial 2_y.npy,4.012377125658066,10.0,20.0
+379,schluter_64f565e338eb2431ac365f_y.npy,5.389858015964854,10.0,20.0
+380,chory_lab_Turbidostat Experiments_20221013_224D 234ab 235ab_00001_2024-03-25 Absorbances_plate_1_y.npy,2.9239352128656986,10.0,20.0
+381,zach_growth_curves_2023-03-22_0_y.npy,2.652652945100386,10.0,20.0
+382,chory_lab_Kinetics Experiments_2021-07-07_Emma_T7PRANCE_2024-03-26 Absorbances_reader_plate_1_y.npy,4.753125551247507,10.0,20.0
+383,zach_other_2019-09-20 ePop Circuit Generation 2_y.npy,2.1474949451747958,10.0,20.0
+384,grayson_231216_Plate2_y.npy,2.5190032691860713,10.0,20.0
+385,cesar_2023-09-02-CASensitive_y.npy,2.128030926919752,10.0,20.0
+386,carolyn_Plate 47 Trial 3_y.npy,3.718257966013455,10.0,20.0
+387,lopatkin_lab_20220206_8.4.009_Rep2Pt2_Multisubtrate_KS_y.npy,1.8229872331661214,10.0,20.0
+388,feilun_synth_comm_data_y.npy,1.7998151609629043,10.0,20.0
+389,carolyn_Plate 15 Trial 1_y.npy,4.00976720219723,10.0,20.0
+390,lynch_lab_Process453_for_upload_y.npy,-1,10.0,20.0
+391,schluter_c30ddb1f9cb76c2cc147f1_y.npy,3.694239624726713,10.0,20.0
+392,zhixiang_zy_comb_lt7_day2_gfp_y.npy,2.6670755535308026,10.0,20.0
+393,chory_lab_Kinetics Experiments_2021-07-02_Emma_T7PRANCE_2024-03-26 Absorbances_reader_plate_3_y.npy,4.343526957151584,10.0,20.0
+394,carolyn_10102018_resistome_longterm_TS30_24-2_y.npy,1.0594166853731248,10.0,20.0
+395,schluter_b8fa33cd5e19482a49d3c5_y.npy,5.026868516997589,20.0,30.0
+396,carolyn_Plate 37 Trial 2_y.npy,4.104840662422029,10.0,20.0
+397,carolyn_09032018_resistome_longterm_TS30_9-2_y.npy,1.8850675394125425,10.0,20.0
+398,lopatkin_lab_final_tet_pOX38_tet_combined_a_y.npy,3.413523413903155,10.0,20.0
+399,schluter_e65b3dec1314cdb5bb2e77_y.npy,4.892423105685686,10.0,20.0
+400,chory_lab_Kinetics Experiments_2021-07-12_Protease_IPTG_ATC_firsttest_2024-03-26 Absorbances_reader_plate_3_y.npy,4.790209640326946,10.0,20.0
+401,carolyn_09292018_resistome_longterm_TS30_20-2_y.npy,1.6248773438817627,10.0,20.0
+402,chory_lab_Kinetics Experiments_2022-08-25 ST04_spla_MBP_2024-03-26 Absorbances_reader_plate_1_y.npy,7.921766630182353,10.0,20.0
+403,carolyn_Plate 43 Trial 2_y.npy,3.940854024897359,10.0,20.0
+404,carolyn_Plate 19 Trial 1_y.npy,3.5181795733809422,10.0,20.0
+405,zhixiang_zy_comb_lt8_day3_od600_y.npy,4.176487959050681,10.0,20.0
+406,lopatkin_lab_8.3.001_Day0_Day0_Col5_KS_20210716_Day0_Col5_y.npy,1.9798449521904493,10.0,20.0
+407,chory_lab_Kinetics Experiments_2019-1028_VHTA_2H_protease_2024-03-26 Absorbances_reader_plate_5_y.npy,5.384714964132743,10.0,20.0
+408,lynch_lab_Process558_for_upload_y.npy,-1,10.0,20.0
+409,zhixiang_zy_comb_lt9_day3_od600_y.npy,2.5482241837945687,10.0,20.0
+410,ashwini_ars_240518_od_y.npy,3.052113427504938,10.0,20.0
+411,katie_2023-06-28 crosstalk plus mixed plate full timecourse 1 yfp_y.npy,2.8513334711418223,10.0,20.0
+412,carolyn_Plate 61 Trial 1_y.npy,3.2303046823199106,10.0,20.0
+413,kyeri_KeioV3_mcherry_2022_2023_NCAL_0202_carb_amx_y.npy,4.548700868129516,10.0,20.0
+414,carolyn_05292018_resistome_longterm_TS30_2-2_y.npy,2.0038205713631743,10.0,20.0
+415,sizhe_Sizhe_mc longterm (Modified)_20231104_155130_y.npy,3.3186443961424548,10.0,20.0
+416,carolyn_Plate 27 Trial 2_y.npy,3.944580624652521,10.0,20.0
+417,carolyn_Plate 77 Trial 3_y.npy,3.781415480803559,10.0,20.0
+418,carolyn_20170807_Fowler_24-46_LB_Lambda-MOI-1_10000x_y.npy,2.136473332394937,10.0,20.0
+419,schluter_aa778346c1ef8dc2ea5d93_y.npy,5.021305322065882,10.0,20.0
+420,cesar_2023-12-11-DH5GFPBio1-KAN_y.npy,1.940554763360334,10.0,20.0
+421,zach_other_2022-09-25 Growth GFP_y.npy,8.709940874487446,10.0,20.0
+422,carolyn_Plate 1 Trial 3_y.npy,4.122080266577783,10.0,20.0
+423,schluter_a22a8351a4f4aa8fa1eccb_y.npy,5.666164395086128,10.0,20.0
+424,carolyn_Plate 61 Trial 2_y.npy,4.245717300765076,10.0,20.0
+425,lynch_lab_Copy of 2163_Manual Record_for_upload_y.npy,-1,10.0,20.0
+426,carolyn_02052019_resistome_longterm_TS30_61-2_y.npy,1.7415982819509923,10.0,20.0
+427,chory_lab_Kinetics Experiments_2019-1030_PylRS_all_2024-03-26 Absorbances_reader_plate_1_y.npy,3.780503854486592,10.0,20.0
+428,chory_lab_Turbidostat Experiments_20220824_SD4 9x4-5 redo_00001_2024-03-25 Absorbances_plate_0_y.npy,8.221061449059615,10.0,20.0
+429,chory_lab_Kinetics Experiments_2022-10-12 224D 234a-c 235a-c_2024-03-26 Absorbances_reader_plate_2_y.npy,3.6950258133080904,10.0,20.0
+430,zach_growth_curves_2023-04-03_0_y.npy,2.486322238934366,10.0,20.0
+431,alex_2022-12-12 alh3 LONG TERM_y.npy,1.9673539427120856,10.0,20.0
+432,emrah_20210908_E22_1xLB_PIP_Tazobactam_OD600_Longterm_y.npy,4.54263490604009,10.0,20.0
+433,schluter_1ee58943a428b5dccad65a_y.npy,4.497187463438428,10.0,20.0
+434,zach_growth_curves_2023-03-27_1_y.npy,2.543151932142666,10.0,20.0
+435,schluter_1dbea9394f467568071ef6_y.npy,6.015653397456877,10.0,20.0
+436,chory_lab_Kinetics Experiments_2021-07-14_Protease_Turbidostat_IPTG_ATC_firsttest_2024-03-26 Absorbances_reader_plate_4_y.npy,4.627204291844344,10.0,20.0
+437,carolyn_Plate 71 Trial 3_y.npy,3.9926666958598434,10.0,20.0
+438,zach_other_2022-02-15 alh mc4100 rerun_y.npy,2.2477494482621854,10.0,20.0
+439,schluter_85c6b894edb17153189265_y.npy,4.968189446645235,10.0,20.0
+440,carolyn_Plate 59 Trial 1_y.npy,3.689606695466293,10.0,20.0
+441,chory_lab_Kinetics Experiments_2019-1031_1H_2H_protease_2024-03-26 Absorbances_reader_plate_3_y.npy,4.5600462929011805,10.0,20.0
+442,zach_other_2020-07-30 Long-term GFP and OLS_y.npy,8.136139135141052,10.0,20.0
+443,carolyn_Plate 21 Trial 3_y.npy,3.3909979424720786,10.0,20.0
+444,carolyn_10132018_resistome_longterm_TS30_27-2_y.npy,1.370537356412118,10.0,20.0
+445,ashwini_ars_240326_od_y.npy,3.553746855532424,10.0,20.0
+446,schluter_b98bd4632e269b2017be08_y.npy,6.70855327674752,10.0,20.0
+447,carolyn_Plate 55 Trial 2_y.npy,3.877604357833964,10.0,20.0
+448,zach_other_2020-07-18 mCherryOAC_y.npy,5.055967903186552,10.0,20.0
+449,chory_lab_Kinetics Experiments_2019-08023_Emma_174_176_177_2024-03-26 Absorbances_reader_plate_4_y.npy,3.8124217890390963,10.0,20.0
+450,zach_other_2021-04-06 Collective Survival_y.npy,1.8676445908421107,10.0,20.0
+451,schluter_3ce9282f72dd815f18e6ad_y.npy,-1,10.0,20.0
+452,carolyn_20170808_Fowler_47-69_LB_Lambda-MOI-1_10000x_y.npy,2.509145903679081,10.0,20.0
+453,schluter_ee3b2b943a6fff993e1ee2_y.npy,5.490594902807666,10.0,20.0
+454,zhixiang_zy_comb_lt8_day2_gfp_y.npy,3.8063322039874916,10.0,20.0
+455,schluter_fc0103da11bcae7b355b7e_y.npy,4.294736674296143,10.0,20.0
+456,carolyn_Plate 45 Trial 3_y.npy,3.7260871880879454,10.0,20.0
+457,carolyn_Plate 15 Trial 2_y.npy,4.091129178448898,10.0,20.0
+458,zach_growth_curves_2023-04-01_0_y.npy,2.475546575289182,10.0,20.0
+459,zach_growth_curves_2023-03-18_3_y.npy,2.2465646423489294,10.0,20.0
+460,schluter_ee58ad4844a5528cc51f76_y.npy,-1,10.0,20.0
+461,zhixiang_zy_comb_lt9_day1_gfp_y.npy,2.859647931173249,10.0,20.0
+462,carolyn_11052018_resistome_longterm_TS30_42-2_y.npy,2.5672636150997996,10.0,20.0
+463,ashwini_ars_240329_od_y.npy,3.686693041045339,10.0,20.0
+464,yuanchi_tetA00_03072024_0438pm_y.npy,4.257820997551054,10.0,20.0
+465,zach_other_2020-09-15 Suicide Circuits_y.npy,3.0345332927816684,10.0,20.0
+466,schluter_71bf18f3080f840f66f5b3_y.npy,3.9037264369545794,10.0,20.0
+467,zhixiang_gfp_lt_1_od600_y.npy,2.133248541187711,10.0,20.0
+468,alex_2023-06-12_OD600-2_alex_y.npy,2.382803916678383,10.0,20.0
+469,kyeri_KeioV3_mcherry_20231021_4hpre_betalactams_384_amx_y.npy,4.735452993635288,10.0,20.0
+470,chory_lab_Kinetics Experiments_2022-09-28 224F 234a-c 235a-c_2024-03-26 Absorbances_reader_plate_5_y.npy,5.421451238096335,10.0,20.0
+471,zach_growth_curves_2023-03-22_3_y.npy,2.899333354171952,10.0,20.0
+472,lynch_lab_021823_Biolector_CyDisCo_summary_raw_data_y.npy,2.101775276686956,10.0,20.0
+473,schluter_bbf3712d9d70fae1c0c8a2_y.npy,3.8713466320361594,10.0,20.0
+474,schluter_4a6ceb4457d72d090b23e6_y.npy,-1,10.0,20.0
+475,carolyn_06242018_resistome_longterm_TS30_4-1_y.npy,1.189971275953971,10.0,20.0
+476,chory_lab_Kinetics Experiments_2021-07-14_Protease_Turbidostat_IPTG_ATC_firsttest_2024-03-26 Absorbances_reader_plate_1_y.npy,4.252652897450511,10.0,20.0
+477,lopatkin_lab_8.4.005_day21_8.4.005_Day21_Col4_20220221_8.4.005_Day21_Col4_y.npy,2.163293268412572,10.0,20.0
+478,chory_lab_Kinetics Experiments_2019-1028_VHTA_2H_protease_2024-03-26 Absorbances_reader_plate_6_y.npy,6.734931620480925,10.0,20.0
+479,carolyn_07312018_resistome_longterm_TS30_8-1_y.npy,2.1514101341873153,10.0,20.0
+480,lopatkin_lab_final_tet_RP4_tet_combined_a_y.npy,2.7182905641668493,10.0,20.0
+481,zhixiang_zy_comb_lt7_day2_od600_y.npy,4.019729776011387,10.0,20.0
+482,carolyn_20170811_Anderson_1-23_LB_Lambda-MOI-1_10000x_y.npy,2.417440257845877,10.0,20.0
+483,katie_20240224 cuma ohc14 atc_y.npy,9.407235001053417,10.0,20.0
+484,schluter_b85f30525ee6a36419bcb3_y.npy,4.989942761804368,10.0,20.0
+485,lopatkin_lab_8.3.001_Day0_Day0_Col8_KS_20210702_Day0_Col8_y.npy,2.160740001115228,10.0,20.0
+486,carolyn_09282018_resistome_longterm_TS30_19-2_y.npy,1.8857899322299125,10.0,20.0
+487,chory_lab_Kinetics Experiments_2021-09-24 IPTG 2H phage pEC223 DRM_2024-03-26 Absorbances_reader_plate_2_y.npy,4.740405439163601,10.0,20.0
+488,zhixiang_zy_comb_lt8_day7_od600_y.npy,3.462176420829863,10.0,20.0
+489,chory_lab_Kinetics Experiments_2019-08021_Emma_174b_176abc_20ng_2024-03-26 Absorbances_reader_plate_2_y.npy,5.5116403968645065,10.0,20.0
+490,dan_22_2_7 mCherry and Protein E vs time with Pum2-ELP-GFP constructs_y.npy,3.071062001539317,10.0,20.0
+491,sizhe_2023-12-07 long term mc_y.npy,1.640563446360793,10.0,20.0
+492,carolyn_20170806_Anderson_41-59_LB_10000x_y.npy,1.9993107376815358,10.0,20.0
+493,lopatkin_lab_20210413_KSstrains7-5-1-3_y.npy,1.9188179734079847,10.0,20.0
+494,carolyn_20170809_Fowler_116-138_LB_Lambda-MOI-1_10000x_y.npy,5.018516550345012,10.0,20.0
+495,schluter_f4ce890d3b3a2c6d8a3972_y.npy,-1,10.0,20.0
+496,carolyn_Plate 69 Trial 3_y.npy,3.7675317000725626,10.0,20.0
+497,carolyn_Plate 5 Trial 2_y.npy,3.944062653450088,10.0,20.0
+498,chory_lab_Kinetics Experiments_2021-08-05_AARS_PRANCE_2024-03-26 Absorbances_reader_plate_4_y.npy,4.343448155381148,10.0,20.0
+499,cesar_2023-09-06-CAKanSensitive-TESTNOTACTUAL_y.npy,2.0361519076261008,10.0,20.0
+500,dan_22_1_12 RBP-mRuby-E34 + F30-Pepx2-RBTx2-pBDTO-Com-sfGFP 535cycles_OD600_2_y.npy,3.737740006773261,10.0,20.0
+501,carolyn_20170822_Fowler_208-218_LB_100x_y.npy,1.683346686966103,10.0,20.0
+502,schluter_71d266646e47f1b0db2745_y.npy,5.093050421717546,10.0,20.0
+503,lopatkin_lab_8.3.001_Day0_Day0_Col11_KS_20210719_Day0_Col11_y.npy,1.6705917211704027,10.0,20.0
+504,sizhe_2024-01-09long term mc_y.npy,2.3949180066059785,10.0,20.0
+505,carolyn_10142018_resistome_longterm_TS30_28-2_y.npy,1.7603282673622689,10.0,20.0
+506,chory_lab_Kinetics Experiments_2019-1031_1H_2H_protease_2024-03-26 Absorbances_reader_plate_1_y.npy,4.816948423099113,10.0,20.0
+507,carolyn_Plate 65 Trial 3_y.npy,3.689941857036071,10.0,20.0
+508,lopatkin_lab_20210219_KPNkinetics_y.npy,2.8204618079079102,10.0,20.0
+509,schluter_2e54fe2e45f4dfbf6a175d_y.npy,5.150341951664649,10.0,20.0
+510,schluter_266d2264d85ae8bfde60e6_y.npy,4.696323179784871,10.0,20.0
+511,carolyn_20170809_Fowler_139-161_LB_Lambda-MOI-1_10000x_y.npy,3.7920447127218524,10.0,20.0
+512,emrah_20211008_E22_1xLB_CEFTA_w-woClav50_OD600_Longterm_y.npy,5.156469248418453,10.0,20.0
+513,lynch_lab_DMC_Ferm_283_for_upload_y.npy,-1,10.0,20.0
+514,lopatkin_lab_final_tet_pB10_tet_combined_d_y.npy,2.744455445318808,10.0,20.0
+515,carolyn_Plate 19 Trial 3_y.npy,3.3999426677115028,10.0,20.0
+516,zach_other_2023-08-09 alh LONG TERM_y.npy,7.273336149544946,10.0,20.0
+517,chory_lab_Kinetics Experiments_2019-08021_Emma_174b_176abc_20ng_2024-03-26 Absorbances_reader_plate_3_y.npy,5.354037324842164,10.0,20.0
+518,carolyn_07032018_resistome_longterm_TS30_6-1_y.npy,1.1216668170545991,10.0,20.0
+519,chory_lab_Kinetics Experiments_2021-07-14_Protease_Turbidostat_IPTG_ATC_firsttest_2024-03-26 Absorbances_reader_plate_6_y.npy,4.8304547549499235,10.0,20.0
+520,dan_23_4_22 M_PEG MstopP_PEG long induction low varation induction repeat try w yifan sterile tubes_y.npy,7.02772030980141,10.0,20.0
+521,lynch_lab_Copy of Process_2167_IRIS_for_upload_y.npy,-1,10.0,20.0
+522,carolyn_Plate 75 Trial 2_y.npy,3.367872154004289,10.0,20.0
+523,grayson_230228_chitinolytic_growth_curves_od_y.npy,2.6685964494696752,10.0,20.0
+524,zhixiang_zy_comb_lt10_day3_od600_y.npy,2.548444633594319,10.0,20.0
+525,zhixiang_zy_comb_lt7_day1_gfp_y.npy,2.6670755535308026,10.0,20.0
+526,chory_lab_Turbidostat Experiments_20220802_Hook IPTG and Arab long equillibrium 3x_00001_2024-03-25 Absorbances_plate_0_y.npy,-1,10.0,20.0
+527,schluter_6f02efe9c1b5bae36acdcc_y.npy,3.8263820611596127,10.0,20.0
+528,dan_23--23 m-peg mppegmcherrygfp2ia and 05ia_y.npy,3.5150981402374923,10.0,20.0
+529,chory_lab_Kinetics Experiments_2021-07-12_Protease_IPTG_ATC_firsttest_2024-03-26 Absorbances_reader_plate_4_y.npy,4.711207499970157,10.0,20.0
+530,lopatkin_lab_8.3.001_Day21_Day21_Col1_KS_20210729_Day21_Col1_y.npy,1.9953048115448906,10.0,20.0
+531,sizhe_2023-07-20 blam_y.npy,6.976870415947956,10.0,20.0
+532,schluter_1707bc3cfd0dc87c135984_y.npy,5.402947472674653,10.0,20.0
+533,zhixiang_gfp_lt_2_rif2_day2_gfp_y.npy,2.957804408692664,10.0,20.0
+534,schluter_21ba20a7bec2237a748cac_y.npy,5.494752329894388,10.0,20.0
+535,chory_lab_Kinetics Experiments_2022-09-02 ST05_mCherry_tagging_assay_with_noMCherry_control_2024-03-26 Absorbances_reader_plate_2_y.npy,6.532634561783143,10.0,20.0
+536,lopatkin_lab_final_tet_pOX38_tet_combined_b_y.npy,3.9407527215064673,10.0,20.0
+537,chory_lab_Turbidostat Experiments_20221013_224D 234ab 235ab_00001_2024-03-25 Absorbances_plate_0_y.npy,6.122659060813084,10.0,20.0
+538,katie_2023-03-23 crosstalk plus mixed plate full timecourse_y.npy,3.463757053041873,10.0,20.0
+539,chory_lab_Turbidostat Experiments_20230517_224D238239_Turb_00001_2024-03-25 Absorbances_plate_0_y.npy,3.714224903335651,10.0,20.0
+540,carolyn_10212018_resistome_longterm_TS30_33-2_y.npy,1.2773018911634324,10.0,20.0
+541,zach_other_2021-11-15 Long-term GFP_y.npy,7.90905385225498,10.0,20.0
+542,zach_growth_curves_2023-04-01_2_y.npy,2.0795586751899124,10.0,20.0
+543,schluter_17391b8feccb550fe3f7dd_y.npy,3.539936981193598,10.0,20.0
+544,zach_growth_curves_2023-03-27_2_y.npy,1.8671494912682058,10.0,20.0
+545,zach_other_2020-09-12 Suicide Circuits_y.npy,10.0130828794466,10.0,20.0
+546,sizhe_Sizhe_mc longterm (Modified)_20240424_123118_y.npy,4.767414684719389,10.0,20.0
+547,zach_growth_curves_2023-03-29_2_y.npy,2.8583955871072364,10.0,20.0
+548,carolyn_ReplacementTrial1_y.npy,2.820493351053132,10.0,20.0
+549,schluter_e0844d613a13c80d5104aa_y.npy,-1,10.0,20.0
+550,grayson_2022-03-31_antho_growthrate_y.npy,1.3675674534003208,10.0,20.0
+551,zach_other_2022-06-11 Long Term_y.npy,2.46969148802617,10.0,20.0
+552,emrah_20211018_E22_1xLB_TIC_MIC_OD600_Longterm_y.npy,2.359537678145845,10.0,20.0
+553,sizhe_Sizhe_mc longterm (Modified)_20230915_143810_y.npy,1.5575326445983528,10.0,20.0
+554,chory_lab_Kinetics Experiments_2021-09-16 aTc 2H phage_2024-03-26 Absorbances_reader_plate_2_y.npy,3.5753107099403265,10.0,20.0
+555,cesar_2023-11-09-CAD055-Katherine_y.npy,2.6970449054739745,10.0,20.0
+556,zach_other_2019-11-01_FJT_flourescence_y.npy,6.010492344814107,10.0,20.0
+557,chory_lab_Kinetics Experiments_2021-07-06_Emma_T7PRANCE_2024-03-26 Absorbances_reader_plate_1_y.npy,5.734615553463706,10.0,20.0
+558,chory_lab_Kinetics Experiments_2019-1030_PylRS_all_2024-03-26 Absorbances_reader_plate_2_y.npy,3.596154840404928,10.0,20.0
+559,sizhe_Sizhe_mc longterm (Modified)_20240426_142839_y.npy,5.523632388224577,10.0,20.0
+560,carolyn_06282018_resistome_longterm_TS30_5-2_y.npy,4.114607590106171,10.0,20.0
+561,chory_lab_Turbidostat Experiments_20230505_224F_238_239_00002_2024-03-25 Absorbances_plate_1_y.npy,4.518876404934748,10.0,20.0
+562,carolyn_Plate 77 Trial 1_y.npy,3.317190118725503,10.0,20.0
+563,chory_lab_Kinetics Experiments_2022-09-02 ST05_mCherry_tagging_assay_with_noMCherry_control_2024-03-26 Absorbances_reader_plate_6_y.npy,6.786005806873681,10.0,20.0
+564,carolyn_20170806_Anderson_21-40_LB_10000x_y.npy,4.014946455695789,10.0,20.0
+565,zhixiang_zy_comb_lt7_day4_od600_y.npy,4.4287070387012015,10.0,20.0
+566,schluter_2b3f03a8b7d55a2de3e745_y.npy,3.476286775665595,10.0,20.0
+567,zach_growth_curves_2023-03-15_1_y.npy,2.2681115766695643,10.0,20.0
+568,zhixiang_zy_comb_lt9_day2_od600_y.npy,2.577108750185079,10.0,20.0
+569,carolyn_09242018_resistome_longterm_TS30_15-2_y.npy,1.3145123895227315,10.0,20.0
+570,kyeri_RIE_top10f_0716_top10f_PG_media_y.npy,2.7752526453050224,10.0,20.0
+571,chory_lab_Kinetics Experiments_2022-10-12 224D 234a-c 235a-c_2024-03-26 Absorbances_reader_plate_8_y.npy,4.209204134824628,10.0,20.0
+572,cesar_2023-11-15-Top10GFPBio3_y.npy,2.6793015760012597,10.0,20.0
+573,chory_lab_Kinetics Experiments_2022-01-19 Massive cloning test 2H_2024-03-26 Absorbances_reader_plate_7_y.npy,3.3552222941648058,10.0,20.0
+574,chory_lab_Kinetics Experiments_2022-09-28 224F 234a-c 235a-c_2024-03-26 Absorbances_reader_plate_4_y.npy,5.142858635932245,10.0,20.0
+575,schluter_c904444941336cb8964b0f_y.npy,3.953084283363918,10.0,20.0
+576,schluter_7941e4cae71c4b58c59331_y.npy,4.157763421920548,10.0,20.0
+577,schluter_781db535d2bd2517b8d550_y.npy,4.068832073923251,10.0,20.0
+578,carolyn_Plate 91 Trial 2_y.npy,2.967568126085844,10.0,20.0
+579,chory_lab_Turbidostat Experiments_20230519_224D_238_239_TurbRepeat3_with Protease_00001_2024-03-25 Absorbances_plate_1_y.npy,6.568817178683535,10.0,20.0
+580,lopatkin_lab_20210524_AP_y.npy,3.083130720367281,10.0,20.0
+581,chory_lab_Kinetics Experiments_2019-1030_PylRS_all_2024-03-26 Absorbances_reader_plate_4_y.npy,4.0656702469450865,10.0,20.0
+582,chory_lab_Turbidostat Experiments_20220823_SD4 9x3_00001_2024-03-25 Absorbances_plate_1_y.npy,3.385947893573932,10.0,20.0
+583,chory_lab_Kinetics Experiments_2021-07-16_Protease_Turbidostat_IPTG_ATC_replicate2_2024-03-26 Absorbances_reader_plate_5_y.npy,4.244778012826108,10.0,20.0
+584,schluter_93d63e3d29804d9ec6c6ef_y.npy,4.45995190990681,10.0,20.0
+585,dan_23_4_7 M_PEG MstopP_PEG long induction_y.npy,8.720589318590408,10.0,20.0
+586,schluter_86f5c1b1606e937c286695_y.npy,5.142138375984204,10.0,20.0
+587,sizhe_2024-04-11 longterm od mch amyloid growth curves 42c j_full timecourse_y.npy,2.7341844010978624,10.0,20.0
+588,schluter_d7ca93f803bcf1e74d37b6_y.npy,3.1073527592029038,10.0,20.0
+589,schluter_3d89559bb0801598211996_y.npy,4.334605840923613,10.0,20.0
+590,schluter_636015deb7278b1f9a83a1_y.npy,5.110534626016624,10.0,20.0
+591,emrah_20220104_E9_1xLB_kan50_IPTG1mM_Carbenicillin_InitDensDependence_y.npy,5.5619534216793065,10.0,20.0
+592,carolyn_20170911_Anderson_47-59_LB_Carb-5ugml_10000x_y.npy,2.5993394773180567,10.0,20.0
+593,zhixiang_zy_comb_lt7_day4_gfp_y.npy,3.027787400954088,10.0,20.0
+594,carolyn_Plate 39 Trial 2_y.npy,4.0515126228037674,10.0,20.0
+595,chory_lab_Kinetics Experiments_2021-08-06 AARS PRANCE pED1a5_pEC182d_2024-03-26 Absorbances_reader_plate_7_y.npy,4.647196671431718,10.0,20.0
+596,chory_lab_Turbidostat Experiments_20220517_IPTG_Arab_HookOpt_00001_2024-03-25 Absorbances_plate_1_y.npy,8.246919736328355,10.0,20.0
+597,schluter_48c4f7863e337d20752856_y.npy,5.253534933615871,10.0,20.0
+598,carolyn_20170909_Fowler_116-138_LB_Carb-5ugml_10000x_y.npy,2.0824532406268705,10.0,20.0
+599,carolyn_Plate 11 Trial 3_y.npy,3.4693074550830363,10.0,20.0
+600,chory_lab_Kinetics Experiments_2021-07-16_Protease_Turbidostat_IPTG_ATC_replicate2_2024-03-26 Absorbances_reader_plate_4_y.npy,4.590420384750037,10.0,20.0
+601,carolyn_Plate 87 Trial 2_y.npy,3.598492708105818,10.0,20.0
+602,zach_growth_curves_2023-03-27_0_y.npy,2.5160318757286935,10.0,20.0
+603,lopatkin_lab_8.3.001_Day0_Day0_Col6_MF_20220610_Day0_Col6_y.npy,2.0061791347270086,10.0,20.0
+604,grayson_231220_ecoli_y.npy,2.1059794826181353,10.0,20.0
+605,chory_lab_Turbidostat Experiments_20221018_224F 234a 10x1-2_00001_2024-03-25 Absorbances_plate_1_y.npy,5.979856283198496,10.0,20.0
+606,chory_lab_Turbidostat Experiments_20230428_VM_splA_PRANCE_verification_00001_2024-03-25 Absorbances_plate_1_y.npy,3.568320576014263,10.0,20.0
+607,carolyn_Plate 67 Trial 2_y.npy,3.399596895037705,10.0,20.0
+608,carolyn_Plate 57 Trial 1_y.npy,3.307053344050114,10.0,20.0
+609,schluter_833bd600fc6bd568ad000a_y.npy,-1,10.0,20.0
+610,chory_lab_Kinetics Experiments_2021-07-06_Emma_T7PRANCE_2024-03-26 Absorbances_reader_plate_2_y.npy,5.8229748073819545,10.0,20.0
+611,schluter_8b13112c6ac5e832836b57_y.npy,4.52059788758854,10.0,20.0
+612,carolyn_Plate 13 Trial 2_y.npy,3.5045634678983792,10.0,20.0
+613,emrah_RawTimeCourse_X17_clone2_y.npy,-1,10.0,20.0
+614,lopatkin_lab_20210408_KSstrains5-8-2-7_y.npy,1.8006793669351069,10.0,20.0
+615,carolyn_20170717_Fowler_93-106_LB_10000x_y.npy,2.3005805973956956,10.0,20.0
+616,chory_lab_Kinetics Experiments_2022-01-19 Massive cloning test 2H_2024-03-26 Absorbances_reader_plate_10_y.npy,2.891126165998013,10.0,20.0
+617,carolyn_10282018_resistome_longterm_TS30_38-2_y.npy,1.6298205324918937,10.0,20.0
+618,schluter_e45518ce28c1f70e4f8eb0_y.npy,-1,10.0,20.0
+619,kyeri_RIE_top10f_0725_top10f_PG_NAMNAG_y.npy,2.3770384484121614,10.0,20.0
+620,emrah_20211001_E22-23-25_M9_glucose0p2_PIP_OD600_Longterm_y.npy,4.708297404024745,10.0,20.0
+621,zhixiang_gfp_lt_1_test2_gfp_y.npy,2.32495872635057,10.0,20.0
+622,zhixiang_zy_comb_lt8_day0_gfp_y.npy,3.8798211447168796,10.0,20.0
+623,kyeri_KeioV3_mcherry_20231022_2hpre_betalactams_384_amx_y.npy,4.364867373690924,10.0,20.0
+624,carolyn_10272018_resistome_longterm_TS30_38-1_y.npy,1.2538864442272901,10.0,20.0
+625,schluter_d98075bf7fe4523e409606_y.npy,4.7317167349239755,10.0,20.0
+626,chory_lab_Kinetics Experiments_2022-11-04 Linker Third Test_2024-03-26 Absorbances_reader_plate_5_y.npy,6.829228457196135,10.0,20.0
+627,chory_lab_Turbidostat Experiments_20221017_234a 235ab replicates_00001_2024-03-25 Absorbances_plate_0_y.npy,6.784592164844616,10.0,20.0
+628,cesar_2023-11-20-DH5GFPBio2_y.npy,3.157537471883599,10.0,20.0
+629,carolyn_05272018_resistome_longterm_TS30_1-2_y.npy,1.575075049547359,10.0,20.0
+630,carolyn_20170721_Fowler_150-172_LB_10000x_y.npy,3.068271539298856,10.0,20.0
+631,lopatkin_lab_final_tet_RN3_tet_combined_b_y.npy,3.036921815660554,10.0,20.0
+632,carolyn_11022018_resistome_longterm_TS30_41-2_y.npy,2.503081766646967,10.0,20.0
+633,schluter_c34b41661c3c4b89c19376_y.npy,4.707817210324311,10.0,20.0
+634,carolyn_Plate 49 Trial 1_y.npy,3.3482200003706613,10.0,20.0
+635,zhixiang_zy_comb_lt8_day5_gfp_y.npy,4.589068281553877,10.0,20.0
+636,chory_lab_Kinetics Experiments_2022-09-28 224F 234a-c 235a-c_2024-03-26 Absorbances_reader_plate_7_y.npy,5.611320812680192,10.0,20.0
+637,dan_22_9_8 PM-ELP + G5P or G4rP lower induction_y.npy,4.164429751054589,10.0,20.0
+638,carolyn_12192018_resistome_longterm_TS30_53-2_y.npy,1.1029445880897628,10.0,20.0
+639,sizhe_2023-4-13 MCH-GGGS-CDC & 2CDC19=ELP_y.npy,2.9214839307096865,10.0,20.0
+640,carolyn_Plate 23 Trial 3_y.npy,3.4045349822863074,10.0,20.0
+641,schluter_36715726acc0d496bb2346_y.npy,5.844448591459581,10.0,20.0
+642,carolyn_Plate 93 Trial 3_y.npy,1.4116753903225894,10.0,20.0
+643,carolyn_Plate 51 Trial 1_y.npy,3.404510608338198,10.0,20.0
+644,schluter_809a6a9627784e56b5f953_y.npy,4.3453119341342346,10.0,20.0
+645,kyeri_KeioV3_mcherry_2022_2023_NCAL_0903_72strains_repeat2_y.npy,4.063388250550303,10.0,20.0
+646,dan_22_5_5 mCherry and Pum-ELP induction after confluence_OD600_y.npy,1.5838890008537994,10.0,20.0
+647,chory_lab_Kinetics Experiments_2019-08021_Emma_174b_176abc_20ng_2024-03-26 Absorbances_reader_plate_4_y.npy,5.223576677291356,10.0,20.0
+648,ashwini_ars_240409_gfp_y.npy,5.445151398005672,10.0,20.0
+649,schluter_688524ef9180bc574f9a61_y.npy,3.2824938320452124,10.0,20.0
+650,chory_lab_Kinetics Experiments_2022-01-19 Massive cloning test 2H_2024-03-26 Absorbances_reader_plate_8_y.npy,3.2042902374962883,10.0,20.0
+651,cesar_2023-11-16-Top10McherryBio3_y.npy,2.465142445189091,10.0,20.0
+652,zhixiang_zy_comb_lt10_day4_gfp_y.npy,4.194629662205222,10.0,20.0
+653,carolyn_09192018_resistome_longterm_TS30_12-1_y.npy,2.405028880104469,10.0,20.0
+654,carolyn_10232018_resistome_longterm_TS30_34-2_y.npy,1.8092451470297761,10.0,20.0
+655,zach_other_2022-12-03 Long-term_y.npy,2.325020756936872,10.0,20.0
+656,carolyn_Plate 1 Trial 2_y.npy,4.291283301505693,10.0,20.0
+657,schluter_1173dfad6eceedd566ad60_y.npy,5.412818319518283,10.0,20.0
+658,cesar_2023-08-28-TazobactamSensitive_y.npy,2.8314758367656854,10.0,20.0
+659,carolyn_Plate 47 Trial 1_y.npy,4.3301398163870735,10.0,20.0
+660,carolyn_Plate 87 Trial 1_y.npy,3.344845258213621,10.0,20.0
+661,zach_other_2021-10-06 PLL Cytotoxicity Data Table GFP_y.npy,8.095728402998867,10.0,20.0
+662,chory_lab_Kinetics Experiments_2022-08-02 Protease_First Test_2024-03-26 Absorbances_reader_plate_5_y.npy,6.659480573512045,10.0,20.0
+663,schluter_502dac27b4acafd0598604_y.npy,-1,10.0,20.0
+664,chory_lab_Turbidostat Experiments_20221106_Linker Turbidostat 1_00001_2024-03-25 Absorbances_plate_1_y.npy,-1,10.0,20.0
+665,schluter_1c6f6f960b693dacd0ef95_y.npy,4.040068211911218,10.0,20.0
+666,carolyn_Plate 45 Trial 2_y.npy,4.113648586419667,10.0,20.0
+667,carolyn_01272019_resistome_longterm_TS30_56-2_y.npy,2.4321017836532466,10.0,20.0
+668,lopatkin_lab_7.7.053-pB10 growth_y.npy,2.617071863080993,10.0,20.0
+669,carolyn_Plate 11 Trial 2_y.npy,3.3918805320366276,10.0,20.0
+670,cesar_2023-11-25-Top10GFPBio1_y.npy,4.171900434938295,10.0,20.0
+671,chory_lab_Turbidostat Experiments_20220802_Hook IPTG and Arab long equillibrium 3x_00001_2024-03-25 Absorbances_plate_1_y.npy,-1,10.0,20.0
+672,emrah_RawTimeCourse_X17_clone1_y.npy,-1,10.0,20.0
+673,carolyn_Plate 7 Trial 1_y.npy,4.334838261395489,10.0,20.0
+674,schluter_291c32e2e8110ee2e4a1a6_y.npy,4.925969343678491,10.0,20.0
+675,lynch_lab_040823_Biolector_DCredox_summary_raw_data_y.npy,2.892833553231283,10.0,20.0
+676,zhixiang_zy_comb_lt10_day5_gfp_y.npy,4.59854700707269,10.0,20.0
+677,huge_carin_subjectB_gut_y.npy,5.950666902581751,30.0,40.0
+678,lynch_lab_DMC_Ferm_275_for_upload_y.npy,-1,10.0,20.0
+679,carolyn_Plate 65 Trial 1_y.npy,3.5177250846283474,10.0,20.0
+680,chory_lab_Kinetics Experiments_2021-07-14_Protease_Turbidostat_IPTG_ATC_firsttest_2024-03-26 Absorbances_reader_plate_2_y.npy,4.450949578766612,10.0,20.0
+681,chory_lab_Kinetics Experiments_2022-09-28 224F 234a-c 235a-c_2024-03-26 Absorbances_reader_plate_2_y.npy,5.929185154209551,10.0,20.0
+682,schluter_d90e1b7f7d96d7133d7172_y.npy,3.6219607088854957,10.0,20.0
+683,cesar_2023-12-11-DH5GFPBio2-KAN_y.npy,2.6204307398158986,10.0,20.0
+684,zhixiang_zy_comb_lt10_day2_gfp_y.npy,3.8749262946736165,10.0,20.0
+685,carolyn_Plate 41 Trial 1_y.npy,3.499809865446684,10.0,20.0
+686,zhixiang_zy_comb_lt7_day0_gfp_y.npy,3.8798211447168796,10.0,20.0
+687,zach_other_2020-06-03 ePop_y.npy,1.5809361055172126,10.0,20.0
+688,zach_other_2022-06-09 Long Term_y.npy,2.617277716934503,10.0,20.0
+689,ashwini_ars_240603_od_y.npy,3.9958371482143207,10.0,20.0
+690,zhixiang_gfp_lt_2_rif2_day1_gfp_y.npy,3.0033818246326587,10.0,20.0
+691,helena_od600_y.npy,4.706259476525373,10.0,20.0
+692,lynch_lab_Copy of 2119_Manual Record_for_upload_y.npy,-1,10.0,20.0
+693,carolyn_20170805_Anderson_1-20_LB_10000x_y.npy,2.323776296648381,10.0,20.0
+694,carolyn_11292018_resistome_longterm_TS30_48-2_y.npy,1.9389396878596024,10.0,20.0
+695,chory_lab_Kinetics Experiments_2019-1028_VHTA_2H_protease_2024-03-26 Absorbances_reader_plate_4_y.npy,6.207879081759191,10.0,20.0
+696,ashwini_ars_240514_gfp_y.npy,1.3076065349265273,10.0,20.0
+697,chory_lab_Kinetics Experiments_2022-09-28 224F 234a-c 235a-c_2024-03-26 Absorbances_reader_plate_9_y.npy,6.012673709728901,10.0,20.0
+698,zhixiang_zy_comb_lt7_day6_gfp_y.npy,2.4529139356265883,10.0,20.0
+699,chory_lab_Kinetics Experiments_2022-10-12 224D 234a-c 235a-c_2024-03-26 Absorbances_reader_plate_3_y.npy,3.83166602138583,10.0,20.0
+700,chory_lab_Kinetics Experiments_2021-07-02_Emma_T7PRANCE_2024-03-26 Absorbances_reader_plate_2_y.npy,3.957575002385619,10.0,20.0
+701,schluter_6915baf26c798b32ad8c98_y.npy,-1,10.0,20.0
+702,chory_lab_Turbidostat Experiments_20230517_224D238239_Turb_00001_2024-03-25 Absorbances_plate_1_y.npy,1.5848717916385753,10.0,20.0
+703,kyeri_FJTimer_MG1655_cas_betalactams_FJT_carb_gfp_rfp_y.npy,6.3943535586372064,10.0,20.0
+704,carolyn_Plate 75 Trial 1_y.npy,3.448729734480757,10.0,20.0
+705,schluter_2114911c40a09a1244abde_y.npy,4.83022582362975,10.0,20.0
+706,kyeri_RIE_top10f_0718_top10f_PG_media_repeat2_y.npy,3.050690783522046,10.0,20.0
+707,lynch_lab_autoinduction_best_screened media_mcherry_GFPuv phosphate sampling_y.npy,1.3708444494745675,10.0,20.0
+708,carolyn_Plate 49 Trial 3_y.npy,3.3371307746572727,10.0,20.0
+709,zach_other_2019-12-18 Timer Plate Reader Long-term_y.npy,2.7323344263863003,10.0,20.0
+710,chory_lab_Kinetics Experiments_2022-01-19 Massive cloning test 2H_2024-03-26 Absorbances_reader_plate_1_y.npy,3.3430788247732015,10.0,20.0
+711,chory_lab_Kinetics Experiments_2019-1029_2H_protease_2024-03-26 Absorbances_reader_plate_3_y.npy,4.330164430984653,10.0,20.0
+712,zhixiang_zy_comb_lt8_day7_gfp_y.npy,3.5315171133452634,10.0,20.0
+713,schluter_f1c248cd1d9bbac6711114_y.npy,-1,10.0,20.0
+714,cesar_2023-11-25-DH5mCBio2_y.npy,5.590857228481263,10.0,20.0
+715,zach_other_2021-10-06 Capsule per Well_y.npy,10.039260384005381,10.0,20.0
+716,lynch_lab_Process598_for_upload_y.npy,-1,10.0,20.0
+717,schluter_c989fa0e051492b49ac7ff_y.npy,4.253165229331476,10.0,20.0
+718,ashwini_ars_240627_od_y.npy,4.285957334808604,10.0,20.0
+719,chory_lab_Kinetics Experiments_2021-07-02_Emma_T7PRANCE_2024-03-26 Absorbances_reader_plate_1_y.npy,3.738667173010746,10.0,20.0
+720,kyeri_KeioV3_mcherry_20231021_4hpre_betalactams_384_cefo_y.npy,3.679718960375711,10.0,20.0
+721,lynch_lab_Copy of 2111_Manual Record_for_upload_y.npy,-1,10.0,20.0
+722,alex_2023-06-24_OD600_alex_y.npy,2.877082719025703,10.0,20.0
+723,schluter_1753ba2e9be09ed03806cc_y.npy,4.1373947673153175,10.0,20.0
+724,chory_lab_Kinetics Experiments_2021-07-02_Emma_T7PRANCE_2024-03-26 Absorbances_reader_plate_4_y.npy,3.7591012662577588,10.0,20.0
+725,schluter_92be05e424153be4d951dc_y.npy,4.290173062908,10.0,20.0
+726,chory_lab_Kinetics Experiments_2022-11-03 Linker Second Test_2024-03-26 Absorbances_reader_plate_4_y.npy,5.187482135594582,10.0,20.0
+727,fujita_microbiome_microbiome_dataset_y.npy,7.312395836363487,20.0,30.0
+728,chory_lab_Kinetics Experiments_2022-08-02 Protease_First Test_2024-03-26 Absorbances_reader_plate_1_y.npy,6.228373785102476,10.0,20.0
+729,lopatkin_lab_20210512_BW25113_IC50_y.npy,2.149465440192117,10.0,20.0
+730,carolyn_01312019_resistome_longterm_TS30_60-2_y.npy,1.5922948523305278,10.0,20.0
+731,carolyn_Plate 63 Trial 1_y.npy,3.758148089359398,10.0,20.0
+732,chory_lab_Turbidostat Experiments_20220818_232_224F 9x2_00001_2024-03-25 Absorbances_plate_0_y.npy,4.1148494791224985,10.0,20.0
+733,zach_other_2021-11-15 Long-term BFP_y.npy,9.14255284314762,10.0,20.0
+734,chory_lab_Turbidostat Experiments_20230522_224DF_238_239 redo 600_200_00001_2024-03-25 Absorbances_plate_0_y.npy,3.9077743906707556,10.0,20.0
+735,schluter_cd99a08d64239bc1f88670_y.npy,4.300956676279537,10.0,20.0
+736,carolyn_20170903_Fowler_1-23_LB_Carb-5ugml_10000x_y.npy,2.5838617350229933,10.0,20.0
+737,zach_growth_curves_2022-11-08_0_y.npy,2.2251125295031606,10.0,20.0
+738,schluter_93a7002b8d9f93d3bf59a1_y.npy,4.672545240267977,10.0,20.0
+739,carolyn_Plate 93 Trial 1_y.npy,1.7118991639073144,10.0,20.0
+740,carolyn_05262018_resistome_longterm_TS30_1-1_y.npy,1.8092914689618949,10.0,20.0
+741,carolyn_Plate 85 Trial 2_y.npy,3.6648767838458127,10.0,20.0
+742,sizhe_2024-04-11 longterm od mch amyloid growth curves 37c nano_y.npy,2.8531072034680602,10.0,20.0
+743,carolyn_20170722_Fowler_173-195_LB_10000x_y.npy,2.374795238877368,10.0,20.0
+744,schluter_7646b301b8b77aab87e5d5_y.npy,3.849926541108144,10.0,20.0
+745,carolyn_Plate 95 Trial 2_y.npy,4.1882181138355925,10.0,20.0
+746,chory_lab_Kinetics Experiments_2019-1031_1H_2H_protease_2024-03-26 Absorbances_reader_plate_4_y.npy,5.331960946742078,10.0,20.0
+747,lopatkin_lab_20210602_exp5.1.012_AP_y.npy,2.1630842301409103,10.0,20.0
+748,kyeri_FJTimer_MG1655_cas_betalactams_FJT_cefo_amx_gfp_rfp_y.npy,4.114195385597375,10.0,20.0
+749,lopatkin_lab_8.3.001_Day21_Day21_Col3_MF_20211120_Day21_Col3_y.npy,1.9892858700908003,10.0,20.0
+750,chory_lab_Turbidostat Experiments_20220911_244fstar_233_Test1_00001_2024-03-25 Absorbances_plate_1_y.npy,6.3089456967236766,10.0,20.0
+751,schluter_87361dc7b53bb65f569e51_y.npy,3.9636059763252196,10.0,20.0
+752,schluter_4ad67ea7ddd46b772fc3e3_y.npy,4.124146015397283,10.0,20.0
+753,feilunconsortia_auxotroph_data_rep2_y.npy,6.0728628719660485,10.0,20.0
+754,zhixiang_zy_comb_lt9_day5_od600_y.npy,2.5516984595738874,10.0,20.0
+755,emrah_20230531_NansMS_VaryCAA_Costar96_MineralOil_y.npy,2.187997755543977,10.0,20.0
+756,lopatkin_lab_final_tet_pB10_tet_combined_a_y.npy,2.0237033469995143,10.0,20.0
+757,schluter_90dd721182743d0a7aa9a9_y.npy,4.258524863676091,10.0,20.0
+758,schluter_e7c04f5c7abf2b3860530a_y.npy,4.057918276506998,10.0,20.0
+759,schluter_f14a2050cc330c868ca5aa_y.npy,4.96185489311789,10.0,20.0
+760,zhixiang_zy_comb_lt8_day6_od600_y.npy,4.3339505408484635,10.0,20.0
+761,sizhe_2024-04-07 longterm cdcmc_y.npy,1.1322551486539185,10.0,20.0
+762,lopatkin_lab_20210525_AP_y.npy,2.7079958240927557,10.0,20.0
+763,schluter_2a2d4355bd23ea1a241fae_y.npy,-1,10.0,20.0
+764,carolyn_07202018_resistome_longterm_TS30_7-2_y.npy,1.8155358283956509,10.0,20.0
+765,carolyn_Plate 71 Trial 1_y.npy,3.392261878069181,10.0,20.0
+766,cesar_2023-09-01-TazobactamSensitive_y.npy,3.15453740716857,10.0,20.0
+767,zhixiang_zy_comb_lt10_day4_od600_y.npy,2.6791641876340506,10.0,20.0
+768,lopatkin_lab_8.3.001_Day0_Day0_Col10_KS_20210714_Day0_Col10_y.npy,1.8908820601034817,10.0,20.0
+769,schluter_ef4a461874d3ff6c881700_y.npy,4.626577107296345,10.0,20.0
+770,sizhe_2024-04-25 longterm od mch amyloid growth curves 30c nano_y.npy,2.429731553241078,10.0,20.0
+771,chory_lab_Kinetics Experiments_2022-08-25 ST04_spla_MBP_2024-03-26 Absorbances_reader_plate_2_y.npy,6.0522890424250395,10.0,20.0
+772,katie_2023-07-14 cuma atc ohc14 individual crosstalk plus mixed plate full timecourse 1_y.npy,3.217549555173236,10.0,20.0
+773,chory_lab_Kinetics Experiments_2022-10-12 224D 234a-c 235a-c_2024-03-26 Absorbances_reader_plate_5_y.npy,3.4735492113632813,10.0,20.0
+774,chory_lab_Kinetics Experiments_2021-10-29 IPTG 2Hphage pEC223 DRM 174cd_2024-03-26 Absorbances_reader_plate_6_y.npy,3.3917167011116693,10.0,20.0
+775,chory_lab_Kinetics Experiments_2022-04-11 psp AR2 comparison_2024-03-26 Absorbances_reader_plate_6_y.npy,2.863228522542344,10.0,20.0
+776,dan_22_4_27 Com-mRuby-IDP + RNA binding targetx2 -RBS-GFP-pBDTO-Blank_OD600_y.npy,2.974720236922204,10.0,20.0
+777,schluter_9fb0c9ff3579a4db2e5f2e_y.npy,4.28818803713113,10.0,20.0
+778,schluter_79223cc9f81f402013249e_y.npy,4.911851417424061,10.0,20.0
+779,zach_other_2021-11-15 Long-term OD600_y.npy,2.82582049271987,10.0,20.0
+780,carolyn_10152018_resistome_longterm_TS30_29-3_y.npy,1.1333138186233052,10.0,20.0
+781,chory_lab_Kinetics Experiments_2022-09-28 224F 234a-c 235a-c_2024-03-26 Absorbances_reader_plate_3_y.npy,5.14572656533985,10.0,20.0
+782,carolyn_20170910_Anderson_1-23_LB_Carb-5ugml_10000x_y.npy,2.334228381885997,10.0,20.0
+783,schluter_ea42dedafcda4a9f91e613_y.npy,4.7611200658703385,10.0,20.0
+784,carolyn_Plate 17 Trial 2_y.npy,3.51582278303908,10.0,20.0
+785,zach_other_2020-07-22 MC4100Z1 ePop with mCherryOAC_y.npy,5.413373435254394,10.0,20.0
+786,alex_2023-06-30_OD600_alex_y.npy,2.7434253644050735,10.0,20.0
+787,schluter_81b792039d15cbd1c3569b_y.npy,2.9354603933229737,10.0,20.0
+788,chory_lab_Kinetics Experiments_2021-10-01 IPTG 2H phage pEC223 DRM SD5_2024-03-26 Absorbances_reader_plate_3_y.npy,3.595224769864234,10.0,20.0
+789,carolyn_Plate 53 Trial 3_y.npy,3.6992598233928033,10.0,20.0
+790,kyeri_FJTimer_MG1655_cas_betalactams_FJT_cas_carb_gfp_rfp_y.npy,2.4743175638923463,10.0,20.0
+791,lopatkin_lab_8.4.005_day21_8.4.005_Day21_Col12_20220606_Day21_Col12_y.npy,1.8827825142229542,10.0,20.0
+792,carolyn_Plate 73 Trial 1_y.npy,3.478828675278082,10.0,20.0
+793,lynch_lab_Process465_for_upload_y.npy,-1,10.0,20.0
+794,chory_lab_Turbidostat Experiments_20220713_First Crystal Violet Test_00001_2024-03-25 Absorbances_plate_0_y.npy,8.281038368970162,10.0,20.0
+795,hyein_GSH_1536_lt_20240606_230523_y.npy,5.4765019345487875,10.0,20.0
+796,chory_lab_Kinetics Experiments_2019-1015_pEC183ab_2024-03-26 Absorbances_reader_plate_2_y.npy,3.575842829799437,10.0,20.0
+797,alex_2022-11-12 alh_y.npy,2.1545074594694125,10.0,20.0
+798,dongheon_20230717_DA28202_NahRAM_mR3_DL_y.npy,2.9443077088817833,10.0,20.0
+799,chory_lab_Kinetics Experiments_2022-09-28 224F 234a-c 235a-c_2024-03-26 Absorbances_reader_plate_1_y.npy,4.965507628477732,10.0,20.0
+800,lopatkin_lab_DG LB plate - 5.2.012_y.npy,1.9890800312375776,10.0,20.0
+801,chory_lab_Turbidostat Experiments_20220806_ScFv 9x1 224f 2430x_00001_2024-03-25 Absorbances_plate_0_y.npy,5.829844033840808,10.0,20.0
+802,zach_other_2021-04-15 Collective Survival_y.npy,1.9512054501263345,10.0,20.0
+803,ashwini_ars_240518_gfp_y.npy,2.3412812444214253,10.0,20.0
+804,schluter_8a25110c831e982ce15747_y.npy,4.801337789656467,10.0,20.0
+805,lopatkin_lab_final_tet_pRK100_tet_combined_b_y.npy,4.93825515935207,10.0,20.0
+806,chory_lab_Kinetics Experiments_2022-11-04 Linker Third Test_2024-03-26 Absorbances_reader_plate_4_y.npy,6.202512082556862,10.0,20.0
+807,sizhe_2023-12-21long term mc_y.npy,3.1629399543116703,10.0,20.0
+808,carolyn_06262018_resistome_longterm_TS30_4-2_y.npy,1.481675137524588,10.0,20.0
+809,schluter_0555bfe76317c3a99281d2_y.npy,-1,10.0,20.0
+810,carolyn_Plate 69 Trial 1_y.npy,3.7557976356080576,10.0,20.0
+811,chory_lab_Kinetics Experiments_2021-08-05_AARS_PRANCE_2024-03-26 Absorbances_reader_plate_1_y.npy,4.918736688620731,10.0,20.0
+812,zach_growth_curves_2023-03-15_0_y.npy,2.0399318868013125,10.0,20.0
+813,chory_lab_Turbidostat Experiments_20220809_224F 9x1 2320x enrichment_00001_2024-03-25 Absorbances_plate_1_y.npy,5.659841888707496,10.0,20.0
+814,chory_lab_Kinetics Experiments_2019-1028_VHTA_2H_protease_2024-03-26 Absorbances_reader_plate_7_y.npy,4.86136774476867,10.0,20.0
+815,chory_lab_Kinetics Experiments_2022-09-02 ST05_mCherry_tagging_assay_with_noMCherry_control_2024-03-26 Absorbances_reader_plate_7_y.npy,6.403349631480376,10.0,20.0
+816,huge_carin_subjectA_saliva_y.npy,4.166862642752558,10.0,20.0
+817,lopatkin_lab_20210609_exp5.1.014_y.npy,1.7484984841359172,10.0,20.0
+818,carolyn_Plate 83 Trial 3_y.npy,3.26142589556714,10.0,20.0
+819,carolyn_20170822_Anderson_24-46_100x_y.npy,2.897069546355293,10.0,20.0
+820,emrah_20220323_E44_LBkan50Carb100_ChloramphenicolDensDepend_OD600_Longterm_y.npy,2.1287971428222665,10.0,20.0
+821,lopatkin_lab_8.4.005_day21_8.4.005_Day21_Col10_20211014_8.5.003_Day21_Col10_y.npy,1.9202656230612638,10.0,20.0
+822,cesar_2023-11-09-CAHighBLA-Katherine_y.npy,2.499422501572541,10.0,20.0
+823,schluter_f642a1078a7ab9ffe16158_y.npy,4.110241051754755,20.0,30.0
+824,chory_lab_Kinetics Experiments_2022-08-31 ST05_mCherry_tagging_assay_2024-03-26 Absorbances_reader_plate_3_y.npy,6.446234809445303,10.0,20.0
+825,carolyn_10172018_resistome_longterm_TS30_30-2_y.npy,1.560133128535764,10.0,20.0
+826,chory_lab_Kinetics Experiments_2022-08-22 ST03_RBS_Standardization_2024-03-26 Absorbances_reader_plate_5_y.npy,7.30768894962242,10.0,20.0
+827,schluter_696cea5815cbed245e7eeb_y.npy,5.033832998813864,10.0,20.0
+828,zach_growth_curves_2023-03-22_1_y.npy,2.6871358438273196,10.0,20.0
+829,carolyn_Plate 17 Trial 1_y.npy,3.4787047272558995,10.0,20.0
+830,chory_lab_Kinetics Experiments_2019-08021_Emma_174b_176abc_20ng_2024-03-26 Absorbances_reader_plate_1_y.npy,5.055377064031559,10.0,20.0
+831,carolyn_Plate 29 Trial 1_y.npy,3.7003420370803015,10.0,20.0
+832,schluter_75a075f2b7e8fb6e8977fe_y.npy,4.147654119555461,10.0,20.0
+833,carolyn_Plate 31 Trial 1_y.npy,3.69702350760284,10.0,20.0
+834,carolyn_20170819_Fowler_1-23_LB_100x_y.npy,2.981908303214537,10.0,20.0
+835,kyeri_FJTimer_MG1655_cas_betalactams_FJT_OD_gfp_rfp_carb_y.npy,1.7836982165672663,10.0,20.0
+836,katie_2023-03-24 crosstalk plus mixed plate full timecourse 1_y.npy,3.136758449830683,10.0,20.0
+837,chory_lab_Kinetics Experiments_2022-09-02 ST05_mCherry_tagging_assay_with_noMCherry_control_2024-03-26 Absorbances_reader_plate_3_y.npy,6.703005499531367,10.0,20.0
+838,schluter_ee8bf08f67564f39262821_y.npy,4.082817325116826,10.0,20.0
+839,carolyn_07202018_resistome_longterm_TS30_7-1_y.npy,1.2285821334484346,10.0,20.0
+840,zhixiang_zy_comb_lt9_day0_gfp_y.npy,2.2574939804879683,10.0,20.0
+841,lopatkin_lab_20210511_BW25113_IC50_y.npy,1.8961645296116778,10.0,20.0
+842,lopatkin_lab_final_tet_RIP113_tet_combined_c_y.npy,1.2824312897255856,10.0,20.0
+843,lopatkin_lab_20210330_KSstrains7-5-1-3_y.npy,1.9110343638217755,10.0,20.0
+844,zach_other_2022-06-20 Long Term_y.npy,5.868555510586922,10.0,20.0
+845,huge_carin_subjectA_gut_y.npy,4.78290872951692,90.0,100.0
+846,zach_other_2022-06-21 Long Term_y.npy,2.4653368429817353,10.0,20.0
+847,carolyn_20170810_Fowler_185-207_LB_Lambda-MOI-1_10000x_y.npy,3.0257439247057416,10.0,20.0
+848,schluter_c24546c67a2ccfbaada8fd_y.npy,4.289846319281368,10.0,20.0
+849,schluter_0d3deb1aa146420ea4377b_y.npy,4.370921005521485,10.0,20.0
+850,carolyn_Plate 3 Trial 3_y.npy,4.323320354730576,10.0,20.0
+851,schluter_8b407686349a80041bd4ab_y.npy,-1,10.0,20.0
+852,carolyn_Plate 15 Trial 3_y.npy,4.073621364888732,10.0,20.0
+853,lopatkin_lab_final_tet_RN3_tet_combined_a_y.npy,3.620253478645631,10.0,20.0
+854,lopatkin_lab_8.4.005_day21_8.4.005_Day21_Col8_20211201_8.4.005_Day21_Col8_y.npy,1.6214934339058997,10.0,20.0
+855,chory_lab_Turbidostat Experiments_20221019_224F 234a 10x1-2_00001_2024-03-25 Absorbances_plate_0_y.npy,4.404067173591814,10.0,20.0
+856,carolyn_06192018_resistome_longterm_TS30_3-2_y.npy,1.3112758719541036,10.0,20.0
+857,carolyn_Plate 13 Trial 1_y.npy,3.879665867778951,10.0,20.0
+858,lopatkin_lab_final_tet_R702_tet_combined_a_y.npy,2.4604476571366174,10.0,20.0
+859,cesar_2023-11-25-Top10GFPBio2_y.npy,2.0405492505911393,10.0,20.0
+860,emrah_20230530_NansMS_VaryCAA_Costar96_MineralOil_y.npy,2.138629549618009,10.0,20.0
+861,sizhe_2024-03-29 longterm cdcmc_y.npy,2.0290351402301146,10.0,20.0
+862,lopatkin_lab_DG - ajl_growthKinetics (Modified)_20220420_120823_y.npy,3.1056150537457254,10.0,20.0
+863,zach_other_2022-11-07 Long-term_y.npy,2.0126773854570885,10.0,20.0
+864,chory_lab_Kinetics Experiments_2022-10-12 224D 234a-c 235a-c_2024-03-26 Absorbances_reader_plate_7_y.npy,4.327687579982918,10.0,20.0
+865,zhixiang_zy_comb_lt8_day1_gfp_y.npy,3.6826819349518134,10.0,20.0
+866,carolyn_20170809_Fowler_93-115_LB_Lambda-MOI-1_10000x_y.npy,2.974545822455173,10.0,20.0
+867,schluter_7e77acf7897d37ba98bfcb_y.npy,4.42368136598286,10.0,20.0
+868,chory_lab_Kinetics Experiments_2019-08023_Emma_174_176_177_2024-03-26 Absorbances_reader_plate_1_y.npy,4.423320350408122,10.0,20.0
+869,schluter_f871850139cd8c88db1aec_y.npy,5.211700258336983,10.0,20.0
+870,schluter_22bb8cf0302df760ff2ca2_y.npy,3.6020941024315793,10.0,20.0
+871,lynch_lab_Copy of 2116_Manual Record_for_upload_y.npy,-1,10.0,20.0
+872,schluter_dd5886623f7863ec6288ba_y.npy,4.675728712805761,10.0,20.0
+873,schluter_3449b56b0b9ff4dcac6c79_y.npy,3.9460730796346524,10.0,20.0
+874,chory_lab_Kinetics Experiments_2022-08-02 Protease_First Test_2024-03-26 Absorbances_reader_plate_3_y.npy,6.607670488413996,10.0,20.0
+875,cesar_2023-08-27-SulbactamSensitive_y.npy,3.332146229167246,10.0,20.0
+876,carolyn_Plate 85 Trial 3_y.npy,3.386924227500978,10.0,20.0
+877,zhixiang_zy_comb_lt10_day0_gfp_y.npy,3.7087263020683965,10.0,20.0
+878,lopatkin_lab_final_tet_RP4_tet_combined_b_y.npy,2.5988362542365975,10.0,20.0
+879,zhixiang_zy_comb_lt7_day3_gfp_y.npy,3.2438196639608576,10.0,20.0
+880,emrah_20210911_E22_1xLB_PIP_Sulbactam_OD600_Longterm_y.npy,3.6803335017905665,10.0,20.0
+881,schluter_3307e0923dc561269cb334_y.npy,4.692335591094869,10.0,20.0
+882,lynch_lab_DMC_Ferm_289_for_upload_y.npy,-1,10.0,20.0
+883,carolyn_Plate 41 Trial 3_y.npy,3.342703823469502,10.0,20.0
+884,emrah_RawTimeCourse_X1_clone2_y.npy,-1,10.0,20.0
+885,zach_other_2021-10-06 PLL Cytotoxicity Data Table_y.npy,3.6689104729646873,10.0,20.0
+886,sizhe_2024-04-03 longterm cdcmc_y.npy,1.2957538674075382,10.0,20.0
+887,carolyn_Plate 73 Trial 3_y.npy,3.7514934840913385,10.0,20.0
+888,sizhe_2023-04-25 long termcdc19p-mch_y.npy,1.8835019044280175,10.0,20.0
+889,schluter_a1c1eab079279fe8575c75_y.npy,4.20168752091117,10.0,20.0
+890,chory_lab_Kinetics Experiments_2021-08-06 AARS PRANCE pED1a5_pEC182d_2024-03-26 Absorbances_reader_plate_8_y.npy,4.624045432117026,10.0,20.0
+891,schluter_43c08d30584796cdbc9118_y.npy,4.037186793168688,10.0,20.0
+892,chory_lab_Turbidostat Experiments_20230505_spla_test_2_00001 (with figures)_2024-03-25 Absorbances_plate_0_y.npy,3.4409611555018618,10.0,20.0
+893,carolyn_Plate 91 Trial 1_y.npy,2.8548348065188835,10.0,20.0
+894,zach_other_2022-02-15 ZH protocol_y.npy,2.2477494482621854,10.0,20.0
+895,chory_lab_Kinetics Experiments_2019-1029_2H_protease_2024-03-26 Absorbances_reader_plate_5_y.npy,4.638291242279928,10.0,20.0
+896,chory_lab_Kinetics Experiments_2022-08-22 ST03_RBS_Standardization_2024-03-26 Absorbances_reader_plate_1_y.npy,6.440433686291872,10.0,20.0
+897,dan_22_7_8 PM-ELP MPPEG and MPEG GFP and mCherry long term GFP mRuby OD600_y.npy,7.407394091492471,10.0,20.0
+898,carolyn_Plate 41 Trial 2_y.npy,3.4506372617474024,10.0,20.0
+899,carolyn_Plate 89 Trial 1_y.npy,3.393248894651056,10.0,20.0
+900,carolyn_Plate 79 Trial 3_y.npy,4.143557845156758,10.0,20.0
+901,lopatkin_lab_final_tet_RP4_tet_combined_c_y.npy,1.7409857611719806,10.0,20.0
+902,schluter_d7ccd1f642b15b75c4c6df_y.npy,4.54094999243939,10.0,20.0
+903,ashwini_ars_240611_gfp_y.npy,1.7399434031764884,10.0,20.0
+904,schluter_fbd892ee98b7d398f1506e_y.npy,4.288014515511867,10.0,20.0
+905,emrah_RawTimeCourse_Ch75_y.npy,-1,10.0,20.0
+906,schluter_77a939ef53c23d2756c1b6_y.npy,5.155670976467428,10.0,20.0
+907,schluter_2579dace9b00a8315e57c5_y.npy,-1,10.0,20.0
+908,schluter_34d24c5b1cb8d610c23a0d_y.npy,4.516897640549791,10.0,20.0
+909,zach_growth_curves_2023-03-18_2_y.npy,2.6288522148758293,10.0,20.0
+910,chory_lab_Kinetics Experiments_2021-07-12_Protease_IPTG_ATC_firsttest_2024-03-26 Absorbances_reader_plate_6_y.npy,4.290863652542199,10.0,20.0
+911,carolyn_Plate 95 Trial 1_y.npy,2.219315665365827,10.0,20.0
+912,schluter_adc54714b4df020bdcfaf3_y.npy,-1,10.0,20.0
+913,schluter_e2e0c9b3af25db7f477b6e_y.npy,4.300093094326842,10.0,20.0
+914,chory_lab_Kinetics Experiments_2022-04-11 psp AR2 comparison_2024-03-26 Absorbances_reader_plate_5_y.npy,4.767285857139663,10.0,20.0
+915,lopatkin_lab_ajl_growthKinetics_20210522_144129_y.npy,2.1443718501977123,10.0,20.0
+916,chory_lab_Kinetics Experiments_2019-1029_2H_protease_2024-03-26 Absorbances_reader_plate_1_y.npy,4.514171501845907,10.0,20.0
+917,carolyn_Plate 43 Trial 3_y.npy,3.8021461362007303,10.0,20.0
+918,cesar_2023-11-16-Top10McherryBio1_y.npy,2.0471637400022584,10.0,20.0
+919,zhixiang_zy_comb_lt9_day0_od600_y.npy,3.0390326798254717,10.0,20.0
+920,carolyn_20170821_Fowler_185-207_100x_y.npy,3.2913235176692113,10.0,20.0
+921,zhixiang_gfp_lt_2_rif2_day1_od600_y.npy,2.2243895648280207,10.0,20.0
+922,grayson_231216_Plate3_y.npy,1.4572123006768307,10.0,20.0
+923,chory_lab_Turbidostat Experiments_20220805_IPTG_Arab_Hook_InduceOnly_00001_2024-03-25 Absorbances_plate_1_y.npy,2.7272699573361874,10.0,20.0
+924,carolyn_20170807_Fowler_1-23_LB_Lambda-MOI-1_10000x_y.npy,3.044498134466804,10.0,20.0
+925,carolyn_Plate 73 Trial 2_y.npy,3.5178209707604338,10.0,20.0
+926,zhixiang_zy_comb_lt10_day5_od600_y.npy,2.7360705843585125,10.0,20.0
+927,schluter_de732d277cece166296156_y.npy,4.467982872988812,10.0,20.0
+928,schluter_6c96523eea5938e1404e62_y.npy,3.9227598381240494,10.0,20.0
+929,chory_lab_Kinetics Experiments_2019-1015_pEC183ab_2024-03-26 Absorbances_reader_plate_1_y.npy,4.076824480801998,10.0,20.0
+930,lynch_lab_Copy of Processes_2163_IRIS_for_upload_y.npy,-1,10.0,20.0
+931,carolyn_20170720_Fowler_130-149_LB_10000x_y.npy,2.727715372433241,10.0,20.0
+932,schluter_c3d0f76ef97b2b5beee154_y.npy,7.551536571766736,10.0,20.0
+933,chory_lab_Kinetics Experiments_2021-10-29 IPTG 2Hphage pEC223 DRM 174cd_2024-03-26 Absorbances_reader_plate_2_y.npy,3.430469625314787,10.0,20.0
+934,grayson_230228_chitinolytic_growth_curves_fps_y.npy,6.244090477777221,10.0,20.0
+935,schluter_df557d369287506531c4ff_y.npy,4.019120329181974,20.0,30.0
+936,emrah_RawTimeCourse_Ch58_y.npy,-1,10.0,20.0
+937,zhixiang_gfp_lt_1_gfp_y.npy,2.5768915653106723,10.0,20.0
+938,chory_lab_Kinetics Experiments_2021-08-06 AARS PRANCE pED1a5_pEC182d_2024-03-26 Absorbances_reader_plate_6_y.npy,4.463071582891781,10.0,20.0
+939,carolyn_Plate 59 Trial 3_y.npy,3.492161695659509,10.0,20.0
+940,chory_lab_Turbidostat Experiments_20220824_SD4 9x4-5 redo_00001_2024-03-25 Absorbances_plate_1_y.npy,4.283267978065362,10.0,20.0
+941,schluter_9fed691e0c8591854eabdb_y.npy,3.411468116844503,10.0,20.0
+942,lopatkin_lab_8.3.001_Day21_Day21_Col5_KS_20210921_Day21_Col5_y.npy,1.5876672148981994,10.0,20.0
+943,schluter_15b50f659d5066438d99ef_y.npy,4.384361853726997,10.0,20.0
+944,schluter_44d2d4fef564af826437e2_y.npy,-1,10.0,20.0
+945,carolyn_Plate 25 Trial 2_y.npy,4.008236600880955,10.0,20.0
+946,schluter_c6d4f5faefc84ec180ad24_y.npy,-1,10.0,20.0
+947,carolyn_Plate 11 Trial 1_y.npy,2.975402395790354,10.0,20.0
+948,carolyn_Plate 71 Trial 2_y.npy,3.3413703690734873,10.0,20.0
+949,chory_lab_Kinetics Experiments_2019-08021_Emma_174b_176abc_20ng_2024-03-26 Absorbances_reader_plate_5_y.npy,5.284938216013902,10.0,20.0
+950,carolyn_09272018_resistome_longterm_TS30_18-2_y.npy,1.8668286492850397,10.0,20.0
+951,sizhe_2024-04-30 longterm mc 42c_y.npy,2.1655982174550577,10.0,20.0
+952,schluter_6ec39bd29017e52b232ca0_y.npy,6.238275833761856,10.0,20.0
+953,cesar_2023-09-06-CAKanSensitive_y.npy,2.494955272894629,10.0,20.0
+954,chory_lab_Kinetics Experiments_2022-08-22 ST03_RBS_Standardization_2024-03-26 Absorbances_reader_plate_8_y.npy,6.872846857189273,10.0,20.0
+955,carolyn_Plate 89 Trial 3_y.npy,3.759689773561922,10.0,20.0
+956,schluter_275549cf1c35c269f17869_y.npy,-1,10.0,20.0
+957,harris_harris_growthcurves_y.npy,2.749356992744394,10.0,20.0
+958,zach_other_2021-11-15 Long-term mCherry_y.npy,17.493197469144775,10.0,20.0
+959,zhixiang_zy_comb_lt8_day2_od600_y.npy,3.519758715643401,10.0,20.0
+960,zhixiang_zy_comb_lt7_day3_od600_y.npy,3.735235253653282,10.0,20.0
+961,schluter_7a7e6f063a3cee8d4b38c7_y.npy,4.6306401836535755,10.0,20.0
+962,jia_Growth curve - varying nutrient exp2_y.npy,2.184895292110331,10.0,20.0
+963,schluter_1b233edd66974c45c12d68_y.npy,4.26466819908772,10.0,20.0
+964,kyeri_KeioV3_mcherry_20231013_4hpre_betalactams_384_carb_y.npy,3.970841750996726,10.0,20.0
+965,kyeri_FJTimer_MG1655_cas_betalactams_FJT_OD_gfp_rfp_cas_carb_y.npy,1.64484594421183,10.0,20.0
+966,chory_lab_Kinetics Experiments_2022-10-12 224D 234a-c 235a-c_2024-03-26 Absorbances_reader_plate_1_y.npy,4.029307497543037,10.0,20.0
+967,sizhe_2022-12-20-long term p15a-ripk od+mruby 24h_y.npy,2.2733266539385264,10.0,20.0
+968,schluter_01bb0c3eb95ae6b4f10004_y.npy,4.736901148459195,10.0,20.0
+969,chory_lab_Turbidostat Experiments_20220816_224F 9x1 232A-C enrichment test_00001_2024-03-25 Absorbances_plate_1_y.npy,5.046208432066536,10.0,20.0
+970,carolyn_20170905_Fowler_70-92_LB_Carb-5ugml_10000x_y.npy,2.7939403899756026,10.0,20.0
+971,schluter_0113b6b5aa14468331fd4b_y.npy,5.236176128285426,10.0,20.0
+972,zach_other_2019-11-14_BlaMv2_y.npy,1.259487188761471,10.0,20.0
+973,katie_2023-05-05 longterm od sink strain 2_y.npy,1.5790403554005628,10.0,20.0
+974,lopatkin_lab_final_tet_R64drd_tet_combined_a_y.npy,3.2624192050685523,10.0,20.0
+975,schluter_a4af57c5da6a08920f2775_y.npy,4.398640035021262,10.0,20.0
+976,sizhe_2024-04-25 longterm od mch amyloid growth curves 42c_y.npy,5.054365301345541,10.0,20.0
+977,emrah_RawTimeCourse_Ch87_y.npy,-1,10.0,20.0
+978,zach_other_2020-07-16 MC4100Z1 ePop with GFP_y.npy,3.006013582199056,10.0,20.0
+979,emrah_20240705_E55-E57_NuncEdge_SMcaa8_OD600_Longterm_y.npy,3.2564521588559048,10.0,20.0
+980,chory_lab_Kinetics Experiments_2021-08-05_AARS_PRANCE_2024-03-26 Absorbances_reader_plate_5_y.npy,4.423314222275892,10.0,20.0
+981,lynch_lab_Process464_for_upload_y.npy,-1,10.0,20.0
+982,kyeri_RIE_top10f_0711_top10f_PG_repeat2_y.npy,3.0707229347745666,10.0,20.0
+983,chory_lab_Turbidostat Experiments_20230505_spla_test_2_00001 (with figures)_2024-03-25 Absorbances_plate_1_y.npy,3.0538484501533616,10.0,20.0
+984,chory_lab_Kinetics Experiments_2022-09-02 ST05_mCherry_tagging_assay_with_noMCherry_control_2024-03-26 Absorbances_reader_plate_4_y.npy,6.3324598685273905,10.0,20.0
+985,zach_other_2022-06-12 Long Term_y.npy,2.7014748422426424,10.0,20.0
+986,chory_lab_Turbidostat Experiments_20221112_Linker Repeat 4b_00002_2024-03-25 Absorbances_plate_0_y.npy,5.432019583217195,10.0,20.0
+987,sizhe_Sizhe_mc longterm (Modified)_20230922_165754_y.npy,1.4260948624367291,10.0,20.0
+988,katie_2023-06-28 mixed plate full timecourse 1_y.npy,4.76497789514769,10.0,20.0
+989,schluter_774274268060692ae85e25_y.npy,3.6680282294543924,10.0,20.0
+990,schluter_4b0c6ed67d037f35939190_y.npy,7.196845781558434,10.0,20.0
+991,zhixiang_zy_comb_lt8_day4_gfp_y.npy,3.9097647917516904,10.0,20.0
+992,zhixiang_zy_comb_lt8_day8_od600_y.npy,3.3231080664323893,10.0,20.0
+993,carolyn_Plate 23 Trial 1_y.npy,3.8502979336048018,10.0,20.0
+994,schluter_6fd7955698a9bde254481d_y.npy,4.545948832051895,10.0,20.0
+995,lynch_lab_Process454_for_upload_y.npy,-1,10.0,20.0
+996,chory_lab_Kinetics Experiments_2019-1015_pEC183ab_2024-03-26 Absorbances_reader_plate_4_y.npy,3.7184068244745863,10.0,20.0
+997,zhixiang_zy_comb_lt9_day5_gfp_y.npy,2.764991919160342,10.0,20.0
+998,schluter_5ed3b4d1fd82a354e6b9d0_y.npy,-1,10.0,20.0
+999,chory_lab_Turbidostat Experiments_20220805_IPTG_Arab_Hook_InduceOnly_00001_2024-03-25 Absorbances_plate_0_y.npy,4.223120174551384,10.0,20.0
+1000,schluter_48ee5269cfe57dd768e4ed_y.npy,3.761266662820918,10.0,20.0
+1001,lynch_lab_nanobodies_Calibrated_20221019_gfp_y.npy,1.5001563035292955,10.0,20.0
+1002,chory_lab_Kinetics Experiments_2022-04-11 psp AR2 comparison_2024-03-26 Absorbances_reader_plate_2_y.npy,3.176434286920919,10.0,20.0
+1003,carolyn_Plate 9 Trial 1_y.npy,3.3712764122020995,10.0,20.0
+1004,emrah_20211021_E22_1xLB_TIC_DensityDependence_OD600_Longterm_y.npy,5.1319635915935375,10.0,20.0
+1005,chory_lab_Kinetics Experiments_2019-1028_VHTA_2H_protease_2024-03-26 Absorbances_reader_plate_1_y.npy,6.462208169134218,10.0,20.0
+1006,chory_lab_Kinetics Experiments_2022-08-22 ST03_RBS_Standardization_2024-03-26 Absorbances_reader_plate_2_y.npy,6.930544671044104,10.0,20.0
+1007,carolyn_Plate 63 Trial 2_y.npy,3.586595129632504,10.0,20.0
+1008,chory_lab_Turbidostat Experiments_20220828_ECSP9x4 SD6 SD4_00001_2024-03-25 Absorbances_plate_0_y.npy,6.366957518326803,10.0,20.0
+1009,carolyn_10152018_resistome_longterm_TS30_29-3-2_y.npy,1.8602546060865925,10.0,20.0
+1010,lopatkin_lab_8.4.005_day21_8.4.005_Day21_Col1_20220209_8.4.005_Day21_Col1_y.npy,1.8557012957931336,10.0,20.0
+1011,lopatkin_lab_20220215_8.4.010_Multisubstrate_KS_Rep3_Pt2_y.npy,1.649707348016051,10.0,20.0
+1012,sizhe_2024-04-30 longterm mc_y.npy,3.0691956864633956,10.0,20.0
+1013,katie_2024-01-26 ttr ths mixed plate full timecourse_nano_plate2_y.npy,4.014681720926451,10.0,20.0
+1014,lopatkin_lab_20210323_KSstrains5-8_y.npy,2.430208025568417,10.0,20.0
+1015,chory_lab_Turbidostat Experiments_20230505_spla_test_2_00001_2024-03-25 Absorbances_plate_1_y.npy,3.0538484501533616,10.0,20.0
+1016,cesar_2023-09-06-CAKanSensitive-combined_y.npy,2.4410282625008013,10.0,20.0
+1017,kyeri_KeioV3_mcherry_20231013_4hpre_betalactams_384_amx_y.npy,4.706228993847446,10.0,20.0
+1018,carolyn_Plate 81 Trial 1_y.npy,3.3958515235378686,10.0,20.0
+1019,emrah_RawTimeCourse_Ch36_y.npy,-1,10.0,20.0
+1020,yuanchi_tetA00_03042024_1125_y.npy,2.443253921037793,10.0,20.0
+1021,zach_growth_curves_2023-04-03_2_y.npy,2.5371285057337913,10.0,20.0
+1022,chory_lab_Kinetics Experiments_2021-09-24 IPTG 2H phage pEC223 DRM_2024-03-26 Absorbances_reader_plate_1_y.npy,4.652079573294568,10.0,20.0
+1023,kyeri_KeioV3_mcherry_20230828_96well_4hpre_betalactams_96well_carb30_y.npy,3.2049282139734148,10.0,20.0
+1024,chory_lab_Kinetics Experiments_2019-08023_Emma_174_176_177_2024-03-26 Absorbances_reader_plate_3_y.npy,4.306427969775191,10.0,20.0
+1025,schluter_173df91e6bdf79c08a928a_y.npy,4.474959982689646,10.0,20.0
+1026,chory_lab_Kinetics Experiments_2022-08-02 Protease_First Test_2024-03-26 Absorbances_reader_plate_2_y.npy,5.879204456289904,10.0,20.0
+1027,zach_other_2019-10-18 ePop 4_y.npy,0.9012921527302555,10.0,20.0
+1028,lopatkin_lab_final_tet_RIP113_tet_combined_b_y.npy,2.0673615827159515,10.0,20.0
+1029,zach_other_2021-11-15 Long-term_y.npy,11.520354719002585,10.0,20.0
+1030,chory_lab_Kinetics Experiments_2022-08-25 ST04_spla_MBP_2024-03-26 Absorbances_reader_plate_3_y.npy,5.5589645254995395,10.0,20.0
+1031,chory_lab_Kinetics Experiments_2022-11-04 Linker Third Test_2024-03-26 Absorbances_reader_plate_1_y.npy,7.178945967323625,10.0,20.0
+1032,carolyn_20170908_Fowler_185-207_LB_Carb-5ugml_10000x_y.npy,1.9074344205015672,10.0,20.0
+1033,chory_lab_Kinetics Experiments_2021-08-06 AARS PRANCE pED1a5_pEC182d_2024-03-26 Absorbances_reader_plate_3_y.npy,4.670002186001689,10.0,20.0
+1034,helena_gfp_y.npy,4.894731115614965,10.0,20.0
+1035,alex_2023-06-17_OD600_alex_y.npy,2.565101373681413,10.0,20.0
+1036,kyeri_KeioV3_mcherry_20230828_96well_4hpre_betalactams_96well_amx5_y.npy,3.6170084353750642,10.0,20.0
+1037,carolyn_Plate 3 Trial 2_y.npy,3.7641874239212867,10.0,20.0
+1038,lopatkin_lab_final_tet_pRK100_tet_combined_a_y.npy,3.627579048943056,10.0,20.0
+1039,carolyn_Plate 67 Trial 3_y.npy,3.4283515189508993,10.0,20.0
+1040,carolyn_Plate 83 Trial 1_y.npy,3.4299572789406763,10.0,20.0
+1041,zach_growth_curves_2023-03-18_1_y.npy,3.0408618990471044,10.0,20.0
+1042,carolyn_10252018_resistome_longterm_TS30_36-2_y.npy,2.3154454009973358,10.0,20.0
+1043,chory_lab_Kinetics Experiments_2021-08-05_AARS_PRANCE_2024-03-26 Absorbances_reader_plate_7_y.npy,3.946015146635552,10.0,20.0
+1044,chory_lab_Kinetics Experiments_2022-10-12 224D 234a-c 235a-c_2024-03-26 Absorbances_reader_plate_4_y.npy,3.651130467647832,10.0,20.0
+1045,zach_other_2020-06-01 ePop_y.npy,0.9486277595064142,10.0,20.0
+1046,ashwini_ars_240514_od_y.npy,2.4372759296126203,10.0,20.0
+1047,lopatkin_lab_ajl_growthKinetics_20201216_081709_y.npy,4.470689072597879,10.0,20.0
+1048,chory_lab_Kinetics Experiments_2019-08028_Emma_PylRSAA mutant_2024-03-26 Absorbances_reader_plate_1_y.npy,4.988789166444018,10.0,20.0
+1049,lopatkin_lab_final_tet_R100-1_tet_combined_c_y.npy,3.6913479152601343,10.0,20.0
+1050,schluter_f6eefa4feaf0975772d863_y.npy,4.57509523200801,10.0,20.0
+1051,carolyn_Plate 45 Trial 1_y.npy,3.645562725258399,10.0,20.0
+1052,chory_lab_Kinetics Experiments_2021-08-05_AARS_PRANCE_2024-03-26 Absorbances_reader_plate_2_y.npy,3.669676463855467,10.0,20.0
+1053,chory_lab_Turbidostat Experiments_20220725_scFV_inducer_test_00001_2024-03-25 Absorbances_plate_1_y.npy,-1,10.0,20.0
+1054,chory_lab_Kinetics Experiments_2021-08-05_AARS_PRANCE_2024-03-26 Absorbances_reader_plate_6_y.npy,3.123261700196075,10.0,20.0
+1055,chory_lab_Turbidostat Experiments_20230505_224F_238_239_00002_2024-03-25 Absorbances_plate_0_y.npy,4.254105659031813,10.0,20.0
+1056,grayson_2022-04-07_antho_growthrate2_y.npy,1.8517106454982335,10.0,20.0
+1057,chory_lab_Kinetics Experiments_2021-07-12_Protease_IPTG_ATC_firsttest_2024-03-26 Absorbances_reader_plate_5_y.npy,5.178899423265565,10.0,20.0
+1058,schluter_ece90549698de0564a9f97_y.npy,4.403203232172478,10.0,20.0
+1059,lopatkin_lab_5.2.013-ajl_growthKinetics (Modified)_20220427_114939_y.npy,2.868736380864591,10.0,20.0
+1060,carolyn_Plate 79 Trial 1_y.npy,3.647859898566167,10.0,20.0
+1061,carolyn_Plate 27 Trial 1_y.npy,3.942956796332276,10.0,20.0
+1062,carolyn_Plate 29 Trial 3_y.npy,3.3757948468220005,10.0,20.0
+1063,carolyn_Plate 39 Trial 3_y.npy,3.920854194156261,10.0,20.0
+1064,chory_lab_Kinetics Experiments_2022-09-02 ST05_mCherry_tagging_assay_with_noMCherry_control_2024-03-26 Absorbances_reader_plate_1_y.npy,6.4982290014163855,10.0,20.0
+1065,schluter_c00834cd4562c651c9d868_y.npy,5.155162733579977,10.0,20.0
+1066,chory_lab_Kinetics Experiments_2021-08-06 AARS PRANCE pED1a5_pEC182d_2024-03-26 Absorbances_reader_plate_1_y.npy,4.3621058050632175,10.0,20.0
+1067,carolyn_20170808_Fowler_70-92_LB_Lambda-MOI-1_10000x_y.npy,2.9442849327552483,10.0,20.0
+1068,carolyn_05282018_resistome_longterm_TS30_2-1_y.npy,2.5632338176752008,10.0,20.0
+1069,dan_23_4_20 M_PEG MstopP_PEG long induction low varation induction protocol_y.npy,7.9451898633116675,10.0,20.0
+1070,zach_growth_curves_2023-03-15_3_y.npy,2.173133954926365,10.0,20.0
+1071,katie_2024-01-26 ttr ths mixed plate full timecourse_loaner_plate 1_y.npy,4.3956715930374495,10.0,20.0
+1072,carolyn_Plate 53 Trial 2_y.npy,3.3726564685430493,10.0,20.0
+1073,schluter_6ee0dd85e063131e77bb33_y.npy,4.458474751827449,10.0,20.0
+1074,yuanchi_Inc_Osc_01_02132024_0700_y.npy,5.426304503566487,10.0,20.0
+1075,zhixiang_zy_comb_lt7_day7_od600_y.npy,3.9102360497759165,10.0,20.0
+1076,carolyn_20170810_Fowler_162-184_LB_Lambda-MOI-1_10000x_y.npy,2.616248082243567,10.0,20.0
+1077,chory_lab_Kinetics Experiments_2021-07-14_Protease_Turbidostat_IPTG_ATC_firsttest_2024-03-26 Absorbances_reader_plate_5_y.npy,4.716181425182839,10.0,20.0
+1078,schluter_852d3a14316666c0bacfbb_y.npy,3.790618822748945,10.0,20.0
+1079,lopatkin_lab_8.3.001_Day21_Day21_Col10_KS_20211014_Day21_Col10_y.npy,1.9202656230612638,10.0,20.0
+1080,carolyn_09252018_resistome_longterm_TS30_16-2_y.npy,2.0038666840082353,10.0,20.0
+1081,schluter_ffe9f50b4d9ae12e3ae671_y.npy,5.1660282071300685,10.0,20.0
+1082,katie_2023-07-14 cuma atc ohc14 mixed plate full timecourse 1_y.npy,3.7027059337960093,10.0,20.0
+1083,carolyn_Plate 39 Trial 1_y.npy,4.723770035590313,10.0,20.0
+1084,carolyn_20170909_Fowler_208-218_LB_Carb-5ugml_10000x_y.npy,2.1240766594617764,10.0,20.0
+1085,zach_other_2019-09-27 ePop Circuit Generation 2_y.npy,2.6181063871783428,10.0,20.0
+1086,chory_lab_Kinetics Experiments_2022-01-19 Massive cloning test 2H_2024-03-26 Absorbances_reader_plate_2_y.npy,3.761272021081046,10.0,20.0
+1087,carolyn_11222018_resistome_longterm_TS30_46-2_y.npy,2.0939972675907863,10.0,20.0
+1088,lopatkin_lab_8.3.001_Day21_Day21_Col8_KS_20210804_Day21_Col8_y.npy,1.9329254434895389,10.0,20.0
+1089,chory_lab_Kinetics Experiments_2022-09-02 ST05_mCherry_tagging_assay_with_noMCherry_control_2024-03-26 Absorbances_reader_plate_8_y.npy,7.465627839039209,10.0,20.0
+1090,carolyn_20170908_Fowler_162-184_LB_carb-5ugml_10000x_y.npy,2.1117093478069524,10.0,20.0
+1091,lynch_lab_Copy of 2167_Manual Record_for_upload_y.npy,-1,10.0,20.0
+1092,carolyn_01302019_resistome_longterm_TS30_59-2_y.npy,1.5283163264417154,10.0,20.0
+1093,lynch_lab_Copy of Process_2111_IRIS_for_upload_y.npy,-1,10.0,20.0
+1094,schluter_23a8869806888678720618_y.npy,-1,10.0,20.0
+1095,yuanchi_tetA00_03062024_1005am_y.npy,3.2589016464772453,10.0,20.0
+1096,carolyn_Plate 79 Trial 2_y.npy,3.2967577209694436,10.0,20.0
+1097,zach_growth_curves_2023-03-29_1_y.npy,2.6972061512067573,10.0,20.0
+1098,yuanchi_tetA00_03082024_0415pm_y.npy,3.4539885853196206,10.0,20.0
+1099,lopatkin_lab_8.4.005_day21_8.4.005_Day21_Col5_20211108_8.4.005_Day21_Col5_y.npy,1.7087729339785769,10.0,20.0
+1100,schluter_d58cf35125159af640abc6_y.npy,3.5805894554625577,10.0,20.0
+1101,carolyn_20170820_Fowler_93-115_LB_100x_y.npy,2.5977366043620225,10.0,20.0
+1102,carolyn_02062019_resistome_longterm_TS30_62-2_y.npy,0.8879786251852735,10.0,20.0
+1103,schluter_b49294dd503d3c1943a207_y.npy,3.6131759212174854,10.0,20.0
+1104,schluter_fdd7818b9812973309d735_y.npy,5.865968943232354,10.0,20.0
+1105,schluter_02ccfb467aa6a4a92122d8_y.npy,4.763298210593422,10.0,20.0
+1106,emrah_20240605_E22-E23_NuncEdge_SMcaa8_OD600_Longterm_y.npy,1.5737117218549783,10.0,20.0
+1107,lopatkin_lab_20210515_BW25113_IC50_y.npy,1.8012919052060148,10.0,20.0
+1108,katie_2023-12-04 mixed plate full timecourse_loaner_AR_y.npy,3.531410497372063,10.0,20.0
+1109,lynch_lab_DMC_Ferm_284_for_upload_y.npy,-1,10.0,20.0
+1110,katie_2023-06-28 crosstalk plus mixed plate full timecourse 1 cfp1_y.npy,3.0345702365532317,10.0,20.0
+1111,lynch_lab_nanobodies_Calibrated_20221019_biomass_y.npy,2.880164229309732,10.0,20.0
+1112,zach_other_2019-10-11 ePop Circuit 3_y.npy,1.071959414387853,10.0,20.0
+1113,chory_lab_Kinetics Experiments_2021-07-06_Emma_T7PRANCE_2024-03-26 Absorbances_reader_plate_4_y.npy,5.6171120662248235,10.0,20.0
+1114,chory_lab_Kinetics Experiments_2022-10-12 224D 234a-c 235a-c_2024-03-26 Absorbances_reader_plate_6_y.npy,4.9528120828270765,10.0,20.0
+1115,chory_lab_Kinetics Experiments_2021-07-12_Protease_IPTG_ATC_firsttest_2024-03-26 Absorbances_reader_plate_2_y.npy,5.506198290353641,10.0,20.0
+1116,chory_lab_Kinetics Experiments_2021-09-20 IPTG 2H phage pEC223_2024-03-26 Absorbances_reader_plate_1_y.npy,4.75449997071665,10.0,20.0
+1117,chory_lab_Kinetics Experiments_2022-01-19 Massive cloning test 2H_2024-03-26 Absorbances_reader_plate_6_y.npy,4.060970782848427,10.0,20.0
+1118,chory_lab_Kinetics Experiments_2019-1031_1H_2H_protease_2024-03-26 Absorbances_reader_plate_2_y.npy,4.670253163757875,10.0,20.0
+1119,katie_2023-04-28 longterm od sink_y.npy,1.3425092494906457,10.0,20.0
+1120,schluter_7f5985c7704a9622214cad_y.npy,5.494272585793737,10.0,20.0
+1121,carolyn_Plate 95 Trial 3_y.npy,3.5394287688769137,10.0,20.0
+1122,carolyn_20170822_Anderson_47-59_LB_100x_y.npy,2.5699613716314933,10.0,20.0
+1123,zach_growth_curves_2023-03-29_3_y.npy,2.1981499790335532,10.0,20.0
+1124,zhixiang_gfp_lt_2_rif2_day2_od600_y.npy,2.4957779114292333,10.0,20.0
+1125,zhixiang_zy_comb_lt8_day1_od600_y.npy,3.4586131276715695,10.0,20.0
+1126,carolyn_Plate 37 Trial 1_y.npy,3.4715541954427596,10.0,20.0
+1127,emrah_20221130_Costar96_MineralOil_y.npy,2.5580084666392464,10.0,20.0
+1128,lopatkin_lab_8.3.001_Day0_Day0_Col12_MF_20220615_Day0_Col12_y.npy,1.7803600258085546,10.0,20.0
+1129,schluter_e730f79dd280af252193ee_y.npy,4.2201200182875285,10.0,20.0
+1130,lopatkin_lab_final_tet_R100-1_tet_combined_b_y.npy,4.359549453195996,10.0,20.0
+1131,cesar_2023-11-22-DH5mCBio3_y.npy,3.635357544728501,10.0,20.0
+1132,chory_lab_Turbidostat Experiments_20220818_232_224F 9x2_00001_2024-03-25 Absorbances_plate_1_y.npy,4.862063393671407,10.0,20.0
+1133,schluter_5526aaba7a5c802b48699b_y.npy,3.539122271133134,10.0,20.0
+1134,schluter_b6e7d2321d3fef695130aa_y.npy,4.52002913934185,10.0,20.0
+1135,chory_lab_Turbidostat Experiments_20221109_Linker Repeat 3_00001_2024-03-25 Absorbances_plate_1_y.npy,4.613295737545638,10.0,20.0
+1136,lopatkin_lab_final_tet_R100-1_tet_combined_d_y.npy,2.7364603866128685,10.0,20.0
+1137,lopatkin_lab_8.3.001_Day21_Day21_Col12_MF_20220606_Day21_Col12_y.npy,1.8827825142229542,10.0,20.0
+1138,chory_lab_Kinetics Experiments_2022-09-28 224F 234a-c 235a-c_2024-03-26 Absorbances_reader_plate_8_y.npy,5.552790492584891,10.0,20.0
+1139,carolyn_10172018_resistome_longterjm_TS30_30-1_y.npy,1.4251809552836976,10.0,20.0
+1140,carolyn_Plate 89 Trial 2_y.npy,3.7039255909939253,10.0,20.0
+1141,dan_24_4_2_MstopP_PEG_PG_EG_G_GrowthCurvesin2xYT_y.npy,1.8551296148685474,10.0,20.0
+1142,chory_lab_Kinetics Experiments_2019-1015_pEC183ab_2024-03-26 Absorbances_reader_plate_3_y.npy,3.7017672482329584,10.0,20.0
+1143,carolyn_Plate 19 Trial 2_y.npy,2.7943318561287476,10.0,20.0
+1144,lopatkin_lab_8.3.001_Day0_Day0_Col1_KS_20210624_Day0_Col1_y.npy,1.5143947059023934,10.0,20.0
+1145,lynch_lab_Process458_for_upload_y.npy,-1,10.0,20.0
+1146,chory_lab_Kinetics Experiments_2022-08-22 ST03_RBS_Standardization_2024-03-26 Absorbances_reader_plate_6_y.npy,7.679708245402576,10.0,20.0
+1147,lopatkin_lab_final_tet_RP4_tet_combined_d_y.npy,3.067186282015726,10.0,20.0
+1148,cesar_2023-11-20-DH5GFPBio1_y.npy,2.5384178674598017,10.0,20.0
+1149,schluter_40383fed69fd3a912d6aa1_y.npy,6.281176453509688,10.0,20.0
+1150,chory_lab_Kinetics Experiments_2022-09-02 ST05_mCherry_tagging_assay_with_noMCherry_control_2024-03-26 Absorbances_reader_plate_5_y.npy,6.280903328276668,10.0,20.0
+1151,zach_other_2020-07-07 MC4100Z1 ePop with new plasmids_y.npy,8.25428488055841,10.0,20.0
+1152,zach_other_2019-11-26_ePopBlaM_and_ePopFJT_2_y.npy,6.741175251308124,10.0,20.0
+1153,schluter_000f9b9617d476abf1f143_y.npy,4.5889179470958466,10.0,20.0
+1154,schluter_d29572ba327976de7cdc0c_y.npy,4.343077771462629,10.0,20.0
+1155,lynch_lab_Process567_for_upload_y.npy,-1,10.0,20.0
+1156,chory_lab_Kinetics Experiments_2022-01-19 Massive cloning test 2H_2024-03-26 Absorbances_reader_plate_9_y.npy,3.133329470062556,10.0,20.0
+1157,schluter_8ae11671e89fe36ab08a7b_y.npy,4.211803770182321,10.0,20.0
+1158,chory_lab_Turbidostat Experiments_20220725_scFV_inducer_test_00001_2024-03-25 Absorbances_plate_0_y.npy,-1,10.0,20.0
+1159,schluter_a86a28c772b8f4f17c1e4e_y.npy,-1,10.0,20.0
+1160,chory_lab_Turbidostat Experiments_20221107_Linker Repeat 2_00001_2024-03-25 Absorbances_plate_1_y.npy,3.0659773347676373,10.0,20.0
+1161,zach_other_20191213_ePopBlaM_and_ePopFJT_for_encapsulation_y.npy,7.592973283104886,10.0,20.0
+1162,lopatkin_lab_final_tet_pB10_tet_combined_c_y.npy,3.5768021771795886,10.0,20.0
+1163,lopatkin_lab_20211213_8.4.008_MultiSubstrate_KS_Rep1_Pt2_y.npy,2.0812039269881684,10.0,20.0
+1164,zach_growth_curves_2023-04-03_3_y.npy,2.303328399855722,10.0,20.0
+1165,chory_lab_Turbidostat Experiments_20230522_224DF_238_239 redo 600_200_00001_2024-03-25 Absorbances_plate_1_y.npy,5.317400595522422,10.0,20.0
+1166,chory_lab_Turbidostat Experiments_20230519_224D_238_239_TurbRepeat3_with Protease_00001_2024-03-25 Absorbances_plate_0_y.npy,7.215575567758924,10.0,20.0
+1167,chory_lab_Kinetics Experiments_2022-11-04 Linker Third Test_2024-03-26 Absorbances_reader_plate_3_y.npy,6.086493871097229,10.0,20.0
+1168,schluter_03ac27da97dc05981f5766_y.npy,5.340949775504433,10.0,20.0
+1169,lopatkin_lab_20210318_KSstrains1-4_y.npy,2.1898564274748358,10.0,20.0
+1170,schluter_49cd8f998facfe3d0f40d3_y.npy,5.275293082484264,10.0,20.0
+1171,carolyn_Plate 29 Trial 2_y.npy,3.900902586139934,10.0,20.0
+1172,katie_2023-03-24 mixed plate full timecourse 1_y.npy,3.6619288272613373,10.0,20.0
+1173,carolyn_Plate 93 Trial 2_y.npy,1.568191947915475,10.0,20.0
+1174,kyeri_KeioV3_mcherry_2022_2023_NCAL_0128_carb_amx_y.npy,4.102057877993445,10.0,20.0
+1175,carolyn_Plate 35 Trial 2_y.npy,3.910804876111034,10.0,20.0
+1176,carolyn_Plate 13 Trial 3_y.npy,3.417723125943455,10.0,20.0
+1177,carolyn_Plate 69 Trial 2_y.npy,3.744334284954468,10.0,20.0
+1178,carolyn_Plate 9 Trial 3_y.npy,3.3322236771022373,10.0,20.0
+1179,alex_2023-06-25_OD600_alex_y.npy,2.241986136576652,10.0,20.0
+1180,lynch_lab_Process585_for_upload_y.npy,-1,10.0,20.0
+1181,lopatkin_lab_8.3.001_Day21_Day21_Col7_KS_20210730_Day21_Col7_y.npy,2.2064953501730478,10.0,20.0
+1182,schluter_32c8e9dac466f04b7098c5_y.npy,3.838873718739646,10.0,20.0
+1183,lopatkin_lab_8.3.001_Day0_Day0_Col7_KS_20210728_Day0_Col7_y.npy,1.9996235111895806,10.0,20.0
+1184,carolyn_Plate 51 Trial 2_y.npy,3.884266333032032,10.0,20.0
+1185,zhixiang_zy_comb_lt7_day5_gfp_y.npy,3.3859531931516638,10.0,20.0
+1186,schluter_a97d8d87ddebfdcdd396fe_y.npy,4.7820957142113665,10.0,20.0
+1187,kyeri_FJTimer_MG1655_cas_betalactams_FJT_OD_gfp_rfp_carbmic_media_y.npy,3.090837859514039,10.0,20.0
+1188,carolyn_Plate 55 Trial 1_y.npy,3.8008998461826464,10.0,20.0
+1189,chory_lab_Kinetics Experiments_2021-08-06 AARS PRANCE pED1a5_pEC182d_2024-03-26 Absorbances_reader_plate_4_y.npy,4.077899352740453,10.0,20.0
+1190,chory_lab_Kinetics Experiments_2021-08-06 AARS PRANCE pED1a5_pEC182d_2024-03-26 Absorbances_reader_plate_9_y.npy,4.352358601702876,10.0,20.0
+1191,ashwini_ars_240627_gfp_y.npy,2.080535236777548,10.0,20.0
+1192,carolyn_Plate 25 Trial 1_y.npy,3.421137053611544,10.0,20.0
+1193,chory_lab_Kinetics Experiments_2022-08-31 ST05_mCherry_tagging_assay_2024-03-26 Absorbances_reader_plate_7_y.npy,6.151419111197639,10.0,20.0
+1194,chory_lab_Kinetics Experiments_2021-08-06 AARS PRANCE pED1a5_pEC182d_2024-03-26 Absorbances_reader_plate_5_y.npy,4.450553927445752,10.0,20.0
+1195,zach_other_2020-06-17 longterm_y.npy,6.394511701018964,10.0,20.0
+1196,carolyn_09042018_resistome_longterm_TS30_10-1_y.npy,1.3426723724708045,10.0,20.0
+1197,lopatkin_lab_8.4.005_day21_8.4.005_Day21_Col7_20211216_8.4.005_Day21_Col7_y.npy,2.224022598369753,10.0,20.0
+1198,chory_lab_Turbidostat Experiments_20230508_224D_238_239_preIPTG_00002_2024-03-25 Absorbances_plate_0_y.npy,5.134142480930492,10.0,20.0
+1199,kyeri_RIE_top10f_0728_top10f_PG_carb_amx_y.npy,3.1264017823344945,10.0,20.0
+1200,carolyn_Plate 47 Trial 2_y.npy,4.736308066662919,10.0,20.0
+1201,carolyn_20170819_Fowler_24-46_LB_100x_microscope room_y.npy,3.279932984439307,10.0,20.0
+1202,chory_lab_Turbidostat Experiments_20221018_224F 234a 10x1-2_00001_2024-03-25 Absorbances_plate_0_y.npy,5.584643095751039,10.0,20.0
+1203,schluter_198d5974caf5981344274e_y.npy,4.701055530029501,10.0,20.0
+1204,zach_other_2022-09-25 Growth mCherry_y.npy,13.472956062459643,10.0,20.0
+1205,schluter_2aaa7e47502291d8fec386_y.npy,5.049955532002946,10.0,20.0
+1206,carolyn_11192018_resistome_longterm_TS30_45-2_y.npy,1.4488317803370263,10.0,20.0
+1207,zhixiang_zy_comb_lt7_day6_od600_y.npy,3.76925943557813,10.0,20.0
+1208,jia_Growth curve - varying nutrient exp1_y.npy,-1,10.0,20.0
+1209,chory_lab_Kinetics Experiments_2022-11-04 Linker Third Test_2024-03-26 Absorbances_reader_plate_2_y.npy,6.599975150989551,10.0,20.0
+1210,chory_lab_Kinetics Experiments_2021-10-01 IPTG 2H phage pEC223 DRM SD5_2024-03-26 Absorbances_reader_plate_2_y.npy,-1,10.0,20.0
+1211,carolyn_20170811_Anderson_24-46_LB_Lambda-MOI-1_10000x_y.npy,3.0147103438888476,10.0,20.0
+1212,schluter_723815e2006e133314a593_y.npy,5.166504449836041,10.0,20.0
+1213,emrah_20230522_NansMS_VaryCAA_Costar96_MineralOil_y.npy,1.896286656074552,10.0,20.0
+1214,lopatkin_lab_20210709_Day0_Col1_C1_D1_Final_y.npy,2.703916666483845,10.0,20.0
+1215,carolyn_02062019_resistome_longterm_TS30_62-1_y.npy,0.8879786251852735,10.0,20.0
+1216,carolyn_Plate 27 Trial 3_y.npy,3.569441745667376,10.0,20.0
+1217,chory_lab_Turbidostat Experiments_20220516_IPTG_Arab_DoseResponse_00001_2024-03-25 Absorbances_plate_0_y.npy,6.974199930804539,10.0,20.0
+1218,lopatkin_lab_final_tet_R64drd_tet_combined_b_y.npy,3.1383049838415933,10.0,20.0
+1219,kyeri_KeioV3_mcherry_20231022_2hpre_betalactams_384_carb_y.npy,3.700214067128327,10.0,20.0
+1220,zach_growth_curves_2023-04-03_1_y.npy,2.4613111764684743,10.0,20.0
+1221,chory_lab_Turbidostat Experiments_20220713_First Crystal Violet Test_00001_2024-03-25 Absorbances_plate_1_y.npy,6.473019718412092,10.0,20.0
+1222,schluter_4cf339e246e99debe59cb1_y.npy,5.012927288065256,10.0,20.0
+1223,zach_other_2020-12-15 OD600 Capsule Supernatant_y.npy,2.4322751711373187,10.0,20.0
+1224,carolyn_11132018_resistome_longterm_TS30_43-2_y.npy,3.0166139193155868,10.0,20.0
+1225,all,6.508091456463558,70.0,80.0

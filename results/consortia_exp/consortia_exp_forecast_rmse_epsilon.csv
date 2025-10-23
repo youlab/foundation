@@ -1,0 +1,13 @@
+,experiment,input_type,tgt_type,rmse
+0,soil-a,latent,latent,0.18044524580150373
+1,soil-a,raw,segment128,0.18080241784716505
+2,soil-b,latent,latent,0.18892069753213397
+3,soil-b,raw,segment128,0.20559822578467868
+4,soil-c,latent,latent,0.16105866249166342
+5,soil-c,raw,segment128,0.16365238533694473
+6,water-a,latent,latent,0.1975638779197711
+7,water-a,raw,segment128,0.22391320082945965
+8,water-b,latent,latent,0.22354180093092182
+9,water-b,raw,segment128,0.2076998244299047
+10,water-c,latent,latent,0.22046960062472534
+11,water-c,raw,segment128,0.26631270361563314
