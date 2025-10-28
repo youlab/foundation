@@ -8,10 +8,11 @@ if __name__ == "__main__":
     RUN_PRESENTATION = False 
 
     RUN_DATA_FIG_1 = False  
-    RUN_MODEL_FIG_2 = True
+    RUN_MODEL_FIG_2 = False
     RUN_ANTIBIOTICS_FIG_3 = False
     RUN_CONSORTIA_SIM_FIG_4 = False
     RUN_CONSORTIA_EXP_FIG_5 = False
+    RUN_ABS_ABUNDANCE_FIG_6 = True
 
     RUN_MODEL_TRAINING_DATASET_COMPARISON_FIG_S1 = False 
     RUN_MODEL_SUPPLEMENTAL_FIG_S2 = False 
@@ -70,6 +71,11 @@ if __name__ == "__main__":
             fw_panel=FW_PANEL,
             fs_panel=FS_PANEL,
         )
+
+    if RUN_ABS_ABUNDANCE_FIG_6:
+        from figs.presentation import fig_6
+        print("Running RUN_ABS_ABUNDANCE_FIG_6")
+        fig_6()
 
     if RUN_MODEL_TRAINING_DATASET_COMPARISON_FIG_S1:
         from figs.model.training_dataset_comparison import main
