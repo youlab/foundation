@@ -6,6 +6,10 @@ import traceback
 from config import (
     MODEL_TYPE,
     Z_DIM,
+    PATH_DATA_GLV_RELATIVE,
+    PATH_DATA_GLV_TOTAL,
+    PATH_DATA_CHAOTIC_RELATIVE,
+    PATH_DATA_CHAOTIC_TOTAL,
 )
 warnings.filterwarnings("ignore", category=RuntimeWarning)
 
@@ -48,12 +52,13 @@ if __name__ == "__main__":
         RUN_ANTIBIOTIC_MAIN = False  
         RUN_ANTIBIOTIC_SUMMARIES = False 
 
-        RUN_CONSORTIA_EXP = True  # Run with array 0-479
+        RUN_CONSORTIA_EXP = False  # Run with array 0-479
         # TODO: Remove the cache files and retry it again.
 
         RUN_CONSORTIA_SIM_FOCUSED_SUMMARY = False # no array needed
         RUN_CONSORTIA_EXP_FOCUSED_SUMMARY = False # no array needed
         RUN_CONSORTIA_EXP_FINAL_ABUNDANCE_CLASSIFICATION = False # no array needed # good
+        RUN_ABUNDANCE_PREDICTION = True # array 0-1 (0: glv, 1: chaotic)
 
         RUN_SUPER_RESOLUTION = False
         
@@ -224,8 +229,51 @@ if __name__ == "__main__":
                 task_id=get_task_id(),
             )
         
+
+        if RUN_ABUNDANCE_PREDICTION:
+            logger.info("Starting RUN_ABUNDANCE_PREDICTION")
+            print("Running RUN_ABUNDANCE_PREDICTION")
+            from applications.abs_abundance_prediction.abs_abundance_prediction import main
+            
+            task_id = get_task_id(debug=False)
+            
+            # Define datasets (using paths from config)
+            # task_id 0: regular microbial dynamics (GLV)
+            # task_id 1: chaotic dynamics
+            datasets = [
+                {
+                    'relative_npz': str(PATH_DATA_GLV_RELATIVE),
+                    'absolute_npz': str(PATH_DATA_GLV_TOTAL),
+                    'dataset_label': 'glv'
+                },
+                {
+                    'relative_npz': str(PATH_DATA_CHAOTIC_RELATIVE),
+                    'absolute_npz': str(PATH_DATA_CHAOTIC_TOTAL),
+                    'dataset_label': 'chaotic'
+                }
+            ]
+            
+            if task_id >= len(datasets):
+                logger.error(f"Invalid task_id {task_id}. Valid range: 0-{len(datasets)-1}")
+                raise ValueError(f"Invalid task_id {task_id}. Valid range: 0-{len(datasets)-1}")
+            
+            dataset = datasets[task_id]
+            logger.info(f"Running abundance prediction for dataset: {dataset['dataset_label']}")
+            logger.info(f"  Relative NPZ: {dataset['relative_npz']}")
+            logger.info(f"  Absolute NPZ: {dataset['absolute_npz']}")
+            
+            main(
+                relative_npz=dataset['relative_npz'],
+                absolute_npz=dataset['absolute_npz'],
+                dataset_label=dataset['dataset_label'],
+                mlp_epochs=100,
+                mlp_lr=0.001,
+                mlp_patience=10,
+                mlp_min_delta=1e-6,
+            )
+
         logger.info("=== ALL APPLICATIONS COMPLETED SUCCESSFULLY ===")
-        
+   
     except Exception as e:
         logger.error(f"FATAL ERROR in main execution: {str(e)}")
         logger.error(f"Exception type: {type(e).__name__}")
