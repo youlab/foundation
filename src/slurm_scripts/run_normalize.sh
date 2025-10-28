@@ -1,6 +1,6 @@
 #!/bin/bash
-#SBATCH -e /hpc/home/zah8/foundations/slurm_outputs/run_normalize_%A.err
-#SBATCH -o /hpc/home/zah8/foundations/slurm_outputs/run_normalize_%A.out
+#SBATCH -e /hpc/home/zah8/foundation/slurm_outputs/run_normalize_%A.err
+#SBATCH -o /hpc/home/zah8/foundation/slurm_outputs/run_normalize_%A.out
 #SBATCH -p youlab-gpu
 #SBATCH --mem=16000
 #SBATCH --cpus-per-task=8

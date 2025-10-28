@@ -1,6 +1,6 @@
 #!/bin/bash
-#SBATCH -e /hpc/home/zah8/foundations/slurm_outputs/run_bert/%A_%a.err
-#SBATCH -o /hpc/home/zah8/foundations/slurm_outputs/run_bert/%A_%a.out
+#SBATCH -e /hpc/home/zah8/foundation/slurm_outputs/run_bert/%A_%a.err
+#SBATCH -o /hpc/home/zah8/foundation/slurm_outputs/run_bert/%A_%a.out
 #SBATCH --array=216-260
 #SBATCH -p youlab-gpu
 #SBATCH --mem=32000

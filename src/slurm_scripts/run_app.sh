@@ -1,7 +1,7 @@
 #!/bin/bash
-#SBATCH -e /hpc/dctrl/is178/foundations/slurm_outputs/run_app/%A_%a.err
-#SBATCH -o /hpc/dctrl/is178/foundations/slurm_outputs/run_app/%A_%a.out
-#SBATCH --array=0-479
+#SBATCH -e /hpc/dctrl/is178/foundation/slurm_outputs/run_app/%A_%a.err
+#SBATCH -o /hpc/dctrl/is178/foundation/slurm_outputs/run_app/%A_%a.out
+#SBATCH --array=0-1
 #SBATCH -p youlab-gpu
 #SBATCH --mem=64000
 #SBATCH --cpus-per-task=8
