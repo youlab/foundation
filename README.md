@@ -162,7 +162,9 @@ These datasets contain large files managed by Git LFS. Ensure you have sufficien
 
 While the files can be downloaded with each use, if you are going to be using this repository extensively it is recommended to download the entire datasets locally.
 
-# Antibiotics Pipeline
+# Applications Pipeline
+
+This section describes how to run various downstream applications using the foundation model, including antibiotic resistance prediction, consortia modeling, and absolute abundance prediction.
 
 ## Sequential Execution Requirements
 
@@ -204,7 +206,29 @@ Before running any other models, you need to generate the regression models:
   * **Array size:** 480 total tasks (0-479)
   * **Cache handling:** Removes existing cache files and retries failed tasks
 
-### 4. Summary and Final Analysis (Run Last)
+### 4. Absolute Abundance Prediction (Independent)
+* **Run:** `RUN_ABUNDANCE_PREDICTION = True` (Run with SLURM array 0-1)
+  * **Purpose:** Predicts absolute abundance from relative abundance using foundation model latent representations
+  * **Independence:** This application can be run independently of other applications (no dependencies on consortia or antibiotic models)
+  * **Array tasks:**
+    * Task 0: GLV (generalized Lotka-Volterra) dataset
+    * Task 1: Chaotic dynamics dataset
+  * **Method:** Uses multi-layer perceptron (MLP) models to predict total microbial abundance
+  * **Training:** 5-fold cross-validation with multiple training set sizes (1%, 5%, 8%, 10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%)
+  * **Metrics:** Evaluates both R² score and RMSE (root mean squared error)
+  * **Comparisons:** Tests predictions using both raw relative abundances and foundation model latent representations
+  * **Key Finding:** Demonstrates that foundation model latent representations improve absolute abundance predictions compared to using raw relative abundances alone
+  * **Outputs:**
+    * Model performance metrics saved as JSON files (e.g., `results_glv_mlp_cv0.json`, `results_chaotic_mlp_cv0.json`)
+    * Visualization plots comparing "using raw" vs "using latent" predictions
+    * Results stored in `results/abs_abundance/glv_analysis_results_mlp/` and `results/abs_abundance/chaotic_analysis_results_mlp/`
+  * **Parameters (configurable in `run_applications.py`):**
+    * `mlp_epochs`: Number of training epochs (default: 100)
+    * `mlp_lr`: Learning rate (default: 0.001)
+    * `mlp_patience`: Early stopping patience (default: 10)
+    * `mlp_min_delta`: Minimum improvement threshold (default: 1e-6)
+
+### 5. Summary and Final Analysis (Run Last)
 These require all previous steps to be completed:
 
 * **Run:** `RUN_CONSORTIA_SIM_FOCUSED_SUMMARY = True` (no array needed)
@@ -311,13 +335,34 @@ To run all models for comparison, use `run_comparison.py`:
 
 ### Data-Only Figures (No application required)
 These rely solely on existing data and can be run independently:
-* `RUN_ANTIBIOTICS_KYERI_TOP10F_FIG_S4`
-* `RUN_ANTIBIOTICS_KYERI_KEIO_FIG_S5`
-* `RUN_ANTIBIOTICS_KYERI_TIMER_FIG_S6`
-* `RUN_ANTIBIOTICS_CAROLYN_ALL_FIG_S7`
+* `RUN_DATA_FIG_1` - Dataset overview and statistics
+* `RUN_MODEL_FIG_2` - Foundation model architecture and performance
+* `RUN_ANTIBIOTICS_KYERI_TOP10F_FIG_S4` - Kyeri antibiotics top 10 features
+* `RUN_ANTIBIOTICS_KYERI_KEIO_FIG_S5` - Kyeri Keio collection analysis
+* `RUN_ANTIBIOTICS_KYERI_TIMER_FIG_S6` - Kyeri time series analysis
+* `RUN_ANTIBIOTICS_CAROLYN_ALL_FIG_S7` - Carolyn antibiotics complete analysis
 
 ### Primary Model Figures
-* `RUN_ANTIBIOTICS_FIG_3` (requires primary model only)
+* `RUN_ANTIBIOTICS_FIG_3` - Antibiotic resistance prediction results (requires primary model)
+* `RUN_CONSORTIA_SIM_FIG_4` - Consortia simulation predictions (requires `RUN_CONSORTIA_SIM_V2` and `RUN_CONSORTIA_SIM_FORECAST_V2`)
+* `RUN_CONSORTIA_EXP_FIG_5` - Experimental consortia predictions (requires `RUN_CONSORTIA_EXP`)
+* `RUN_ABS_ABUNDANCE_FIG_6` - Absolute abundance prediction from relative abundance (requires `RUN_ABUNDANCE_PREDICTION`)
+  * **Dependency:** Must complete `RUN_ABUNDANCE_PREDICTION` with array 0-1 first
+  * **Visualizations:**
+    * Pipeline diagram showing how relative abundance is converted to absolute abundance
+    * R² score comparisons for Chaotic and GLV models
+    * RMSE comparisons for both models
+    * Compares performance using raw relative abundances vs. foundation model latent representations
+  * **Output:** Saved as Figure 6 in results directory
+
+### Supplemental Figures
+* `RUN_MODEL_TRAINING_DATASET_COMPARISON_FIG_S1` - Model training dataset comparison
+* `RUN_MODEL_SUPPLEMENTAL_FIG_S2` - Additional model performance metrics
+* `RUN_MODEL_INTRINSIC_DIMENSIONS_FIG_S3` - Intrinsic dimensionality analysis
+* `RUN_CONSORTIA_SIM_SUPPLEMENTAL_OVERVIEW_FIG_S9` - Simulation consortia overview
+* `RUN_CONSORTIA_SIM_SUPPLEMENTAL_FIG_S10` - Simulation consortia detailed curves
+* `RUN_CONSORTIA_EXP_FOCAL_COMMUNITIES_FIG_S11` - Experimental focal communities
+* `RUN_CONSORTIA_EXP_SUPPLEMENTAL_FIG_S12` - Experimental consortia detailed curves
 
 ### Model Comparison Figures
 * `RUN_ANTIBIOTICS_MODEL_COMPARISON_FIG_S8` (requires all models to be completed)
