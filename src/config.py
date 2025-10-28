@@ -3,11 +3,11 @@ from pathlib import Path
 
 home_dir = Path("/hpc/dctrl/is178")
 
-DIR_RESULTS = home_dir / "foundations" / "results"
-DIR_SRC = home_dir / "foundations" / "src"
+DIR_RESULTS = home_dir / "foundation" / "results"
+DIR_SRC = home_dir / "foundation" / "src"
 DIR_DATA = DIR_SRC / "data"
 DIR_MODELS = Path("/work/zah8/best_models/models")
-DIR_LOGS = home_dir / "foundations" / "logs"
+DIR_LOGS = home_dir / "foundation" / "logs"
 
 DIR_DATA_CAROLYN = DIR_SRC / "applications" / "antibiotics" / "carolyn" / "data"
 DIR_DATA_CHAOTIC = DIR_SRC / "data" / "simulation" / "chaotic"
@@ -19,6 +19,17 @@ DIR_DATA_ZACH = DIR_SRC / "data" / "experimental" / "zach"
 PATH_DATA_ZZ294_SIMPLE = DIR_SRC / "applications" / "consortia" / "data_files" / "bgLV_B15_T5_fixed.txt"
 PATH_DATA_ZZ294_COMPLEX = DIR_SRC / "applications" / "consortia" / "data_files" / "dgLV_B92_T8_fixed.txt"
 PATH_FUJITA_DATA = DIR_SRC / "data" / "experimental" / "fujita_microbiome" / "microbiome_dataset.csv"
+
+# Absolute abundance prediction data files
+DIR_DATA_ABS_ABUNDANCE = DIR_SRC / "applications" / "abs_abundance_prediction" / "data_files"
+
+# GLV dynamics dataset (separate relative and total abundance files)
+PATH_DATA_GLV_RELATIVE = DIR_DATA_ABS_ABUNDANCE / "relative_abundance.npz"
+PATH_DATA_GLV_TOTAL = DIR_DATA_ABS_ABUNDANCE / "total_abundance.npz"
+
+# Chaotic dynamics dataset (separate relative and total abundance files)
+PATH_DATA_CHAOTIC_RELATIVE = DIR_DATA_ABS_ABUNDANCE / "chaotic_relative_abundance.npz"
+PATH_DATA_CHAOTIC_TOTAL = DIR_DATA_ABS_ABUNDANCE / "chaotic_total_abundance.npz"
 
 DIR_CACHE_MODEL_FIGS = DIR_SRC / "figs" / "model" / "cache"
 DIR_CACHE_CONSORTIA = DIR_SRC / "applications" / "consortia" / "cache"
@@ -38,6 +49,9 @@ DIR_RESULTS_CONSORTIA = DIR_RESULTS / "consortia"
 DIR_RESULTS_CONSORTIA_EXP = DIR_RESULTS / "consortia_exp"
 DIR_RESULTS_SUPER_RESOLUTION = DIR_RESULTS / "super_resolution"
 DIR_RESULTS_MODEL_COMPARISON = DIR_RESULTS / "model_comparison"
+DIR_RESULTS_ABS_ABUNDANCE = DIR_RESULTS / "abs_abundance_prediction"
+DIR_RESULTS_ABS_ABUNDANCE_CHAOTIC = DIR_RESULTS_ABS_ABUNDANCE / "chaotic_analysis_results_mlp"
+DIR_RESULTS_ABS_ABUNDANCE_GLV = DIR_RESULTS_ABS_ABUNDANCE / "glv_analysis_results_mlp"
 
 SEQ_LEN = 128
 Z_DIM = 8
