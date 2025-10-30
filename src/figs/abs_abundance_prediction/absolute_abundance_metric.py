@@ -195,8 +195,8 @@ def plot_absolute_abundance_metrics(
     
     # Style Chaotic R² plot - LARGER FONTS, ONLY ONE LEGEND, NO X-LABEL
     # ax_chaotic_r2.set_xlabel('Train Size', fontsize=fs_label+2, labelpad=8, fontweight='bold')  # REMOVED for decluttering
-    ax_chaotic_r2.set_ylabel('R² score', fontsize=fs_label+2, fontweight='bold')
-    ax_chaotic_r2.set_title('Chaotic Model', fontsize=fs_label+4, pad=25, fontweight='bold')  # INCREASED pad from 20 to 25 for consistency
+    ax_chaotic_r2.set_ylabel('R²', fontsize=fs_label+2)
+    ax_chaotic_r2.set_title('GLV with dispersal', fontsize=fs_label+4, pad=25)  # INCREASED pad from 20 to 25 for consistency
     ax_chaotic_r2.tick_params(axis='both', which='major', labelsize=fs_ticks+2)
     ax_chaotic_r2.spines['top'].set_visible(False)
     ax_chaotic_r2.spines['right'].set_visible(False)
@@ -204,24 +204,24 @@ def plot_absolute_abundance_metrics(
     
     # Style Chaotic RMSE plot - NO LEGEND, NO X-LABEL
     # ax_chaotic_rmse.set_xlabel('Train Size', fontsize=fs_label+2, labelpad=8, fontweight='bold')  # REMOVED for decluttering
-    ax_chaotic_rmse.set_ylabel('RMSE', fontsize=fs_label+2, fontweight='bold')
+    ax_chaotic_rmse.set_ylabel('RMSE', fontsize=fs_label+2)
     ax_chaotic_rmse.tick_params(axis='both', which='major', labelsize=fs_ticks+2)
     ax_chaotic_rmse.spines['top'].set_visible(False)
     ax_chaotic_rmse.spines['right'].set_visible(False)
     # NO LEGEND for panel D
     
     # Style GLV R² plot - NO LEGEND, HAS X-LABEL
-    ax_glv_r2.set_xlabel('Train Size', fontsize=fs_label+2, labelpad=6, fontweight='bold')  # KEPT in E
-    ax_glv_r2.set_ylabel('R² score', fontsize=fs_label+2, fontweight='bold')
-    ax_glv_r2.set_title('GLV Model', fontsize=fs_label+4, pad=15, fontweight='bold')  # INCREASED pad from 20 to 25 to avoid overlap with tick labels
+    ax_glv_r2.set_xlabel('Train size', fontsize=fs_label+2, labelpad=6)  # KEPT in E
+    ax_glv_r2.set_ylabel('R²', fontsize=fs_label+2)
+    ax_glv_r2.set_title('GLV without dispersal', fontsize=fs_label+4, pad=15)  # INCREASED pad from 20 to 25 to avoid overlap with tick labels
     ax_glv_r2.tick_params(axis='both', which='major', labelsize=fs_ticks+2)
     ax_glv_r2.spines['top'].set_visible(False)
     ax_glv_r2.spines['right'].set_visible(False)
     # NO LEGEND for panel E
     
     # Style GLV RMSE plot - NO LEGEND, HAS X-LABEL
-    ax_glv_rmse.set_xlabel('Train Size', fontsize=fs_label+2, labelpad=6, fontweight='bold')  # KEPT in F
-    ax_glv_rmse.set_ylabel('RMSE', fontsize=fs_label+2, fontweight='bold')
+    ax_glv_rmse.set_xlabel('Train size', fontsize=fs_label+2, labelpad=6)  # KEPT in F
+    ax_glv_rmse.set_ylabel('RMSE', fontsize=fs_label+2)
     ax_glv_rmse.tick_params(axis='both', which='major', labelsize=fs_ticks+2)
     ax_glv_rmse.spines['top'].set_visible(False)
     ax_glv_rmse.spines['right'].set_visible(False)
