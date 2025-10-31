@@ -59,6 +59,7 @@ if __name__ == "__main__":
         RUN_CONSORTIA_EXP_FOCUSED_SUMMARY = False # no array needed
         RUN_CONSORTIA_EXP_FINAL_ABUNDANCE_CLASSIFICATION = False # no array needed # good
         RUN_ABUNDANCE_PREDICTION = True # array 0-1 (0: glv, 1: chaotic)
+        RUN_ABUNDANCE_PREDICTION_TUNING = False # array 0-1 (0: glv, 1: chaotic) - Finds optimal L2 values
 
         RUN_SUPER_RESOLUTION = False
         
@@ -68,6 +69,8 @@ if __name__ == "__main__":
         if RUN_CONSORTIA_SIM_FORECAST_V2: enabled_apps.append("RUN_CONSORTIA_SIM_FORECAST_V2")
         if RUN_ANTIBIOTIC_MAIN: enabled_apps.append("RUN_ANTIBIOTIC_MAIN")
         if RUN_ANTIBIOTIC_SUMMARIES: enabled_apps.append("RUN_ANTIBIOTIC_SUMMARIES")
+        if RUN_ABUNDANCE_PREDICTION: enabled_apps.append("RUN_ABUNDANCE_PREDICTION")
+        if RUN_ABUNDANCE_PREDICTION_TUNING: enabled_apps.append("RUN_ABUNDANCE_PREDICTION_TUNING")
         logger.info(f"Enabled applications: {enabled_apps}")
 
         if RUN_CONSORTIA_SIM_V2:
@@ -237,6 +240,11 @@ if __name__ == "__main__":
             
             task_id = get_task_id(debug=False)
             
+            L2_RAW = 5e-03       # Lower/no L2 for high-dimensional raw features
+            L2_LATENT = 0   # Higher L2 for low-dimensional latent features
+            
+            logger.info(f"L2 Regularization Configuration: raw={L2_RAW}, latent={L2_LATENT}")
+            
             # Define datasets (using paths from config)
             # task_id 0: regular microbial dynamics (GLV)
             # task_id 1: chaotic dynamics
@@ -270,7 +278,58 @@ if __name__ == "__main__":
                 mlp_lr=0.001,
                 mlp_patience=10,
                 mlp_min_delta=1e-6,
+                mlp_l2_raw=L2_RAW,
+                mlp_l2_latent=L2_LATENT,
             )
+
+        if RUN_ABUNDANCE_PREDICTION_TUNING:
+            logger.info("Starting RUN_ABUNDANCE_PREDICTION_TUNING")
+            print("Running RUN_ABUNDANCE_PREDICTION_TUNING")
+            from applications.abs_abundance_prediction.tune_regularization import tune_regularization
+            
+            task_id = get_task_id(debug=False)
+            
+            # Define datasets (same as above)
+            datasets = [
+                {
+                    'relative_npz': str(PATH_DATA_GLV_RELATIVE),
+                    'absolute_npz': str(PATH_DATA_GLV_TOTAL),
+                    'dataset_label': 'glv'
+                },
+                {
+                    'relative_npz': str(PATH_DATA_CHAOTIC_RELATIVE),
+                    'absolute_npz': str(PATH_DATA_CHAOTIC_TOTAL),
+                    'dataset_label': 'chaotic'
+                }
+            ]
+            
+            if task_id >= len(datasets):
+                logger.error(f"Invalid task_id {task_id}. Valid range: 0-{len(datasets)-1}")
+                raise ValueError(f"Invalid task_id {task_id}. Valid range: 0-{len(datasets)-1}")
+            
+            dataset = datasets[task_id]
+            logger.info(f"Running L2 regularization tuning for dataset: {dataset['dataset_label']}")
+            logger.info(f"  Relative NPZ: {dataset['relative_npz']}")
+            logger.info(f"  Absolute NPZ: {dataset['absolute_npz']}")
+            logger.info(f"This will test {7*7}=49 L2 combinations with 5 CV folds each")
+            logger.info(f"Expected runtime: ~30-60 minutes per dataset")
+            
+            # Use default output directory from DIR_RESULTS_ABS_ABUNDANCE
+            from config import DIR_RESULTS_ABS_ABUNDANCE
+            output_dir = DIR_RESULTS_ABS_ABUNDANCE / f"{dataset['dataset_label']}_regularization_tuning"
+            
+            tune_regularization(
+                relative_npz=dataset['relative_npz'],
+                absolute_npz=dataset['absolute_npz'],
+                output_dir=str(output_dir),
+                dataset_label=dataset['dataset_label'],
+                n_trials=5  # Run 5 CV folds per configuration
+            )
+            
+            logger.info(f"Tuning complete! Check results at: {output_dir}")
+            logger.info(f"  - tuning_results.json: Raw metrics for all configs")
+            logger.info(f"  - tuning_heatmaps.png: Visualization of all L2 combinations")
+            logger.info(f"  - tuning_recommendations.png: Top 10 configurations")
 
         logger.info("=== ALL APPLICATIONS COMPLETED SUCCESSFULLY ===")
    
