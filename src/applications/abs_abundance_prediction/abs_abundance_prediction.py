@@ -12,6 +12,8 @@ import torch.optim as optim
 from torch.utils.data import DataLoader, TensorDataset
 from sklearn.metrics import r2_score, mean_squared_error
 from sklearn.model_selection import train_test_split
+from sklearn.decomposition import PCA
+from sklearn.preprocessing import StandardScaler
 
 from applications.antibiotics.generate_results import main as train_main
 from applications.utils.latents import get_latents
@@ -82,8 +84,17 @@ def load_abundance_from_npz(relative_npz_path: str, absolute_npz_path: str):
     logger.info(f"Final shapes → focal: {focal.shape}, rel: {rel.shape}")
     return focal, rel
 
-def train_single_mlp(X_train, X_test, Y_train, Y_test, epochs=100, lr=0.001, patience=10, min_delta=1e-6):
-    """Train a single MLP model with early stopping and return predictions."""
+def train_single_mlp(X_train, X_test, Y_train, Y_test, epochs=100, lr=0.001, patience=10, min_delta=1e-6, l2_reg=0.0):
+    """Train a single MLP model with early stopping and return predictions and loss history.
+    
+    Args:
+        X_train, X_test, Y_train, Y_test: Training/test data
+        epochs: Number of training epochs
+        lr: Learning rate
+        patience: Early stopping patience
+        min_delta: Minimum change for early stopping
+        l2_reg: L2 regularization strength (weight_decay in Adam)
+    """
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
     
     X_train_split, X_val_split, Y_train_split, Y_val_split = train_test_split(
@@ -101,7 +112,7 @@ def train_single_mlp(X_train, X_test, Y_train, Y_test, epochs=100, lr=0.001, pat
     output_dim = Y_train.shape[1]
     model = MLP(input_dim=input_dim, output_dim=output_dim).to(device)
     criterion = nn.MSELoss()
-    optimizer = optim.Adam(model.parameters(), lr=lr)
+    optimizer = optim.Adam(model.parameters(), lr=lr, weight_decay=l2_reg)
     
     train_dataset = TensorDataset(X_train_tensor, Y_train_tensor)
     train_loader = DataLoader(train_dataset, batch_size=32, shuffle=True)
@@ -109,6 +120,9 @@ def train_single_mlp(X_train, X_test, Y_train, Y_test, epochs=100, lr=0.001, pat
     best_val_loss = float('inf')
     patience_counter = 0
     best_model_state = None
+    
+    train_losses = []
+    val_losses = []
     
     model.train()
     for epoch in range(epochs):
@@ -122,12 +136,17 @@ def train_single_mlp(X_train, X_test, Y_train, Y_test, epochs=100, lr=0.001, pat
             optimizer.step()
             epoch_loss += loss.item()
         
+        avg_train_loss = epoch_loss / len(train_loader)
+        train_losses.append(avg_train_loss)
+        
         # Validation phase
         model.eval()
         with torch.no_grad():
             val_outputs = model(X_val_tensor)
             val_loss = criterion(val_outputs, Y_val_tensor).item()
         model.train()
+        
+        val_losses.append(val_loss)
         
         # Early stopping check
         if val_loss < best_val_loss - min_delta:
@@ -139,8 +158,7 @@ def train_single_mlp(X_train, X_test, Y_train, Y_test, epochs=100, lr=0.001, pat
         
         # Log progress occasionally
         if (epoch + 1) % 20 == 0:
-            avg_train_loss = epoch_loss / len(train_loader)
-            logger.info(f"MLP Epoch [{epoch+1}/{epochs}], Train Loss: {avg_train_loss:.4f}, Val Loss: {val_loss:.4f}, Patience: {patience_counter}/{patience}")
+            logger.info(f"MLP Epoch [{epoch+1}/{epochs}], Train Loss: {avg_train_loss:.4f}, Val Loss: {val_loss:.4f}, Patience: {patience_counter}/{patience}, L2Reg: {l2_reg}")
         
         # Early stopping
         if patience_counter >= patience:
@@ -157,25 +175,43 @@ def train_single_mlp(X_train, X_test, Y_train, Y_test, epochs=100, lr=0.001, pat
     with torch.no_grad():
         Y_test_pred = model(X_test_tensor).cpu().numpy()
     
-    return Y_test_pred
+    loss_history = {
+        'train_losses': train_losses,
+        'val_losses': val_losses
+    }
+    
+    return Y_test_pred, loss_history
 
 
-def train_mlp_with_cross_validation(X, Y, cross_val=0, train_sizes=None, epochs=100, lr=0.001, model_type="A7X", z_dim=Z_DIM, patience=10, min_delta=1e-6):
-    """Train MLP with proper cross-validation structure matching ExtraTree implementation."""
+def train_mlp_with_cross_validation(X, Y, cross_val=0, train_sizes=None, epochs=100, lr=0.001, model_type="A7X", z_dim=Z_DIM, patience=10, min_delta=1e-6, l2_reg_raw=0.0, l2_reg_latent=0.0):
+    """Train MLP with proper cross-validation structure matching ExtraTree implementation.
+    
+    Args:
+        X, Y: Input and output data
+        cross_val: Cross-validation fold index
+        train_sizes: List of training set sizes to evaluate
+        epochs: Number of epochs
+        lr: Learning rate
+        model_type: VAE model type
+        z_dim: Latent dimension
+        patience: Early stopping patience
+        min_delta: Minimum change for early stopping
+        l2_reg_raw: L2 regularization for raw features
+        l2_reg_latent: L2 regularization for latent features
+    """
     if train_sizes is None:
         train_sizes = [0.01, 0.05, 0.08, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8]
-        # train_sizes = [0.7, 0.8]
-
     
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
     logger.info(f"Training MLP on device: {device} for cross_val={cross_val}")
+    logger.info(f"Regularization: L2_raw={l2_reg_raw}, L2_latent={l2_reg_latent}")
     
-    # Load VAE model (same as ExtraTree implementation)
+    # Load VAE model 
     logger.info("Loading VAE model for latent conversion...")
     vae_model = load_model(model_type=model_type, z_dim=z_dim)
     logger.info(f"VAE model loaded: {type(vae_model)}")
     
-    # Convert X to latent representations using VAE (same as ExtraTree)
+    # Convert X to latent representations using VAE
     logger.info(f"Converting input X to latents...")
     logger.info(f"Reshaping X from {X.shape} to {X.reshape(-1, SEQ_LEN).shape} for VAE")
     X_latents = get_latents(
@@ -230,13 +266,17 @@ def train_mlp_with_cross_validation(X, Y, cross_val=0, train_sizes=None, epochs=
         logger.info(f"Training samples: {X_train.shape[0]}, Test samples: {X_test.shape[0]}")
         logger.info(f"Raw input dim: {X_train.shape[1]}, Latent input dim: {X_latents_train.shape[1]}")
         
-        # Train MLP on RAW data
-        logger.info("Training MLP on RAW data...")
-        Y_test_pred_raw = train_single_mlp(X_train, X_test, Y_train, Y_test, epochs=epochs, lr=lr, patience=patience, min_delta=min_delta)
+        # Train MLP on RAW data with specified L2 regularization
+        logger.info(f"Training MLP on RAW data (L2={l2_reg_raw})...")
+        Y_test_pred_raw, raw_loss_history = train_single_mlp(X_train, X_test, Y_train, Y_test, 
+                                                              epochs=epochs, lr=lr, patience=patience, 
+                                                              min_delta=min_delta, l2_reg=l2_reg_raw)
         
-        # Train MLP on LATENT data  
-        logger.info("Training MLP on LATENT data...")
-        Y_test_pred_latent = train_single_mlp(X_latents_train, X_latents_test, Y_train, Y_test, epochs=epochs, lr=lr, patience=patience, min_delta=min_delta)
+        # Train MLP on LATENT data with specified L2 regularization
+        logger.info(f"Training MLP on LATENT data (L2={l2_reg_latent})...")
+        Y_test_pred_latent, latent_loss_history = train_single_mlp(X_latents_train, X_latents_test, Y_train, Y_test, 
+                                                                    epochs=epochs, lr=lr, patience=patience, 
+                                                                    min_delta=min_delta, l2_reg=l2_reg_latent)
         
         # Calculate metrics for both approaches
         raw_r2 = r2_score(Y_test.flatten(), Y_test_pred_raw.flatten())
@@ -246,7 +286,9 @@ def train_mlp_with_cross_validation(X, Y, cross_val=0, train_sizes=None, epochs=
         
         results[X_train.shape[0]] = {
             'raw_accuracy': {'r2': raw_r2, 'rmse': raw_rmse},
-            'latent_accuracy': {'r2': latent_r2, 'rmse': latent_rmse}
+            'latent_accuracy': {'r2': latent_r2, 'rmse': latent_rmse},
+            'raw_loss_history': raw_loss_history,
+            'latent_loss_history': latent_loss_history
         }
         
         # Save visualization samples for the largest training set (store 5 examples)
@@ -269,15 +311,27 @@ def train_mlp_with_cross_validation(X, Y, cross_val=0, train_sizes=None, epochs=
     return results
 
 
-def train_model(rel, focal, use_mlp=False, mlp_epochs=100, mlp_lr=0.001, mlp_patience=10, mlp_min_delta=1e-6):
-    """Prepare features and train using either ExtraTree (default) or MLP."""
+def train_model(rel, focal, use_mlp=False, mlp_epochs=100, mlp_lr=0.001, mlp_patience=10, mlp_min_delta=1e-6, mlp_l2_raw=0.0, mlp_l2_latent=0.0):
+    """Prepare features and train using MLP with optional regularization.
+    
+    Args:
+        rel: Relative abundance data
+        focal: Absolute abundance data
+        use_mlp: Whether to use MLP (currently always True)
+        mlp_epochs: Number of epochs
+        mlp_lr: Learning rate
+        mlp_patience: Early stopping patience
+        mlp_min_delta: Minimum change for early stopping
+        mlp_l2_raw: L2 regularization for raw features
+        mlp_l2_latent: L2 regularization for latent features
+    """
 
     n_samples, n_species, n_time = rel.shape
 
     index_mapping = []
     X, Y = [], []
     
-    # Option 1: Use complete trajectories (no sliding window)
+    # Use complete trajectories (no sliding window)
     for s in range(n_samples):
         # Use the entire trajectory as input
         x = rel[s, :, :SEQ_LEN]  # Take first SEQ_LEN time points
@@ -296,6 +350,7 @@ def train_model(rel, focal, use_mlp=False, mlp_epochs=100, mlp_lr=0.001, mlp_pat
     logger.info(f"Y represents total abundance (sum across all species)")
     logger.info(f"Using complete trajectories starting from t=0 (no sliding window)")
     logger.info(f"Model type: {model_type}")
+    logger.info(f"L2 Regularization - Raw: {mlp_l2_raw}, Latent: {mlp_l2_latent}")
 
     data_context = {
         'rel': rel,
@@ -309,53 +364,24 @@ def train_model(rel, focal, use_mlp=False, mlp_epochs=100, mlp_lr=0.001, mlp_pat
 
     results = []
     
-    if use_mlp:
-        # Use MLP training with proper cross-validation
-        logger.info("Training with MLP...")
-        for cross_val in range(5):
-            res = train_mlp_with_cross_validation(
-                X, Y, 
-                cross_val=cross_val,
-                train_sizes=train_sizes,
-                epochs=mlp_epochs, 
-                lr=mlp_lr,
-                model_type="A7X",
-                z_dim=Z_DIM,
-                patience=mlp_patience,
-                min_delta=mlp_min_delta
-            )
-            res['data_context'] = data_context
-            results.append(res)
-    else:
-        # Use existing ExtraTree training
-        logger.info("Training with ExtraTree...")
-        for cross_val in range(5):
-            res = train_main(
-                x_raw=X,
-                tgt=Y,
-                model_type="A7X",
-                z_dim=Z_DIM,
-                classify=False,
-                detailed_binary=False,
-                epochs_fine_tuned=0,
-                lr_fine_tuned=0.0,
-                epochs_end2end=0,
-                lr_end2end=0.0,
-                return_latent_vectors=False,
-                stack=1,  # Changed from n_species to 1 since we're predicting a single value
-                cross_val=cross_val,
-                max_depth=None,
-                train_sizes=train_sizes,
-                name_suffix="glv_analysis",
-                use_decoded_prediction=False,
-                use_tgt_latent=False,
-                include_rmse=True,
-                save_samples_for_viz=True,
-                n_viz_samples=5,
-            )
-            # Add data context for visualization
-            res['data_context'] = data_context
-            results.append(res)
+    # Use MLP training with proper cross-validation
+    logger.info("Training with MLP...")
+    for cross_val in range(5):
+        res = train_mlp_with_cross_validation(
+            X, Y, 
+            cross_val=cross_val,
+            train_sizes=train_sizes,
+            epochs=mlp_epochs, 
+            lr=mlp_lr,
+            model_type="A7X",
+            z_dim=Z_DIM,
+            patience=mlp_patience,
+            min_delta=mlp_min_delta,
+            l2_reg_raw=mlp_l2_raw,
+            l2_reg_latent=mlp_l2_latent
+        )
+        res['data_context'] = data_context
+        results.append(res)
     
     return results
 
@@ -417,13 +443,18 @@ def visualize_grid_5x5(results, output_dir=None, prediction_key: str = "raw_pred
     handles, labels = axes[0, 0].get_legend_handles_labels()
     if handles:
         fig.legend(handles, labels, loc='upper center', ncol=2)
-    fig.suptitle(f"True vs Predicted Total Abundance (prediction: {prediction_key})", y=0.98)
+    
+    # Update title based on prediction key
+    title_suffix = "Raw Features" if prediction_key == "raw_predictions" else "Latent Features"
+    fig.suptitle(f"True vs Predicted Total Abundance ({title_suffix})", y=0.98)
     plt.tight_layout(rect=[0, 0, 1, 0.95])
 
     if output_dir:
         output_dir = Path(output_dir)
         output_dir.mkdir(exist_ok=True, parents=True)
-        save_path = output_dir / "grid_5x5.png"
+        # Save with different filenames based on prediction key
+        filename = "grid_5x5_raw.png" if prediction_key == "raw_predictions" else "grid_5x5_latent.png"
+        save_path = output_dir / filename
         plt.savefig(save_path, dpi=160, bbox_inches='tight')
         logger.info(f"Saved 5x5 grid visualization to: {save_path}")
         plt.close()
@@ -433,10 +464,23 @@ def visualize_grid_5x5(results, output_dir=None, prediction_key: str = "raw_pred
 
 
 def main(output_dir=None, mlp_epochs=100, mlp_lr=0.001, mlp_patience=10, mlp_min_delta=1e-6,
-         relative_npz: str = None, absolute_npz: str = None, dataset_label: str = None):
+         relative_npz: str = None, absolute_npz: str = None, dataset_label: str = None,
+         mlp_l2_raw: float = 0.0, mlp_l2_latent: float = 0.0):
     """Main entry point.
 
     If `relative_npz` and `absolute_npz` are provided, loads pre-saved data from these files.
+    
+    Args:
+        output_dir: Output directory for results
+        mlp_epochs: Number of training epochs
+        mlp_lr: Learning rate
+        mlp_patience: Early stopping patience
+        mlp_min_delta: Minimum change for early stopping
+        relative_npz: Path to relative abundance NPZ file
+        absolute_npz: Path to absolute abundance NPZ file
+        dataset_label: Label for the dataset
+        mlp_l2_raw: L2 regularization for raw features
+        mlp_l2_latent: L2 regularization for latent features
     """
     
     # Decide dataset label for output naming
@@ -469,8 +513,27 @@ def main(output_dir=None, mlp_epochs=100, mlp_lr=0.001, mlp_patience=10, mlp_min
         raise ValueError(
             f"Time dimension ({rel.shape[2]}) is shorter than SEQ_LEN ({SEQ_LEN}). Please provide data with at least {SEQ_LEN} time points."
         )
+    
+    # Prepare data (same as train_model)
+    n_samples, n_species, n_time = rel.shape
+    X, Y = [], []
+    
+    for s in range(n_samples):
+        x = rel[s, :, :SEQ_LEN]
+        total_abundance = focal[s, :, :SEQ_LEN].sum(axis=0)
+        X.append(x.flatten())
+        Y.append(total_abundance)
+    
+    X = np.nan_to_num(np.array(X))
+    Y = np.nan_to_num(np.array(Y))
+    
+    logger.info(f"Training data shapes - X: {X.shape}, Y: {Y.shape}")
+    logger.info(f"Running full training pipeline with diagnostics...")
+    logger.info(f"L2 Regularization - Raw: {mlp_l2_raw}, Latent: {mlp_l2_latent}")
         
-    results = train_model(rel, focal, use_mlp=True, mlp_epochs=mlp_epochs, mlp_lr=mlp_lr, mlp_patience=mlp_patience, mlp_min_delta=mlp_min_delta)
+    results = train_model(rel, focal, use_mlp=True, mlp_epochs=mlp_epochs, mlp_lr=mlp_lr, 
+                         mlp_patience=mlp_patience, mlp_min_delta=mlp_min_delta,
+                         mlp_l2_raw=mlp_l2_raw, mlp_l2_latent=mlp_l2_latent)
     
     # Save results and visualizations
     for i, res in enumerate(results):
@@ -483,9 +546,27 @@ def main(output_dir=None, mlp_epochs=100, mlp_lr=0.001, mlp_patience=10, mlp_min
     
     viz_dir = output_dir / "visualizations"
     logger.info(f"Creating visualization directory at: {viz_dir}")
-    # visualize_curves(results, output_dir=viz_dir)
-    # 5x5 grid across CV folds (rows) and 5 samples (cols)
+    
+    # Create two 5x5 grids: one for raw curves, one for latent curves
+    logger.info("Creating 5x5 grid for raw predictions...")
     visualize_grid_5x5(results, output_dir=viz_dir, prediction_key="raw_predictions")
+    
+    logger.info("Creating 5x5 grid for latent predictions...")
+    visualize_grid_5x5(results, output_dir=viz_dir, prediction_key="latent_predictions")
+    
+    # Convert X to latent space for diagnostics
+    logger.info("Loading VAE model for latent conversion...")
+    vae_model = load_model(model_type="A7X", z_dim=Z_DIM)
+    logger.info(f"VAE model loaded: {type(vae_model)}")
+    
+    logger.info(f"Converting input X to latents...")
+    X_latents = get_latents(
+        z=X.reshape(-1, SEQ_LEN),
+        use_transformer=False,
+        z_dim=Z_DIM,
+        model=vae_model,
+    ).reshape(X.shape[0], -1)
+    logger.info(f"X_latents extracted - shape: {X_latents.shape}")
     
     return results
 
@@ -508,6 +589,10 @@ if __name__ == "__main__":
                        help='Early stopping patience for MLP training (default: 10)')
     parser.add_argument('--mlp_min_delta', type=float, default=1e-6, 
                        help='Minimum change for early stopping (default: 1e-6)')
+    parser.add_argument('--mlp_l2_raw', type=float, default=0.0,
+                       help='L2 regularization strength for raw features (default: 0.0)')
+    parser.add_argument('--mlp_l2_latent', type=float, default=0.0,
+                       help='L2 regularization strength for latent features (default: 0.0)')
     
     args = parser.parse_args()
     
@@ -519,7 +604,9 @@ if __name__ == "__main__":
         mlp_min_delta=args.mlp_min_delta,
         relative_npz=args.relative_npz,
         absolute_npz=args.absolute_npz,
-        dataset_label=args.dataset_label
+        dataset_label=args.dataset_label,
+        mlp_l2_raw=args.mlp_l2_raw,
+        mlp_l2_latent=args.mlp_l2_latent
     )
     
     if results:
