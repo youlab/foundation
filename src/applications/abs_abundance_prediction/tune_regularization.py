@@ -23,8 +23,7 @@ from itertools import product
 
 from applications.abs_abundance_prediction.abs_abundance_prediction import (
     main, 
-    load_abundance_from_npz,
-    measure_regularization_effect
+    load_abundance_from_npz
 )
 from config import SEQ_LEN, Z_DIM, DIR_RESULTS_ABS_ABUNDANCE
 
