@@ -73,9 +73,12 @@ if __name__ == "__main__":
         )
 
     if RUN_ABS_ABUNDANCE_FIG_6:
-        from figs.presentation import fig_6
+        from figs.abs_abundance_prediction.absolute_abundance_pipeline import main
         print("Running RUN_ABS_ABUNDANCE_FIG_6")
-        fig_6()
+        main(
+            fw_panel=FW_PANEL,
+            fs_panel=FS_PANEL,
+        )
 
     if RUN_MODEL_TRAINING_DATASET_COMPARISON_FIG_S1:
         from figs.model.training_dataset_comparison import main

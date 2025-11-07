@@ -13,5 +13,5 @@ mkdir -p /hpc/dctrl/is178/foundation/slurm_outputs/run_figs
 cd /hpc/dctrl/is178/foundation/src
 
 # Run the figure generation script
-apptainer exec --bind /hpc/group/youlab/zz294/VAE/saved_sims --bind /hpc/group/youlab/zah8/foundations --bind /work/zah8/ --bind /hpc/dctrl/is178 /hpc/group/youlab/you-lab-deep-learning.sif python run_figs.py
+apptainer exec --bind /hpc/group/youlab/zz294/VAE/saved_sims --bind /hpc/group/youlab/zah8/foundations --bind /work/zah8/ --bind /hpc/dctrl/is178 /hpc/group/youlab/you-lab-deep-learning.sif python src/run_figs.py
 

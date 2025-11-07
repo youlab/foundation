@@ -270,3 +270,115 @@ def plot_absolute_abundance_pipeline(
         ax.set_xlim(-0.05, output_x + width_output + 0.05)  # Panel B: Less left margin to avoid overlap
     ax.set_ylim(0.05, 1.9)  # Reduced white space above and below
     ax.axis("off")
+
+
+def main(
+    fw_panel="semibold",
+    fs_panel=20,
+):
+    """
+    Create the complete absolute abundance prediction figure (Figure 6).
+    
+    Args:
+        fw_panel: Font weight for panel labels
+        fs_panel: Font size for panel labels
+    """
+    from figs.abs_abundance_prediction.absolute_abundance_metric import plot_absolute_abundance_metrics
+    from config import DIR_FIGS_MANUSCRIPT
+    
+    FS_LABEL = 20
+    FS_TICKS = 16
+    FS_TEXT = 20
+    FS_LEGEND = 14
+    
+    # Create figure with 3x2 grid (3 rows, 2 columns) - ENLARGE A&B, SHRINK C-F
+    fig = plt.figure(figsize=(14, 12))
+    gs = fig.add_gridspec(
+        3, 2,
+        width_ratios=[1, 1],  # Equal width for both columns
+        height_ratios=[1.3, 0.6, 0.6],  # ENLARGED A&B (1.3), SHRUNK C-F (0.6)
+        left=0.08,
+        right=0.92,
+        bottom=0.06,
+        top=0.94,
+        wspace=0.25,  # Space between columns
+        hspace=0.28   # Slightly increased space between rows
+    )
+    ax_dict = {
+        'A': fig.add_subplot(gs[0, 0]),  # Top left - latent pathway
+        'B': fig.add_subplot(gs[0, 1]),  # Top right - raw pathway
+        'C': fig.add_subplot(gs[1, 0]),  # Middle left - chaotic R²
+        'D': fig.add_subplot(gs[1, 1]),  # Middle right - chaotic RMSE
+        'E': fig.add_subplot(gs[2, 0]),  # Bottom left - GLV R²
+        'F': fig.add_subplot(gs[2, 1])   # Bottom right - GLV RMSE
+    }
+    
+    # Plot latent pathway diagram in panel A
+    plot_absolute_abundance_pipeline(
+        ax=ax_dict['A'],
+        fs_label=FS_LABEL,
+        fs_text=FS_TEXT,
+        show_example_data=True,
+        show_raw_pathway=False,  # Only show latent pathway
+    )
+    print("debug: plotted with fs_label = ", FS_LABEL)
+
+    
+    # Plot raw pathway diagram in panel B
+    plot_absolute_abundance_pipeline(
+        ax=ax_dict['B'],
+        fs_label=FS_LABEL,
+        fs_text=FS_TEXT,
+        show_example_data=True,
+        show_latent_pathway=False,  # Only show raw pathway
+    )
+    
+    # Plot metrics in panels C, D, E, and F
+    plot_absolute_abundance_metrics(
+        ax_chaotic_r2=ax_dict['C'],
+        ax_chaotic_rmse=ax_dict['D'],
+        ax_glv_r2=ax_dict['E'],
+        ax_glv_rmse=ax_dict['F'],
+        fs_label=FS_LABEL,
+        fs_ticks=FS_TICKS,
+        fs_legend=FS_LEGEND,
+    )
+    
+    # Add panel labels with consistent styling - MOVED A & B HIGHER
+    for x, y, label in [
+        (0.02, 0.98, "A"),  # Top left - latent pathway - MOVED HIGHER
+        (0.52, 0.98, "B"),  # Top right - raw pathway - MOVED HIGHER
+        (0.02, 0.55, "C"),  # Middle left - chaotic R²
+        (0.52, 0.55, "D"),  # Middle right - chaotic RMSE
+        (0.02, 0.28, "E"),  # Bottom left - GLV R²
+        (0.52, 0.28, "F"),  # Bottom right - GLV RMSE
+    ]:
+        fig.text(
+            x=x,
+            y=y,
+            s=label,
+            verticalalignment="top",
+            horizontalalignment="left",
+            fontsize=fs_panel,
+            fontweight=fw_panel,
+        )
+    
+    plt.tight_layout()
+    
+    # Create directory if it doesn't exist
+    DIR_FIGS_MANUSCRIPT.mkdir(parents=True, exist_ok=True)
+    
+    # Save as PNG, PDF, and SVG (following the pattern of other main figures)
+    plt.savefig(
+        DIR_FIGS_MANUSCRIPT / "fig_6.png",
+    )
+    
+    plt.savefig(
+        DIR_FIGS_MANUSCRIPT / "fig_6.pdf",
+    )
+    
+    plt.savefig(
+        DIR_FIGS_MANUSCRIPT / "fig_6.svg",
+    )
+    
+    plt.close()
