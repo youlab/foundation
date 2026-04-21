@@ -1,22 +1,22 @@
 if __name__ == "__main__":
 
     RUN_COMPILE = True
-    RUN_NORMALIZE = False
+    RUN_NORMALIZE = True
     RUN_INTRINSIC_DIMENSION_ESTIMATION = False
-    RUN_WRITE_DATA_SOUCES = False
+    RUN_WRITE_DATA_SOURCES = False
     RUN_UPLOAD_DATA_EXPERIMENTAL = False
     RUN_UPLOAD_DATA_SIMULATION = False
     RUN_UPLOAD_DATA_PROCESSED = False
     RUN_ADD_TO_COLLECTION = False
 
-    if RUN_COMPILE:
-        print(f"Running RUN_COMPILE")
-        from data.compile import main
-        main()
-
     if RUN_NORMALIZE:
         print(f"Running RUN_NORMALIZE")
         from data.normalize import main
+        main()
+
+    if RUN_COMPILE:
+        print(f"Running RUN_COMPILE")
+        from data.compile import main
         main()
 
     if RUN_INTRINSIC_DIMENSION_ESTIMATION:
@@ -24,7 +24,7 @@ if __name__ == "__main__":
         from data.intrinsic_dimension_estimation import main
         main()
 
-    if RUN_WRITE_DATA_SOUCES:
+    if RUN_WRITE_DATA_SOURCES:
         print(f"Running RUN_WRITE_DATA_SOUCES")
         from data.write_data_sources_table import main
         main()

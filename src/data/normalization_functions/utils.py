@@ -53,6 +53,61 @@ def generate_train_test_idx(
     return idx_train, idx_test
 
 
+def generate_train_test_idx_by_dataset(
+    idx_key,
+    train_ratio=0.8,
+):
+    """
+    Generate train-test split such that all samples from each dataset file
+    are assigned to either train or test and never split between them
+    
+    Parameters
+    ----------
+    idx_key : dict
+        The index key from compile_y containing sample-to-file mappings. 
+        idx_key[i] for integer i contains the filename as a key mapping to indices of samples within the file (to Derek's understanding)
+    train_ratio : float
+        Ratio of files to assign to train set, canonically set to 0.8
+    
+    Returns
+    -------
+    idx_train : np.ndarray
+        Indices of all samples in train set
+    idx_test : np.ndarray
+        Indices of all samples in test set
+    """
+
+    # parse through idx_key to find all files and use files_to_sample to map files to sample indices
+    files_to_samples = {}
+    for i in idx_key:
+        if isinstance(i, int) or (isinstance(i, str) and i.isdigit()):
+            fn = None
+            for key in idx_key[i]:
+                if key not in ["original_shape", "y.shape"]:
+                    fn = key
+                    break
+            if fn is not None:
+                if fn not in files_to_samples:
+                    files_to_samples[fn] = []
+                files_to_samples[fn].append(int(i) if isinstance(i, str) else i)
+    
+    # do the train-test split on list of files
+    files = list(files_to_samples.keys())
+    file_idx_train, file_idx_test = generate_train_test_idx(n=len(files), train_ratio=train_ratio)
+    train_files = [files[i] for i in file_idx_train]
+    test_files = [files[i] for i in file_idx_test]
+    
+    # collect sample indices for train and test files post-splitting
+    idx_train = []
+    for file in train_files:
+        idx_train.extend(files_to_samples[file])
+    idx_test = []
+    for file in test_files:
+        idx_test.extend(files_to_samples[file])
+    
+    return np.array(sorted(idx_train)), np.array(sorted(idx_test))
+
+
 def get_t_cols(p):
     cols = []
     t = []

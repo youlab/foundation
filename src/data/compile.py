@@ -9,7 +9,10 @@ from config import (
     DIR_DATA_PROCESSED,
     SEQ_LEN,
 )
-from data.normalization_functions.utils import generate_train_test_idx
+
+from data.config import SPLIT_SCALE
+
+from data.normalization_functions.utils import generate_train_test_idx, generate_train_test_idx_by_dataset
 
 
 def interpolate_y(
@@ -139,7 +142,11 @@ def main():
         )
 
         print(f"Sequence length {SEQ_LEN} y shape {y.shape}")
-        train_idx, test_idx = generate_train_test_idx(n=y.shape[0])
+        
+        if SPLIT_SCALE == "by_dataset":
+            train_idx, test_idx = generate_train_test_idx_by_dataset(idx_key=idx_key)
+        else:
+            train_idx, test_idx = generate_train_test_idx(n=y.shape[0])
 
         np.savez(
             DIR_DATA_PROCESSED

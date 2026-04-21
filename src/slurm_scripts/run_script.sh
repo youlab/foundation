@@ -1,6 +1,6 @@
 #!/bin/bash
-#SBATCH -e /hpc/group/youlab/xw262/foundations/slurm_outputs/run_script_%A_%a.err
-#SBATCH -o /hpc/group/youlab/xw262/foundations/slurm_outputs/run_script_%A_%a.out
+#SBATCH -e /hpc/group/youlab/xw262/foundation/slurm_outputs/run_script_%A_%a.err
+#SBATCH -o /hpc/group/youlab/xw262/foundation/slurm_outputs/run_script_%A_%a.out
 #SBATCH -p youlab-gpu
 #SBATCH --mem=32000
 #SBATCH --cpus-per-task=8
