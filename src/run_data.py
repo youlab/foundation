@@ -10,12 +10,12 @@ if __name__ == "__main__":
     RUN_ADD_TO_COLLECTION = False
 
     if RUN_NORMALIZE:
-        print(f"Running RUN_NORMALIZE")
+        print(f"\nRunning RUN_NORMALIZE")
         from data.normalize import main
         main()
 
     if RUN_COMPILE:
-        print(f"Running RUN_COMPILE")
+        print(f"\nRunning RUN_COMPILE")
         from data.compile import main
         main()
 

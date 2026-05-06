@@ -3,4 +3,5 @@ OVERLAP = 4
 
 # splitting
 SPLIT_SCALE = "by_dataset" # "all" or "by_dataset"
+RANDOM_SEED = 631
 
