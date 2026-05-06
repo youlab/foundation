@@ -6,11 +6,13 @@ from sklearn.model_selection import train_test_split
 from tqdm import trange
 
 from config import DIR_DATA
+from data.config import RANDOM_SEED
 
 
 def generate_train_test_idx(
     n,
     train_ratio=0.8,
+    use_random_seed=False,
 ):
     if not isinstance(n, int):
         return TypeError(f"n should be int but is {type(n)}")
@@ -24,31 +26,53 @@ def generate_train_test_idx(
     n_test_loop = N_SET - n_train_loop
     idx_train = np.zeros(n_train, dtype=int,)
     idx_test = np.zeros(n_test, dtype=int,)
+    
     if n_loops > 0:
-        for random_state in range(n_loops):
-            idx_train[
-                random_state * n_train_loop:(random_state + 1) * n_train_loop
-            ], idx_test[
-                random_state * n_test_loop:(random_state + 1) * n_test_loop
-            ] = train_test_split(
-                idx[random_state * N_SET:(random_state + 1) * N_SET],
-                random_state=random_state,
-                train_size=train_ratio,
-            )
+        for loop_idx in range(n_loops):
+
+            if use_random_seed:
+                idx_train[
+                    loop_idx * n_train_loop:(loop_idx + 1) * n_train_loop
+                ], idx_test[
+                    loop_idx * n_test_loop:(loop_idx + 1) * n_test_loop
+                ] = train_test_split(
+                    idx[loop_idx * N_SET:(loop_idx + 1) * N_SET],
+                    random_state=RANDOM_SEED,
+                    train_size=train_ratio,
+                )
+            else:
+                idx_train[
+                    loop_idx * n_train_loop:(loop_idx + 1) * n_train_loop
+                ], idx_test[
+                    loop_idx * n_test_loop:(loop_idx + 1) * n_test_loop
+                ] = train_test_split(
+                    idx[loop_idx * N_SET:(loop_idx + 1) * N_SET],
+                    random_state=loop_idx,
+                    train_size=train_ratio,
+                )
+
         i_add = n_loops * N_SET
     else:
-        random_state = -1
         i_add = 0
+        random_state = -1
 
     if n > (n_loops * N_SET):
         n_train_loop = int((n % N_SET) * train_ratio)
         n_test_loop = (n % N_SET) - n_train_loop
     
-        idx_train[-n_train_loop:], idx_test[-n_test_loop:] = train_test_split(
-            idx[i_add:],
-            random_state=random_state + 1,
-            train_size=train_ratio,
-        )
+        if use_random_seed:
+            idx_train[-n_train_loop:], idx_test[-n_test_loop:] = train_test_split(
+                idx[i_add:],
+                random_state=RANDOM_SEED,
+                train_size=train_ratio,
+            )
+        else:
+            idx_train[-n_train_loop:], idx_test[-n_test_loop:] = train_test_split(
+                idx[i_add:],
+                random_state=random_state + 1,
+                train_size=train_ratio,
+            )
+
     
     return idx_train, idx_test
 
@@ -56,6 +80,7 @@ def generate_train_test_idx(
 def generate_train_test_idx_by_dataset(
     idx_key,
     train_ratio=0.8,
+    use_random_seed=True,
 ):
     """
     Generate train-test split such that all samples from each dataset file
@@ -93,7 +118,12 @@ def generate_train_test_idx_by_dataset(
     
     # do the train-test split on list of files
     files = list(files_to_samples.keys())
-    file_idx_train, file_idx_test = generate_train_test_idx(n=len(files), train_ratio=train_ratio)
+    file_idx_train, file_idx_test = generate_train_test_idx(
+        n=len(files), 
+        train_ratio=train_ratio, 
+        use_random_seed=use_random_seed
+    )
+
     train_files = [files[i] for i in file_idx_train]
     test_files = [files[i] for i in file_idx_test]
     
