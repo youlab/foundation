@@ -6,7 +6,7 @@ if __name__ == "__main__":
     RUN_UPLOAD_MCR = False
     RUN_UPLOAD_PR = False
     RUN_UPLOAD_VB = False
-    RUN_TRAIN = False
+    RUN_TRAIN = True
     RUN_STUDIES_TO_DF = False
     RUN_OPTIMIZE = False
 

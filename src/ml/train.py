@@ -5,7 +5,7 @@ from datetime import datetime
 import numpy as np
 import torch
 
-from config import DIR_RESULTS_MODEL
+from config import DIR_RESULTS_MODEL, DIR_RESULTS_MODEL_NEW_SPLITS
 from data.utils import get_data
 from ml.config import (
     CONFIG_A7X,
@@ -13,6 +13,7 @@ from ml.config import (
     CONFIG_MNM,
     CONFIG_VB,
     TRAINING_EPOCHS,
+    DATA_RUN_DIR,
 )
 from ml.datasets.efficient_datasets import get_efficient_data_loaders
 from ml.trainers.mcr_trainer import MCRTrainer
@@ -26,13 +27,15 @@ def run_trainer(
     trainer=None,
     model=None,
 ):
-    dir_model = DIR_RESULTS_MODEL / model_name
+
+    dir_model = DIR_RESULTS_MODEL_NEW_SPLITS / model_name
     if not os.path.exists(dir_model):
         os.makedirs(dir_model)
 
     if trainer is not None:
         test_loss = trainer.train()
-        print("Saving model", test_loss)
+        print(f"Saving model to {dir_model}")
+        print(f"Model test loss: {test_loss}")
 
         torch.save(
             obj=trainer.model.state_dict(),
@@ -52,7 +55,7 @@ def run_trainer(
 
     elif model is not None:
         
-        print("Saving model")
+        print(f"Saving model to {dir_model}")
         joblib.dump(
             value=model,
             filename=dir_model / f"model.joblib",
@@ -66,14 +69,19 @@ def train(
     lr,
     data_category,
 ):
-    print("Loading data")
+    print(f"Loading data from splitting run {DATA_RUN_DIR}")
+    print(f"Loading data of category {data_category}")
     (
         x_train,
         x_test,
     ) = get_data(
+        run_dir=DATA_RUN_DIR,
         category=data_category,
         return_split=True,
     )
+
+    print(f"Train data loaded: {x_train.shape}")
+    print(f"Test data loaded: {x_test.shape}")
 
     (
         train_loader,
@@ -92,7 +100,7 @@ def train(
             lr=lr,
         )
         test_loss = run_trainer(
-            model_name=f"{model_type.lower()}_{num_to_str(n=z_dim)}_{datetime.now().isoformat()}_{data_category}",
+            model_name=f"{model_type.lower()}_{num_to_str(n=z_dim)}_{DATA_RUN_DIR}_{data_category}_{TRAINING_EPOCHS}epochs",
             trainer=trainer,
         )
     elif model_type == "MCR":
@@ -104,14 +112,14 @@ def train(
             lr=lr,
         )
         test_loss = run_trainer(
-            model_name=f"{model_type.lower()}_{num_to_str(n=z_dim)}_{datetime.now().isoformat()}_{data_category}",
+            model_name=f"{model_type.lower()}_{num_to_str(n=z_dim)}_{DATA_RUN_DIR}_{data_category}",
             trainer=trainer,
         )
     elif model_type == "PR":
         for x in train_loader:
             model.partial_fit(x.cpu().detach().numpy()[:, 0, :])
         test_loss = run_trainer(
-            model_name=f"{model_type.lower()}_{num_to_str(n=z_dim)}_{datetime.now().isoformat()}_{data_category}",
+            model_name=f"{model_type.lower()}_{num_to_str(n=z_dim)}_{DATA_RUN_DIR}_{data_category}",
             model=model,
         )
 

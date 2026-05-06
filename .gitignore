@@ -205,3 +205,4 @@ src/data/processed/
 src/results/
 logs/*
 temp.py
+results/model_new_splits/
