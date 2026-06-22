@@ -33,7 +33,7 @@ class Trainer:
         lr=2e-4,
         min_lr_mult=1e-5,
         gamma=0.996,
-        test_frequency=10,
+        test_frequency=1,
     ):
         self.model = model
         self.train_loader = train_loader

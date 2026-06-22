@@ -1,7 +1,8 @@
 if __name__ == "__main__":
 
-    RUN_COMPILE = True
-    RUN_NORMALIZE = True
+    RUN_COMPILE = False
+    RUN_NORMALIZE = False
+    RUN_PLOT_SPLIT_ANALYSIS = True
     RUN_INTRINSIC_DIMENSION_ESTIMATION = False
     RUN_WRITE_DATA_SOURCES = False
     RUN_UPLOAD_DATA_EXPERIMENTAL = False
@@ -17,6 +18,11 @@ if __name__ == "__main__":
     if RUN_COMPILE:
         print(f"\nRunning RUN_COMPILE")
         from data.compile import main
+        main()
+
+    if RUN_PLOT_SPLIT_ANALYSIS:
+        print(f"\nRunning RUN_PLOT_SPLIT_ANALYSIS")
+        from data.plot_split_analysis import main
         main()
 
     if RUN_INTRINSIC_DIMENSION_ESTIMATION:

@@ -8,6 +8,7 @@ from config import (
     MODEL_TYPE,
     Z_DIM,
 )
+from ml.config import CONFIG_MCR, CONFIG_MNM, CONFIG_VB, CONFIG_A7X
 from ml.models.autoencoder7x import Autoencoder7XModel
 from ml.models.mlp_network_model import MLPNetworkModel
 from ml.models.microbert_curve_reducer import MicroBERTCurveReducerModel
@@ -97,6 +98,33 @@ def load_model(
         return load_pr(z_dim=z_dim)
     else:
         raise ValueError(f"Model type '{model_type}' not supported.")
+    model.to(device)
+    model.eval()
+    return model
+
+
+def load_trained_model(
+    model_type,
+    model_dir,
+):  
+    # adding for debugging
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
+    a7x_config = CONFIG_A7X.copy()
+    a7x_config["z_dim"] = Z_DIM
+
+    if model_type == "A7X":
+        model = Autoencoder7XModel(config=a7x_config)
+    elif model_type == "MNM":
+        model = MLPNetworkModel(config=CONFIG_MNM)
+    elif model_type == "MCR":
+        model = MicroBERTCurveReducerModel(config=CONFIG_MCR)
+    elif model_type == "VB":
+        model = VAEBottleneckModel(config=CONFIG_VB)
+    else:
+        raise ValueError(f"Model type '{model_type}' not supported.")
+    
+    model.load_state_dict(torch.load(model_dir / "model.pth", map_location=device))
     model.to(device)
     model.eval()
     return model
