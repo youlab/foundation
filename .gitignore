@@ -206,3 +206,5 @@ src/results/
 logs/*
 temp.py
 results/model_new_splits/
+results/karlsson_forecast/
+results/karlsson_species_loo/

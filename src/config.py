@@ -9,6 +9,8 @@ DIR_DATA = DIR_SRC / "data"
 DIR_MODELS = Path("/work/zah8/best_models/models")
 DIR_LOGS = home_dir / "foundation" / "logs"
 
+DIR_DATA_KARLSSON = DIR_SRC / "applications" / "karlsson" / "data"
+
 DIR_DATA_CAROLYN = DIR_SRC / "applications" / "antibiotics" / "carolyn" / "data"
 DIR_DATA_CHAOTIC = DIR_SRC / "data" / "simulation" / "chaotic"
 DIR_DATA_EXP_PROC = DIR_SRC / "data" / "experimental" / "processed"
