@@ -14,7 +14,9 @@ from config import (
     SEQ_LEN,
 )
 
-from applications.karlsson.karlsson_dataset import preprocess_data, train_test_split_dark, KarlssonDarkDataLoader
+from applications.karlsson.karlsson_dataset import preprocess_data, train_test_split_dark, downsample_train, KarlssonDarkDataLoader
+from applications.karlsson.karlsson_plots import plot_reconstruction, plot_per_idx_metrics, plot_per_window_metrics
+
 
 def compute_metrics(y_true, y_pred):
     '''
@@ -100,378 +102,6 @@ def compute_metrics(y_true, y_pred):
     return r2, rmse, nrmse, global_r2, global_rmse, global_nrmse
 
 
-def plot_reconstruction(
-    y_true,
-    y_pred,
-    title: str = "",
-    output_path: str = None,
-    max_points: int = 80000,
-    random_state: int = 501,
-):
-    '''plot predicted vs actual values of trajectories across all target windows'''
-
-    y_true_flat = np.asarray(y_true).reshape(-1)
-    y_pred_flat = np.asarray(y_pred).reshape(-1)
-
-    # downsample if too many points
-    if len(y_true_flat) > max_points:
-
-        rng = np.random.default_rng(random_state)
-        keep_idx = rng.choice(
-            len(y_true_flat),
-            size=max_points,
-            replace=False,
-        )
-
-        y_true_flat = y_true_flat[keep_idx]
-        y_pred_flat = y_pred_flat[keep_idx]
-
-    fig, ax = plt.subplots(
-        figsize=(5, 5)
-    )
-
-    ax.scatter(
-        y_true_flat,
-        y_pred_flat,
-        alpha=0.1,
-        s=6,
-    )
-
-    min_val = min(
-        y_true_flat.min(),
-        y_pred_flat.min(),
-    )
-
-    max_val = max(
-        y_true_flat.max(),
-        y_pred_flat.max(),
-    )
-
-    ax.plot(
-        [min_val, max_val],
-        [min_val, max_val],
-        "k--",
-        linewidth=1,
-    )
-
-    ax.set_xlabel("Actual")
-    ax.set_ylabel("Predicted")
-    ax.set_title(title)
-    ax.grid(True, alpha=0.3)
-    ax.set_aspect("equal", adjustable="box")
-
-    fig.tight_layout()
-
-    if output_path:
-        fig.savefig(
-            output_path,
-            dpi=300,
-            bbox_inches="tight",
-        )
-
-    plt.close(fig)
-
-
-def plot_per_idx_metrics(
-    y_true,
-    y_pred,
-    title: str = "",
-    output_dir: str = None,
-):
-    """
-    Plot per-target-index performance, where index is with respect to each window internally
-
-    For a target window of length w:
-
-        y[:, 0]
-        y[:, 1]
-        ...
-        y[:, w-1]
-
-    compute R2, RMSE, and NRMSE independently at each target index across all target windows
-
-    Returns
-    -------
-    r2_by_index : ndarray
-    rmse_by_index : ndarray
-    nrmse_by_index : ndarray
-    """
-
-    y_true = np.asarray(y_true)
-    y_pred = np.asarray(y_pred)
-
-    if y_true.ndim != 2:
-        raise ValueError(f"Expected 2D targets. Got shape {y_true.shape}")
-
-    window_size = y_true.shape[1]
-
-    r2_per_index = np.zeros(
-        window_size,
-        dtype=np.float32,
-    )
-    rmse_per_index = np.zeros(
-        window_size,
-        dtype=np.float32,
-    )
-    nrmse_per_index = np.zeros(
-        window_size,
-        dtype=np.float32,
-    )
-
-    # compute metrics
-    for idx in range(window_size):
-
-        r2_per_index[idx] = r2_score(
-            y_true[:, idx],
-            y_pred[:, idx],
-        )
-        rmse_per_index[idx] = root_mean_squared_error(
-            y_true[:, idx],
-            y_pred[:, idx],
-        )
-        range_val = y_true[:, idx].max() - y_true[:, idx].min()
-        nrmse_per_index[idx] = rmse_per_index[idx] / range_val if range_val > 0 else 0.0
-
-    # R2 plot
-    fig, ax = plt.subplots(
-        figsize=(8, 4)
-    )
-
-    ax.plot(
-        np.arange(window_size),
-        r2_per_index,
-        linewidth=2,
-    )
-
-    ax.set_xlabel("Target index (internal to window)")
-    ax.set_ylabel("R2")
-    ax.set_title(f"{title}: R2")
-    ax.grid(True, alpha=0.3)
-
-    fig.tight_layout()
-
-    if output_dir:
-        output_dir = Path(output_dir)
-        output_dir.mkdir(parents=True, exist_ok=True)
-        fig.savefig(
-            output_dir / "r2_per_index.png",
-            dpi=300,
-            bbox_inches="tight",
-        )
-
-    plt.close(fig)
-
-    # RMSE plot
-    fig, ax = plt.subplots(
-        figsize=(8, 4)
-    )
-
-    ax.plot(
-        np.arange(window_size),
-        rmse_per_index,
-        linewidth=2,
-    )
-
-    ax.set_xlabel("Target index (internal to window)")
-    ax.set_ylabel("RMSE")
-    ax.set_title(f"{title}: RMSE")
-    ax.grid(True, alpha=0.3)
-
-    fig.tight_layout()
-
-    if output_dir:
-        output_dir = Path(output_dir)
-        output_dir.mkdir(parents=True, exist_ok=True)
-        fig.savefig(
-            output_dir / "rmse_per_index.png",
-            dpi=300,
-            bbox_inches="tight",
-        )
-
-    plt.close(fig)
-
-    # NRMSE plot
-    fig, ax = plt.subplots(
-        figsize=(8, 4)
-    )
-
-    ax.plot(
-        np.arange(window_size),
-        nrmse_per_index,
-        linewidth=2,
-    )
-
-    ax.set_xlabel("Target index (internal to window)")
-    ax.set_ylabel("NRMSE")
-    ax.set_title(f"{title}: NRMSE")
-    ax.grid(True, alpha=0.3)
-
-    fig.tight_layout()
-
-    if output_dir:
-        output_dir = Path(output_dir)
-        output_dir.mkdir(parents=True, exist_ok=True)
-        fig.savefig(
-            output_dir / "nrmse_per_index.png",
-            dpi=300,
-            bbox_inches="tight",
-        )
-
-    plt.close(fig)
-
-    return r2_per_index, rmse_per_index, nrmse_per_index
-
-
-def plot_per_window_metrics(
-    y_true,
-    y_pred,
-    title: str = "",
-    output_dir: str = None,
-):
-    """
-    Compute and plot per-window metrics
-    Each sample corresponds to one input window to target window task
-
-    Returns
-    -------
-    r2_per_window : ndarray
-    rmse_per_window : ndarray
-    nrmse_per_window : ndarray
-    """
-
-    y_true = np.asarray(y_true)
-    y_pred = np.asarray(y_pred)
-
-    if y_true.shape != y_pred.shape:
-        raise ValueError(
-            f"Shape mismatch: "
-            f"{y_true.shape} vs {y_pred.shape}"
-        )
-
-    n_windows = y_true.shape[0]
-
-    r2_per_window = np.zeros(
-        n_windows,
-        dtype=np.float32,
-    )
-
-    rmse_per_window = np.zeros(
-        n_windows,
-        dtype=np.float32,
-    )
-
-    nrmse_per_window = np.zeros(
-        n_windows,
-        dtype=np.float32,
-    )
-
-    # compute metrics
-    for i in range(n_windows):
-
-        r2_per_window[i] = r2_score(
-            y_true[i],
-            y_pred[i],
-        )
-
-        rmse_per_window[i] = root_mean_squared_error(
-            y_true[i],
-            y_pred[i],
-        )
-
-        range_val = y_true[i].max() - y_true[i].min()
-        nrmse_per_window[i] = rmse_per_window[i] / range_val if range_val > 0 else 0.0
-
-    window_idx = np.arange(n_windows)
-
-    # R2 plot
-    fig, ax = plt.subplots(
-        figsize=(10, 4)
-    )
-
-    ax.plot(
-        window_idx,
-        r2_per_window,
-        linewidth=1,
-    )
-
-    ax.set_xlabel("Forecast window index")
-    ax.set_ylabel("R2")
-    ax.set_title(f"{title}: R2")
-    ax.grid(True, alpha=0.3)
-
-    fig.tight_layout()
-
-    if output_dir:
-        output_dir = Path(output_dir)
-        output_dir.mkdir(parents=True, exist_ok=True)
-        fig.savefig(
-            output_dir / "r2_per_window.png",
-            dpi=300,
-            bbox_inches="tight",
-        )
-
-    plt.close(fig)
-
-    # RMSE plot
-    fig, ax = plt.subplots(
-        figsize=(10, 4)
-    )
-
-    ax.plot(
-        window_idx,
-        rmse_per_window,
-        linewidth=1,
-    )
-
-    ax.set_xlabel("Forecast window index")
-    ax.set_ylabel("RMSE")
-    ax.set_title(f"{title}: R2")
-    ax.grid(True, alpha=0.3)
-
-    fig.tight_layout()
-
-    if output_dir:
-        output_dir = Path(output_dir)
-        output_dir.mkdir(parents=True, exist_ok=True)
-        fig.savefig(
-            output_dir / "rmse_per_window.png",
-            dpi=300,
-            bbox_inches="tight",
-        )
-
-    plt.close(fig)
-
-    # NRMSE plot
-    fig, ax = plt.subplots(
-        figsize=(10, 4)
-    )
-
-    ax.plot(
-        window_idx,
-        nrmse_per_window,
-        linewidth=1,
-    )
-
-    ax.set_xlabel("Forecast window index")
-    ax.set_ylabel("NRMSE")
-    ax.set_title(f"{title}: NRMSE")
-    ax.grid(True, alpha=0.3)
-
-    fig.tight_layout()
-
-    if output_dir:
-        output_dir = Path(output_dir)
-        output_dir.mkdir(parents=True, exist_ok=True)
-        fig.savefig(
-            output_dir / "nrmse_per_window.png",
-            dpi=300,
-            bbox_inches="tight",
-        )
-
-    plt.close(fig)
-
-    return r2_per_window, rmse_per_window, nrmse_per_window
-
 
 def main(
     data_dir: str = DIR_DATA_KARLSSON,
@@ -479,17 +109,23 @@ def main(
     data_output_type: str = 'dataframe', # 'dataframe' or 'json'
     input_type: str = 'raw', # 'raw' or 'latent' or 'pca'
     target_type: str = 'raw', # 'raw' or 'latent' or 'pca'
+    use_test_indices_at: str = None, # specify name of full_split_indices json storing previously computed test indices, assumed to be in data_dir
     split_level: str = 'per_replicate', # 'per_replicate' or 'per_species'
     train_size: float = 0.8,
+    train_downsample_to_n: int = None, # if specified, downsamples the train set to this number of curves
     window_size: int = SEQ_LEN,
     stride: int = 1,
     max_depth: int = 15,
-    random_seed: int = 501,
+    random_seed: int = 501, # determines full splitting and others
+    downsampling_seed: int = None, # determines downsampling only
 ):
     # set up seed and time
     np.random.seed(random_seed)
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
 
+    data_dir = Path(data_dir)
+    data_dir.mkdir(parents=True, exist_ok=True)
+    
     # name the run
     run_name = (
         f'{input_type}_to_{target_type}'
@@ -519,12 +155,67 @@ def main(
         output_type=data_output_type,
     )
 
-    # split data
-    train_indices, test_indices = train_test_split_dark(
-        data=data,
-        train_size=train_size,
-        split_level=split_level,
-    )
+    # ----------------------------------------------------------------------------------------------------
+    # splitting
+
+    # use previously computed test indices
+    if use_test_indices_at:
+        full_indices_name = use_test_indices_at
+        print(f'Using previously split indices: {full_indices_name}')
+        with open(str(data_dir / use_test_indices_at), 'r') as f:
+            prev_full_split_indices = json.load(f)
+        
+        full_train_indices = prev_full_split_indices['train']
+        full_test_indices = prev_full_split_indices['test']
+    
+    # perform a new data split
+    else: 
+        full_indices_name =  f'full_split_indices_seed{random_seed}.json'
+        print(f'Creating new train-test split indices: {full_indices_name}')
+
+        full_train_indices, full_test_indices = train_test_split_dark(
+            data=data,
+            train_size=train_size,
+            split_level=split_level,
+        )
+
+        # save indices if split is new
+        full_split_indices = {
+            'splitting_seed': random_seed,
+            'n_train': len(full_train_indices),
+            'n_test': len(full_test_indices),
+            'train': full_train_indices,
+            'test': full_test_indices,
+        }
+
+        full_split_indices_path = data_dir / full_indices_name
+        with open(full_split_indices_path, 'w') as f:
+            json.dump(full_split_indices, f, indent=2)
+    
+    # downsample train indices if specified
+    if train_downsample_to_n:
+
+        # match downsampling seed with overall seed if none specified
+        downsampling_seed = downsampling_seed if downsampling_seed is not None else random_seed
+        downsampled_train_indices_name = f'downsampled_train_indices_seed{downsampling_seed}.json'
+        print(f'Downsampling full train indices to {train_downsample_to_n}, saving to {downsampled_train_indices_name}')
+
+        train_indices = downsample_train(
+            n=train_downsample_to_n, 
+            full_train_indices=full_train_indices,
+            output_path=str(output_dir / downsampled_train_indices_name),
+            downsampling_seed=downsampling_seed,
+        )
+
+    else:
+        downsampled_train_indices_name = ''
+        train_indices = full_train_indices
+    
+    # keet test indices fixed
+    test_indices = full_test_indices
+
+    # ----------------------------------------------------------------------------------------------------
+    # forecasting
 
     # prepare data for regression
     loader = KarlssonDarkDataLoader(
@@ -535,6 +226,7 @@ def main(
         target_type=target_type,
         window_size=window_size,
         stride=stride,
+        random_seed=random_seed,
     )
 
     X_train, y_train, X_test, y_test = loader.get_regression_data()
@@ -559,6 +251,9 @@ def main(
     print("Training ExtraTreesRegressor...")
     regressor.fit(X_train, y_train)
 
+    # ----------------------------------------------------------------------------------------------------
+    # performance evaluation
+
     # test
     print("Generating predictions...")
     y_train_pred = regressor.predict(X_train)
@@ -578,7 +273,12 @@ def main(
         "window_size": window_size,
         "stride": stride,
         "train_size": train_size,
+        "train_downsample_to_n": train_downsample_to_n,
         "max_depth": max_depth,
+
+        "full_indices_name": full_indices_name,
+        "downsampled_train_indices_name": downsampled_train_indices_name,
+        "downsampling_seed": downsampling_seed,
 
         "n_train_trajectories": len(train_indices),
         "n_test_trajectories": len(test_indices),
@@ -623,7 +323,9 @@ def main(
     print("=" * 80)
     print(f"Saved to: {output_dir}")
 
-    # plot results
+    # ----------------------------------------------------------------------------------------------------
+    # plotting
+
     train_plots_dir = output_dir / 'train'
     test_plots_dir = output_dir / 'test'
     train_plots_dir.mkdir(parents=True, exist_ok=True)
@@ -658,20 +360,20 @@ def main(
             output_dir=str(test_plots_dir),
         )
 
-        r2_per_window_train, rmse_window_index_train, nrmse_per_window_train = plot_per_window_metrics(
-            y_train,
-            y_train_pred,
-            title='Train Metrics per Windows',
-            output_dir=str(train_plots_dir),
-        )
+        # r2_per_window_train, rmse_window_index_train, nrmse_per_window_train = plot_per_window_metrics(
+        #     y_train,
+        #     y_train_pred,
+        #     title='Train Metrics per Windows',
+        #     output_dir=str(train_plots_dir),
+        # )
 
-        r2_per_window_test, rmse_per_window_test, nrmse_per_window_test = plot_per_window_metrics(
-            y_test,
-            y_test_pred,
-            title='Test Metrics per Window',
-            output_dir=str(test_plots_dir),
-        )
+        # r2_per_window_test, rmse_per_window_test, nrmse_per_window_test = plot_per_window_metrics(
+        #     y_test,
+        #     y_test_pred,
+        #     title='Test Metrics per Window',
+        #     output_dir=str(test_plots_dir),
+        # )
     except Exception as e:
-        print(f'Plotting error: {e}')
+        print(f'Metrics plotting error: {e}')
 
     return results

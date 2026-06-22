@@ -13,15 +13,18 @@ if __name__ == "__main__":
     if RUN_KARLSSON_DARK:
 
         from applications.karlsson.forecast import main
-        random_seed = 501
+
         results = main(
             data_dir=DIR_DATA_KARLSSON,
-            input_type='latent', 
-            target_type='latent',
+            input_type='pca', 
+            target_type='raw',
+            use_test_indices_at='full_split_indices_seed501.json',
             split_level='per_replicate',
             train_size=0.8, 
+            train_downsample_to_n=10,
             window_size=SEQ_LEN,
-            stride=32,
+            stride=128,
             max_depth=15,
-            random_seed=random_seed,
+            random_seed=501,
+            downsampling_seed=627,
         )

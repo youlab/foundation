@@ -107,6 +107,40 @@ def train_test_split_dark(
     return sorted(train_indices), sorted(test_indices)
 
 
+def downsample_train(
+    n,
+    full_train_indices,
+    downsampling_seed,
+    output_path: str = None,
+):
+    '''downsamples given train indices'''
+
+    # return all indices if n > total number of indices
+    if n >= len(full_train_indices):
+        print(f'[WARNING] Specified downsampled train size of {n} is greater than or equal to the total number of train indices {len(full_train_indices)}')
+        return full_train_indices
+
+    # perform downsampling
+    rng = np.random.default_rng(seed=downsampling_seed)
+    downsampled_indices = rng.choice(
+        full_train_indices,
+        size=n,
+        replace=False,
+    )
+    downsampled_indices = np.sort(downsampled_indices).tolist()
+
+    if output_path:
+        with open(output_path, 'w') as f:
+            json.dump({
+                'downsampling_seed': int(downsampling_seed),
+                'len_downsampled_train_indices': len(downsampled_indices),
+                'prop_downsampled_train_indices': float(len(downsampled_indices)) / len(full_train_indices),
+                'downsampled_train_indices': downsampled_indices,
+            }, f, indent=2)
+
+    return downsampled_indices
+
+
 class KarlssonDarkDataLoader:
     '''prep data into windows ready for regression'''
 
@@ -121,6 +155,7 @@ class KarlssonDarkDataLoader:
         stride=1,
         encoder=None,
         pca_components=Z_DIM,
+        random_seed=501,
     ):
         self.data = data
         self.train_indices = train_indices
@@ -130,6 +165,7 @@ class KarlssonDarkDataLoader:
         self.window_size = window_size
         self.stride = stride
         self.pca_components = pca_components
+        self.random_seed = random_seed
 
         self.encoder = encoder if encoder is not None else load_default_model()
 
