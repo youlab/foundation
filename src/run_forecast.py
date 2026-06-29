@@ -8,12 +8,13 @@ import os
 
 if __name__ == "__main__":
 
-    RUN_KARLSSON_DARK = True
+    RUN_KARLSSON_DARK = False
+    RUN_KARLSSON_DARK_SAMPLE_SIZE_ANALYSIS = True
 
     if RUN_KARLSSON_DARK:
 
         from applications.karlsson.forecast import main
-
+        print("Running RUN_KARLSSON_DARK")
         results = main(
             data_dir=DIR_DATA_KARLSSON,
             input_type='pca', 
@@ -27,4 +28,18 @@ if __name__ == "__main__":
             max_depth=15,
             random_seed=501,
             downsampling_seed=627,
+        )
+ 
+    if RUN_KARLSSON_DARK_SAMPLE_SIZE_ANALYSIS:
+
+        from applications.karlsson.forecast_sample_size import main
+        print("Running RUN_KARLSSON_DARK_SAMPLE_SIZE_ANALYSIS")
+        results = main(
+            n_repeats=5,
+            random_seed=501,
+            base_downsampling_seed=627,
+            stride=128,
+            max_depth=15,
+            plot_only=True, # if True, assumes results from running with plot_only=False are present
+            plot_start_idx=1, # index of train size to start plotting
         )

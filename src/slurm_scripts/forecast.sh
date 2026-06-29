@@ -1,6 +1,6 @@
 #!/bin/bash
-#SBATCH -e /hpc/group/youlab/xw262/foundation/slurm_outputs/run_karlsson_%A_%a.err
-#SBATCH -o /hpc/group/youlab/xw262/foundation/slurm_outputs/run_karlsson_%A_%a.out
+#SBATCH -e /hpc/group/youlab/xw262/foundation/slurm_outputs/run_karlsson_forecast_%A_%a.err
+#SBATCH -o /hpc/group/youlab/xw262/foundation/slurm_outputs/run_karlsson_forecast_%A_%a.out
 
 #SBATCH --partition=youlab-gpu
 #SBATCH --gres=gpu:1

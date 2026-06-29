@@ -118,6 +118,7 @@ def main(
     max_depth: int = 15,
     random_seed: int = 501, # determines full splitting and others
     downsampling_seed: int = None, # determines downsampling only
+    output_subdir: str = None, # for sampling size repeated downsampling steps
 ):
     # set up seed and time
     np.random.seed(random_seed)
@@ -135,7 +136,16 @@ def main(
         f'_{timestamp}'
     )
 
-    output_dir = Path(DIR_RESULTS) / 'karlsson_forecast' / run_name
+    if output_subdir is None:
+        output_dir = Path(DIR_RESULTS) / 'karlsson_forecast' / run_name
+    else:
+        output_dir = (
+            Path(DIR_RESULTS)
+            / "karlsson_forecast"
+            / "sample_size_analysis"
+            / output_subdir
+        )
+     
     output_dir.mkdir(parents=True, exist_ok=True)
 
     print("=" * 80)
@@ -266,6 +276,7 @@ def main(
     # save results
     results = {
         "timestamp": timestamp,
+        "output_dir": str(output_dir),
         "random_seed": random_seed,
         "input_type": input_type,
         "target_type": target_type,
@@ -375,5 +386,11 @@ def main(
         # )
     except Exception as e:
         print(f'Metrics plotting error: {e}')
+    
+    results["y_train"] = y_train
+    results["y_train_pred"] = y_train_pred
+
+    results["y_test"] = y_test
+    results["y_test_pred"] = y_test_pred
 
     return results

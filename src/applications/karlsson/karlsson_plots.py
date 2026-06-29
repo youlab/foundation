@@ -381,3 +381,118 @@ def plot_per_window_metrics(
     plt.close(fig)
 
     return r2_per_window, rmse_per_window, nrmse_per_window
+
+
+# ====================================================================================================
+# SAMPLE SIZE ANALYSIS
+# ====================================================================================================
+
+def _plot_sample_size_metric(
+    aggregate_results,
+    metric,
+    ylabel,
+    output_path,
+    start_idx: int = 0,
+):
+    '''plots one metric against number of training trajectories'''
+
+    fig, ax = plt.subplots(figsize=(6, 4))
+
+    representations = [
+        "raw_to_raw",
+        "pca_to_raw",
+        "latent_to_raw",
+    ]
+
+    labels = {
+        "raw_to_raw": "Raw to Raw",
+        "pca_to_raw": "PCA to Raw",
+        "latent_to_raw": "Latent to Raw",
+    }
+
+    for representation in representations:
+        rows = [r for r in aggregate_results if r["representation"] == representation]
+        rows = sorted(rows, key=lambda x: x["train_trajectories"])
+        
+        x = [r["train_trajectories"] for r in rows[start_idx:]]
+        y = [r[f"{metric}_mean"] for r in rows[start_idx:]]
+        yerr = [r[f"{metric}_std"] for r in rows[start_idx:]]
+
+        ax.errorbar(
+            x,
+            y,
+            yerr=yerr,
+            marker="o",
+            markersize=6,
+            capsize=3,
+            linewidth=1.5,
+            label=labels[representation],
+            alpha=0.8,
+        )
+
+    ax.set_xlabel("Number of training trajectories")
+    ax.set_ylabel(ylabel)
+    ax.grid(True, alpha=0.3)
+    ax.legend()
+
+    fig.tight_layout()
+    fig.savefig(
+        output_path,
+        dpi=300,
+        bbox_inches="tight",
+    )
+
+    plt.close(fig)
+
+
+def plot_sample_size_results(
+    aggregate_results,
+    output_dir,
+    start_idx: int = 0,
+):
+    '''plots sample size cross validation analysis in form of metrics against downsampled number of train trajectories'''
+
+    output_dir = Path(output_dir)
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    metrics = [
+        (
+            "r2_test",
+            "R²",
+            "r2.png",
+        ),
+        (
+            "rmse_test",
+            "RMSE",
+            "rmse.png",
+        ),
+        (
+            "nrmse_test",
+            "NRMSE",
+            "nrmse.png",
+        ),
+        (
+            "global_r2_test",
+            "Global R²",
+            "global_r2.png",
+        ),
+        (
+            "global_rmse_test",
+            "Global RMSE",
+            "global_rmse.png",
+        ),
+        (
+            "global_nrmse_test",
+            "Global NRMSE",
+            "global_nrmse.png",
+        ),
+    ]
+
+    for metric, ylabel, filename in metrics:
+        _plot_sample_size_metric(
+            aggregate_results=aggregate_results,
+            metric=metric,
+            ylabel=ylabel,
+            output_path=output_dir / filename,
+            start_idx=start_idx,
+        )
