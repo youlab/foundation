@@ -1,5 +1,5 @@
 import json
-
+import os
 import numpy as np
 
 from applications.antibiotics.carolyn.data import get_data
@@ -93,8 +93,10 @@ def main(
                 classify=True,
                 detailed_binary=True,
                 train_sizes=TRAIN_SIZES,
+                cross_val=cross_val,
             )
 
+        os.makedirs(DIR_CACHE_CAROLYN, exist_ok=True)
         with open(
             DIR_CACHE_CAROLYN
             / f"classify_antibiotics_{antibiotic}_{cross_val}_{model_type}_{z_dim}.json",

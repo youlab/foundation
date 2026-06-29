@@ -54,7 +54,21 @@ def summarize_data(
         )
     df["train_size_pct"] = np.around((df.train_size / df.train_size.max()) * 100).astype(int)
     df["train_size_pct"] = [key[val] for val in df.train_size_pct]
-    df = df.groupby("train_size_pct").agg("mean").reset_index()
+
+    # df = df.groupby("train_size_pct").agg("mean").reset_index()
+    df = (
+        df.groupby("train_size_pct")
+        .agg(
+            train_size=("train_size", "mean"),
+            cross_val=("cross_val", "mean"),
+            raw_accuracy=("raw_accuracy", "mean"),
+            latent_accuracy=("latent_accuracy", "mean"),
+            raw_accuracy_std=("raw_accuracy", "std"),
+            latent_accuracy_std=("latent_accuracy", "std"),
+        )
+        .reset_index()
+    )
+
 
     df.to_csv(
         DIR_RESULTS_ANTIBIOTICS

@@ -45,10 +45,10 @@ if __name__ == "__main__":
         RUN_CONSORTIA_SIM_V2 = False  # Run with array 0-19
         RUN_CONSORTIA_SIM_FORECAST_V2 = False  # Run with array 0-19 
 
-        RUN_ANTIBIOTIC_MAIN = False  
-        RUN_ANTIBIOTIC_SUMMARIES = False 
+        RUN_ANTIBIOTIC_MAIN = True
+        RUN_ANTIBIOTIC_SUMMARIES = True
 
-        RUN_CONSORTIA_EXP = True  # Run with array 0-479
+        RUN_CONSORTIA_EXP = False  # Run with array 0-479
         # TODO: Remove the cache files and retry it again.
 
         RUN_CONSORTIA_SIM_FOCUSED_SUMMARY = False # no array needed

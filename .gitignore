@@ -186,6 +186,7 @@ regr*.pkl
 # *.txt
 
 cache/*
+**/cache/
 applications/consortia_exp/figs/
 *.png
 telegram.py

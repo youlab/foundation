@@ -1,4 +1,5 @@
 import json
+import os
 
 import numpy as np
 
@@ -44,6 +45,7 @@ def main(
         cross_val=cross_val,
     )
 
+    os.makedirs(DIR_CACHE_KYERI, exist_ok=True)
     with open(
         DIR_CACHE_KYERI
         / f"classify_antibiotics_{cross_val}_{model_type}_{z_dim}.json",
