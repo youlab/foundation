@@ -1,6 +1,8 @@
 # SLURM Scripts
 This directory contains scripts for running the code on the Duke Compute Cluster. Specific parameters such as array numbers, memory, and the bindings will need to be adjusted by the user.
 
+**NEEDS TO BE UPDATED**
+
 ## Files
 * `run_app.sh`: used to run `src/app.py`
 * `run_bert.sh`: used to run `src/train_simple_bert.py`
