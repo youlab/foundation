@@ -155,6 +155,7 @@ class KarlssonDarkDataLoader:
         stride=1,
         encoder=None,
         pca_components=Z_DIM,
+        append_max=True,
         random_seed=501,
     ):
         self.data = data
@@ -165,9 +166,14 @@ class KarlssonDarkDataLoader:
         self.window_size = window_size
         self.stride = stride
         self.pca_components = pca_components
+        self.append_max = append_max
         self.random_seed = random_seed
 
-        self.encoder = encoder if encoder is not None else load_default_model()
+        # only pay for the encoder when a latent representation is actually requested
+        if (input_type == 'latent') or (target_type == 'latent'):
+            self.encoder = encoder if encoder is not None else load_default_model()
+        else:
+            self.encoder = encoder
 
         # store PCA encoders
         self.input_pca = None
@@ -256,6 +262,24 @@ class KarlssonDarkDataLoader:
         )
 
 
+    def _normalize_curves(self, curves):
+        '''divide each curve by its own maximum, returning the normalised curves and the maxima'''
+
+        # curves has shape (n_windows, window_size)
+        maxima = curves.max(axis=1, keepdims=True)
+
+        # zero curves are mapped to ones exactly like get_latents does
+        normalized = np.ones_like(curves)
+        np.divide(
+            curves,
+            maxima,
+            out=normalized,
+            where=maxima > 0,
+        )
+
+        return normalized, maxima
+
+
     def _fit_pca(self, X_train_raw, y_train_raw,):
         '''fit PCA functions with training data'''
 
@@ -265,10 +289,14 @@ class KarlssonDarkDataLoader:
         if not (needs_input_pca or needs_target_pca):
             return
 
+        # PCA fit on max normalized curves to match A7X
+        X_curves, _ = self._normalize_curves(X_train_raw)
+        y_curves, _ = self._normalize_curves(y_train_raw)
+
         # shared PCA space
         if (self.input_type == "pca" and self.target_type == "pca"):
             all_windows = np.concatenate(
-                [X_train_raw, y_train_raw],
+                [X_curves, y_curves],
                 axis=0,
             )
             self.shared_pca = PCA(
@@ -283,14 +311,14 @@ class KarlssonDarkDataLoader:
             self.input_pca = PCA(
                 n_components=self.pca_components
             )
-            self.input_pca.fit(X_train_raw)
+            self.input_pca.fit(X_curves)
 
         # target-only PCA
         if needs_target_pca:
             self.target_pca = PCA(
                 n_components=self.pca_components
             )
-            self.target_pca.fit(y_train_raw)
+            self.target_pca.fit(y_curves)
 
 
     def _transform_windows(
@@ -320,45 +348,42 @@ class KarlssonDarkDataLoader:
 
 
     def _encode_latent(self, windows):
-        '''latent encoder wrapper, where max values are appended'''
-        maxima = np.max(
-            windows,
-            axis=1,
-            keepdims=True,
-        )
+        '''latent encoder wrapper, get_latents normalises each curve and returns its max last'''
 
-        windows_norm = windows / maxima
-
-        latents = get_latents(
-            z=windows_norm,
+        # get_latents returns (n_windows, Z_DIM + 1), the final column is the appended max value
+        features = get_latents(
+            z=windows,
             model=self.encoder,
             batch_size=1024,
         )
 
-        features = np.concatenate(
-            [latents, maxima],
-            axis=1,
-        )
+        # drop max if append_max is not on
+        if not self.append_max:
+            features = features[:, :-1]
 
+        assert features.shape == (windows.shape[0], Z_DIM + int(self.append_max))
         return features.astype(np.float32)
 
 
     def _encode_pca(self, windows, side):
         '''PCA encoder wrapper'''
 
+        pca_input, maxima = self._normalize_curves(windows)
+
         if self.shared_pca is not None:
-            return self.shared_pca.transform(
-                windows
-            ).astype(np.float32)
+            components = self.shared_pca.transform(pca_input)
+        elif side == "input":
+            components = self.input_pca.transform(pca_input)
+        elif side == "target":
+            components = self.target_pca.transform(pca_input)
+        else:
+            raise ValueError(f"Unknown side, not input or target: {side}")
 
-        if side == "input":
-            return self.input_pca.transform(
-                windows
-            ).astype(np.float32)
+        if self.append_max:
+            components = np.concatenate(
+                [components, maxima],
+                axis=1,
+            )
 
-        if side == "target":
-            return self.target_pca.transform(
-                windows
-            ).astype(np.float32)
-
-        raise ValueError(f"Unknown side, not input or target: {side}")
+        assert components.shape == (windows.shape[0], self.pca_components + int(self.append_max))
+        return components.astype(np.float32)

@@ -109,6 +109,7 @@ def main(
     data_output_type: str = 'dataframe', # 'dataframe' or 'json'
     input_type: str = 'raw', # 'raw' or 'latent' or 'pca'
     target_type: str = 'raw', # 'raw' or 'latent' or 'pca'
+    append_max: bool = True, # append the window maximum to latent and pca features, on both sides
     use_test_indices_at: str = None, # specify name of full_split_indices json storing previously computed test indices, assumed to be in data_dir
     split_level: str = 'per_replicate', # 'per_replicate' or 'per_species'
     train_size: float = 0.8,
@@ -139,10 +140,10 @@ def main(
     if output_subdir is None:
         output_dir = Path(DIR_RESULTS) / 'karlsson_forecast' / run_name
     else:
+        # the caller owns the whole subtree below karlsson_forecast
         output_dir = (
             Path(DIR_RESULTS)
             / "karlsson_forecast"
-            / "sample_size_analysis"
             / output_subdir
         )
      
@@ -152,6 +153,7 @@ def main(
     print("Karlsson Forecast")
     print(f"    input_type   : {input_type}")
     print(f"    target_type  : {target_type}")
+    print(f"    append_max   : {append_max}")
     print(f"    split_level  : {split_level}")
     print(f"    window_size  : {window_size}")
     print(f"    stride       : {stride}")
@@ -236,6 +238,7 @@ def main(
         target_type=target_type,
         window_size=window_size,
         stride=stride,
+        append_max=append_max,
         random_seed=random_seed,
     )
 
@@ -280,6 +283,7 @@ def main(
         "random_seed": random_seed,
         "input_type": input_type,
         "target_type": target_type,
+        "append_max": append_max,
         "split_level": split_level,
         "window_size": window_size,
         "stride": stride,
@@ -370,20 +374,7 @@ def main(
             title='Test Metrics per Window Internal Index',
             output_dir=str(test_plots_dir),
         )
-
-        # r2_per_window_train, rmse_window_index_train, nrmse_per_window_train = plot_per_window_metrics(
-        #     y_train,
-        #     y_train_pred,
-        #     title='Train Metrics per Windows',
-        #     output_dir=str(train_plots_dir),
-        # )
-
-        # r2_per_window_test, rmse_per_window_test, nrmse_per_window_test = plot_per_window_metrics(
-        #     y_test,
-        #     y_test_pred,
-        #     title='Test Metrics per Window',
-        #     output_dir=str(test_plots_dir),
-        # )
+    
     except Exception as e:
         print(f'Metrics plotting error: {e}')
     

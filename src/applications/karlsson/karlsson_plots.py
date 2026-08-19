@@ -4,16 +4,24 @@ import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.metrics import r2_score, root_mean_squared_error
 
+# one cell of 2x3 summary figure
+PANEL_FIGSIZE = (6, 6)
 
-def plot_reconstruction(
+# some hardcoded fontsizes for plots
+SUMMARY_LABEL_FONTSIZE = 22
+SUMMARY_TICK_FONTSIZE = 20
+SUMMARY_LEGEND_FONTSIZE = 15
+SUMMARY_ANNOTATION_FONTSIZE = 20
+
+
+def _draw_reconstruction(
+    ax,
     y_true,
     y_pred,
-    title: str = "",
-    output_path: str = None,
     max_points: int = 80000,
     random_state: int = 501,
 ):
-    '''plot predicted vs actual values of trajectories across all target windows'''
+    '''draw the predicted vs actual scatter into a given axes, without labels or title'''
 
     y_true_flat = np.asarray(y_true).reshape(-1)
     y_pred_flat = np.asarray(y_pred).reshape(-1)
@@ -30,10 +38,6 @@ def plot_reconstruction(
 
         y_true_flat = y_true_flat[keep_idx]
         y_pred_flat = y_pred_flat[keep_idx]
-
-    fig, ax = plt.subplots(
-        figsize=(5, 5)
-    )
 
     ax.scatter(
         y_true_flat,
@@ -59,20 +63,49 @@ def plot_reconstruction(
         linewidth=1,
     )
 
-    ax.set_xlabel("Actual")
-    ax.set_ylabel("Predicted")
-    ax.set_title(title)
+    ax.set_xlim(min_val, max_val)
+    ax.set_ylim(min_val, max_val)
+
     ax.grid(True, alpha=0.3)
     ax.set_aspect("equal", adjustable="box")
+
+
+def plot_reconstruction(
+    y_true,
+    y_pred,
+    title: str = "",
+    output_path: str = None,
+    max_points: int = 80000,
+    random_state: int = 501,
+):
+    '''plot predicted vs actual values of trajectories across all target windows'''
+
+    fig, ax = plt.subplots(
+        figsize=(5, 5)
+    )
+
+    _draw_reconstruction(
+        ax,
+        y_true,
+        y_pred,
+        max_points=max_points,
+        random_state=random_state,
+    )
+
+    ax.set_xlabel("True")
+    ax.set_ylabel("Predicted")
+    ax.set_title(title)
 
     fig.tight_layout()
 
     if output_path:
-        fig.savefig(
-            output_path,
-            dpi=300,
-            bbox_inches="tight",
-        )
+        output_path = Path(output_path)
+        for ext in [".png", ".pdf"]:
+            fig.savefig(
+                output_path.with_suffix(ext),
+                dpi=300,
+                bbox_inches="tight",
+            )
 
     plt.close(fig)
 
@@ -159,11 +192,12 @@ def plot_per_idx_metrics(
     if output_dir:
         output_dir = Path(output_dir)
         output_dir.mkdir(parents=True, exist_ok=True)
-        fig.savefig(
-            output_dir / "r2_per_index.png",
-            dpi=300,
-            bbox_inches="tight",
-        )
+        for ext in [".png", ".pdf"]:
+            fig.savefig(
+                output_dir / f"r2_per_index{ext}",
+                dpi=300,
+                bbox_inches="tight",
+            )
 
     plt.close(fig)
 
@@ -188,11 +222,12 @@ def plot_per_idx_metrics(
     if output_dir:
         output_dir = Path(output_dir)
         output_dir.mkdir(parents=True, exist_ok=True)
-        fig.savefig(
-            output_dir / "rmse_per_index.png",
-            dpi=300,
-            bbox_inches="tight",
-        )
+        for ext in [".png", ".pdf"]:
+            fig.savefig(
+                output_dir / f"rmse_per_index{ext}",
+                dpi=300,
+                bbox_inches="tight",
+            )
 
     plt.close(fig)
 
@@ -217,11 +252,12 @@ def plot_per_idx_metrics(
     if output_dir:
         output_dir = Path(output_dir)
         output_dir.mkdir(parents=True, exist_ok=True)
-        fig.savefig(
-            output_dir / "nrmse_per_index.png",
-            dpi=300,
-            bbox_inches="tight",
-        )
+        for ext in [".png", ".pdf"]:
+            fig.savefig(
+                output_dir / f"nrmse_per_index{ext}",
+                dpi=300,
+                bbox_inches="tight",
+            )
 
     plt.close(fig)
 
@@ -387,33 +423,59 @@ def plot_per_window_metrics(
 # SAMPLE SIZE ANALYSIS
 # ====================================================================================================
 
-def _plot_sample_size_metric(
+REPRESENTATIONS = [
+    "raw_to_raw",
+    "pca_to_raw",
+    "pca_max_to_raw",
+    "latent_to_raw",
+    "latent_max_to_raw",
+]
+
+REPRESENTATION_LABELS = {
+    "raw_to_raw": "Raw to Raw",
+    "pca_to_raw": "PCA to Raw",
+    "pca_max_to_raw": "PCA + Max to Raw",
+    "latent_to_raw": "Latent to Raw",
+    "latent_max_to_raw": "Latent + Max to Raw",
+}
+
+# each representation keeps one hue, the variant without the appended max is dashed
+REPRESENTATION_COLORS = {
+    "raw_to_raw": "tab:gray",
+    "pca_to_raw": "tab:orange",
+    "pca_max_to_raw": "tab:orange",
+    "latent_to_raw": "tab:blue",
+    "latent_max_to_raw": "tab:blue",
+}
+
+REPRESENTATION_LINESTYLES = {
+    "raw_to_raw": "-",
+    "pca_to_raw": "--",
+    "pca_max_to_raw": "-",
+    "latent_to_raw": "--",
+    "latent_max_to_raw": "-",
+}
+
+
+def _draw_sample_size_metric(
+    ax,
     aggregate_results,
     metric,
     ylabel,
-    output_path,
     start_idx: int = 0,
+    label_fontsize=SUMMARY_LABEL_FONTSIZE,
+    tick_fontsize=SUMMARY_TICK_FONTSIZE,
+    legend_fontsize=SUMMARY_LEGEND_FONTSIZE,
 ):
-    '''plots one metric against number of training trajectories'''
+    '''draw one metric against number of training trajectories into a given axes'''
 
-    fig, ax = plt.subplots(figsize=(6, 4))
-
-    representations = [
-        "raw_to_raw",
-        "pca_to_raw",
-        "latent_to_raw",
-    ]
-
-    labels = {
-        "raw_to_raw": "Raw to Raw",
-        "pca_to_raw": "PCA to Raw",
-        "latent_to_raw": "Latent to Raw",
-    }
-
-    for representation in representations:
+    for representation in REPRESENTATIONS:
         rows = [r for r in aggregate_results if r["representation"] == representation]
         rows = sorted(rows, key=lambda x: x["train_trajectories"])
-        
+
+        if len(rows) == 0:
+            continue
+
         x = [r["train_trajectories"] for r in rows[start_idx:]]
         y = [r[f"{metric}_mean"] for r in rows[start_idx:]]
         yerr = [r[f"{metric}_std"] for r in rows[start_idx:]]
@@ -423,24 +485,50 @@ def _plot_sample_size_metric(
             y,
             yerr=yerr,
             marker="o",
-            markersize=6,
-            capsize=3,
+            markersize=8,
+            capsize=4,
             linewidth=1.5,
-            label=labels[representation],
-            alpha=0.8,
+            color=REPRESENTATION_COLORS[representation],
+            linestyle=REPRESENTATION_LINESTYLES[representation],
+            label=REPRESENTATION_LABELS[representation],
+            alpha=0.7,
         )
 
-    ax.set_xlabel("Number of training trajectories")
-    ax.set_ylabel(ylabel)
+    ax.set_xlabel("Number of train trajectories", fontsize=label_fontsize)
+    ax.set_ylabel(ylabel, fontsize=label_fontsize)
+    ax.tick_params(labelsize=tick_fontsize)
     ax.grid(True, alpha=0.3)
-    ax.legend()
+    ax.legend(fontsize=legend_fontsize)
+
+    ax.set_box_aspect(1)
+
+
+def _plot_sample_size_metric(
+    aggregate_results,
+    metric,
+    ylabel,
+    output_path,
+    start_idx: int = 0,
+):
+    '''plots one metric against number of training trajectories, formatted as a summary figure panel'''
+
+    fig, ax = plt.subplots(figsize=PANEL_FIGSIZE)
+
+    _draw_sample_size_metric(
+        ax,
+        aggregate_results=aggregate_results,
+        metric=metric,
+        ylabel=ylabel,
+        start_idx=start_idx,
+    )
 
     fig.tight_layout()
-    fig.savefig(
-        output_path,
-        dpi=300,
-        bbox_inches="tight",
-    )
+    output_path = Path(output_path)
+    for ext in [".png", ".pdf", ".svg"]:
+        fig.savefig(
+            output_path.with_suffix(ext),
+            dpi=300,
+        )
 
     plt.close(fig)
 
@@ -496,3 +584,83 @@ def plot_sample_size_results(
             output_path=output_dir / filename,
             start_idx=start_idx,
         )
+
+
+def plot_sample_size_summary_figure(
+    predictions,
+    aggregate_results,
+    output_path,
+    start_idx: int = 0,
+):
+    '''2x3 summary figure, five full train set reconstruction scatters plus the global R2 sweep'''
+    # predictions maps representation name to (y_test, y_test_pred) at the full train set
+
+    fig, axes = plt.subplots(2, 3, figsize=(3 * PANEL_FIGSIZE[0], 2 * PANEL_FIGSIZE[1]))
+
+    for panel, representation in enumerate(REPRESENTATIONS):
+
+        ax = axes[panel // 3, panel % 3]
+        if representation not in predictions:
+            ax.axis("off")
+            continue
+
+        y_true, y_pred = predictions[representation]
+
+        _draw_reconstruction(
+            ax,
+            y_true,
+            y_pred,
+        )
+
+        # global R2 on the full pre-downsampling test sets
+        global_r2 = r2_score(
+            np.asarray(y_true).reshape(-1),
+            np.asarray(y_pred).reshape(-1),
+        )
+
+        ax.text(
+            0.05,
+            0.95,
+            REPRESENTATION_LABELS[representation],
+            transform=ax.transAxes,
+            va="top",
+            ha="left",
+            fontsize=SUMMARY_ANNOTATION_FONTSIZE,
+        )
+
+        ax.text(
+            0.05,
+            0.87,
+            f"R² = {global_r2:.3f}",
+            transform=ax.transAxes,
+            va="top",
+            ha="left",
+            fontsize=SUMMARY_ANNOTATION_FONTSIZE,
+        )
+
+        ax.set_xlabel("True", fontsize=SUMMARY_LABEL_FONTSIZE)
+        ax.set_ylabel("Predicted", fontsize=SUMMARY_LABEL_FONTSIZE)
+        ax.tick_params(labelsize=SUMMARY_TICK_FONTSIZE)
+
+    _draw_sample_size_metric(
+        axes[1, 2],
+        aggregate_results=aggregate_results,
+        metric="global_r2_test",
+        ylabel="Global R²",
+        start_idx=start_idx,
+        label_fontsize=SUMMARY_LABEL_FONTSIZE,
+        tick_fontsize=SUMMARY_TICK_FONTSIZE,
+        legend_fontsize=SUMMARY_LEGEND_FONTSIZE,
+    )
+
+    fig.tight_layout()
+
+    output_path = Path(output_path)
+    for ext in [".png", ".pdf"]:
+        fig.savefig(
+            output_path.with_suffix(ext),
+            dpi=300,
+            bbox_inches="tight",
+        )
+
+    plt.close(fig)
