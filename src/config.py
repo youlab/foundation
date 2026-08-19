@@ -36,11 +36,15 @@ DIR_FIGS_FONT = DIR_SRC / "figs" / "utils" / "open_sans"
 DIR_RESULTS_DATA = DIR_RESULTS / "data"
 DIR_RESULTS_MODEL = DIR_RESULTS / "model"
 DIR_RESULTS_MODEL_NEW_SPLITS = DIR_RESULTS / "model_new_splits"
+DIR_RESULTS_MODEL_PERC_SIM_SENSITIVITY = DIR_RESULTS / "model_perc_sim_sensitivity"
 DIR_RESULTS_ANTIBIOTICS = DIR_RESULTS / "antibiotics"
 DIR_RESULTS_CONSORTIA = DIR_RESULTS / "consortia"
 DIR_RESULTS_CONSORTIA_EXP = DIR_RESULTS / "consortia_exp"
 DIR_RESULTS_SUPER_RESOLUTION = DIR_RESULTS / "super_resolution"
 DIR_RESULTS_MODEL_COMPARISON = DIR_RESULTS / "model_comparison"
+
+PATH_DATA_ZZ294_SIMPLE = None # artifact, now unavailable
+PATH_DATA_ZZ294_COMPLEX = None # artifact, now unavailable
 
 SEQ_LEN = 128
 Z_DIM = 8

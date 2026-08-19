@@ -162,7 +162,7 @@ def main(
         yticks_major=[0.6, 0.8, 1.0,],
         yticks_minor=[0.5, 0.7, 0.9,],
         xlabel="Train size",
-        ylabel="Classification R²",
+        ylabel="Classification Accuracy",
         ylim=(0.4, 1.0,),
     )
 
