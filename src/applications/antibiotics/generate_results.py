@@ -22,6 +22,7 @@ def main(
     lr_end2end,
     train_sizes=None,
     return_latent_vectors=False,
+    return_regressors=False,
     stack=1,
     cross_val=-1,
     k_fold=5,
@@ -84,6 +85,7 @@ def main(
                 name_suffix=name_suffix,
                 max_depth=max_depth,
                 train_sizes=train_sizes,
+                return_regressors=return_regressors,
             ),
             x_latents,
             x_latents_fine_tuned,
@@ -102,6 +104,7 @@ def main(
         name_suffix=name_suffix,
         train_sizes=train_sizes,
         max_depth=max_depth,
+        return_regressors=return_regressors,
     )
 
 
@@ -119,6 +122,7 @@ def split_data_and_get_results(
     prediction_model_cache_dir=None,
     name_suffix=None,
     max_depth=None,
+    return_regressors=False,
 ):
     (
         x_raw_train_original,
@@ -171,4 +175,5 @@ def split_data_and_get_results(
         cross_val=cross_val,
         train_sizes=train_sizes,
         max_depth=max_depth,
+        return_regressors=return_regressors,
     )
