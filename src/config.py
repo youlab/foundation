@@ -1,13 +1,15 @@
 import os
 from pathlib import Path
 
-home_dir = Path("/hpc/dctrl/is178")
+home_dir = Path("/hpc/group/youlab/xw262")
 
-DIR_RESULTS = home_dir / "foundations" / "results"
-DIR_SRC = home_dir / "foundations" / "src"
+DIR_RESULTS = home_dir / "foundation" / "results"
+DIR_SRC = home_dir / "foundation" / "src"
 DIR_DATA = DIR_SRC / "data"
 DIR_MODELS = Path("/work/zah8/best_models/models")
-DIR_LOGS = home_dir / "foundations" / "logs"
+DIR_LOGS = home_dir / "foundation" / "logs"
+
+DIR_DATA_KARLSSON = DIR_SRC / "applications" / "karlsson" / "data"
 
 DIR_DATA_CAROLYN = DIR_SRC / "applications" / "antibiotics" / "carolyn" / "data"
 DIR_DATA_CHAOTIC = DIR_SRC / "data" / "simulation" / "chaotic"
@@ -33,11 +35,16 @@ DIR_FIGS_FONT = DIR_SRC / "figs" / "utils" / "open_sans"
 
 DIR_RESULTS_DATA = DIR_RESULTS / "data"
 DIR_RESULTS_MODEL = DIR_RESULTS / "model"
+DIR_RESULTS_MODEL_NEW_SPLITS = DIR_RESULTS / "model_new_splits"
+DIR_RESULTS_MODEL_PERC_SIM_SENSITIVITY = DIR_RESULTS / "model_perc_sim_sensitivity"
 DIR_RESULTS_ANTIBIOTICS = DIR_RESULTS / "antibiotics"
 DIR_RESULTS_CONSORTIA = DIR_RESULTS / "consortia"
 DIR_RESULTS_CONSORTIA_EXP = DIR_RESULTS / "consortia_exp"
 DIR_RESULTS_SUPER_RESOLUTION = DIR_RESULTS / "super_resolution"
 DIR_RESULTS_MODEL_COMPARISON = DIR_RESULTS / "model_comparison"
+
+PATH_DATA_ZZ294_SIMPLE = None # artifact, now unavailable
+PATH_DATA_ZZ294_COMPLEX = None # artifact, now unavailable
 
 SEQ_LEN = 128
 Z_DIM = 8

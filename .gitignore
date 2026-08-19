@@ -186,7 +186,7 @@ regr*.pkl
 # *.txt
 
 cache/*
-applications/consortia_exp/figs/
+**/cache/
 *.png
 telegram.py
 *temp*.pkl
@@ -205,3 +205,8 @@ src/data/processed/
 src/results/
 logs/*
 temp.py
+results/model_new_splits/
+results/model_perc_sim_sensitivity/
+results/karlsson_forecast/
+results/consortia_focal_background/
+references/

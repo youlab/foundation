@@ -66,36 +66,37 @@ def memory_efficient_prediction(
 
     logger.info(f"Saving model to {prediction_model_cache_dir}")
     if prediction_model_cache_dir is not None:
-        regression_filename = f"regr_{input_type}_{name_suffix}_{cross_val}_{x_train.shape[0]}.pkl"
-        full_path = prediction_model_cache_dir / regression_filename
+        pass
+        # regression_filename = f"regr_{input_type}_{name_suffix}_{cross_val}_{x_train.shape[0]}.pkl"
+        # full_path = prediction_model_cache_dir / regression_filename
         
-        logger.info(f"=== REGRESSION MODEL SAVE DEBUG ===")
-        logger.info(f"Filename pattern: regr_{{input_type}}_{{name_suffix}}_{{cross_val}}_{{train_size}}.pkl")
-        logger.info(f"  input_type: {input_type}")
-        logger.info(f"  name_suffix: {name_suffix}")
-        logger.info(f"  cross_val: {cross_val}")
-        logger.info(f"  train_size: {x_train.shape[0]}")
-        logger.info(f"Full filename: {regression_filename}")
-        logger.info(f"Full path: {full_path}")
-        logger.info(f"Directory exists: {prediction_model_cache_dir.exists()}")
+        # logger.info(f"=== REGRESSION MODEL SAVE DEBUG ===")
+        # logger.info(f"Filename pattern: regr_{{input_type}}_{{name_suffix}}_{{cross_val}}_{{train_size}}.pkl")
+        # logger.info(f"  input_type: {input_type}")
+        # logger.info(f"  name_suffix: {name_suffix}")
+        # logger.info(f"  cross_val: {cross_val}")
+        # logger.info(f"  train_size: {x_train.shape[0]}")
+        # logger.info(f"Full filename: {regression_filename}")
+        # logger.info(f"Full path: {full_path}")
+        # logger.info(f"Directory exists: {prediction_model_cache_dir.exists()}")
         
-        try:
-            with open(full_path, "wb") as fp:
-                pickle.dump(obj=regr, file=fp)
+        # try:
+        #     with open(full_path, "wb") as fp:
+        #         pickle.dump(obj=regr, file=fp)
             
-            # Verify the file was created
-            if full_path.exists():
-                file_size = full_path.stat().st_size
-                logger.info(f"✓ SUCCESS: Regression model saved successfully (size: {file_size} bytes)")
-            else:
-                logger.error(f"✗ FAILURE: File was not created despite no exception")
+        #     # Verify the file was created
+        #     if full_path.exists():
+        #         file_size = full_path.stat().st_size
+        #         logger.info(f"✓ SUCCESS: Regression model saved successfully (size: {file_size} bytes)")
+        #     else:
+        #         logger.error(f"✗ FAILURE: File was not created despite no exception")
                 
-        except Exception as e:
-            logger.error(f"✗ FAILURE: Error saving regression model: {e}")
-            logger.error(f"Exception type: {type(e).__name__}")
-            raise
+        # except Exception as e:
+        #     logger.error(f"✗ FAILURE: Error saving regression model: {e}")
+        #     logger.error(f"Exception type: {type(e).__name__}")
+        #     raise
         
-        logger.info(f"=== END REGRESSION MODEL SAVE DEBUG ===")
+        # logger.info(f"=== END REGRESSION MODEL SAVE DEBUG ===")
     else:
         logger.warning("prediction_model_cache_dir is None - regression model NOT saved!")
 
@@ -228,6 +229,7 @@ def loop_for_results(
     classify=True,
     train_sizes=None,
     return_predictions=False,
+    return_regressors=False,
     detailed_binary=False,
     prediction_model_cache_dir=None,
     name_suffix=None,
@@ -281,6 +283,30 @@ def loop_for_results(
             max_depth=max_depth,
             classify=classify,
         )
+
+        raw_regressor = None
+        latent_regressor = None
+
+        if return_regressors:
+
+            from sklearn.ensemble import ExtraTreesRegressor
+            raw_regressor = ExtraTreesRegressor(
+                random_state=42,
+                max_depth=max_depth,
+            )
+            raw_regressor.fit(
+                x_raw_train,
+                tgt_train,
+            )
+            latent_regressor = ExtraTreesRegressor(
+                random_state=42,
+                max_depth=max_depth,
+            )
+            latent_regressor.fit(
+                x_latent_train,
+                tgt_train,
+            )
+        
         tgt_test_latent_fine_tuned_pred = None
         tgt_test_latent_end2end_pred = None
 
@@ -320,6 +346,24 @@ def loop_for_results(
             }
 
     results["test_size"] = x_raw_test.shape[0]
+    # if return_predictions:
+    #     return results, tgt_test, tgt_test_raw_pred, tgt_test_latent_pred, tgt_test_latent_fine_tuned_pred, tgt_test_latent_end2end_pred
+    
     if return_predictions:
-        return results, tgt_test, tgt_test_raw_pred, tgt_test_latent_pred, tgt_test_latent_fine_tuned_pred, tgt_test_latent_end2end_pred
+        return (
+            results,
+            tgt_test,
+            tgt_test_raw_pred,
+            tgt_test_latent_pred,
+            tgt_test_latent_fine_tuned_pred,
+            tgt_test_latent_end2end_pred,
+        )
+
+    if return_regressors:
+        return (
+            results,
+            raw_regressor,
+            latent_regressor,
+        )
+
     return results

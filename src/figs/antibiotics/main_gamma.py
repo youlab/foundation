@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+import os
 
 from config import (
     DIR_FIGS_MANUSCRIPT,
@@ -81,12 +82,12 @@ def main(
     h = 0.3
     p = 0.08
     b1, b2, b3 = 0.71, 0.38, 0.05
-    a_clas = ax_dict["A"].inset_axes([p - 0.03, b1, w_pipeline, h,])
+    # a_clas = ax_dict["A"].inset_axes([p - 0.03, b1, w_pipeline, h,])
     p_clas = ax_dict["A"].inset_axes([w_pipeline + p * 2 - 0.03, b1, w_panel, h * 0.9,])
-    a_regr = ax_dict["A"].inset_axes([p - 0.03, b2, w_pipeline, h,])
+    # a_regr = ax_dict["A"].inset_axes([p - 0.03, b2, w_pipeline, h,])
     p_regr = ax_dict["A"].inset_axes([w_pipeline + p * 2 - 0.03, b2, w_panel, h * 0.9,])
     
-    a_resi = ax_dict["A"].inset_axes([p - 0.03, b3, w_pipeline, h,])
+    # a_resi = ax_dict["A"].inset_axes([p - 0.03, b3, w_pipeline, h,])
     axes_for_resistance = []
     ys = [0.45, 0.45, 0.05, 0.05,]
     h, w_panel = 0.1, 0.06
@@ -103,14 +104,14 @@ def main(
                 ]
             )
         )
-    plot_resistance_classification_pipeline(
-        ax=a_resi,
-        w_bact=0.22,
-        h_bact=0.2,
-        y_bact_hi=0.7,
-        y_bact_lo=0.15,
-        x_bact=0.75,
-    )
+    # plot_resistance_classification_pipeline(
+    #     ax=a_resi,
+    #     w_bact=0.22,
+    #     h_bact=0.2,
+    #     y_bact_hi=0.7,
+    #     y_bact_lo=0.15,
+    #     x_bact=0.75,
+    # )
     p = 0.05
     xes = [0, 0.25, 0.5, 0.75,]
     ys = [0.05, 0.05, 0.05, 0.05,]
@@ -122,17 +123,17 @@ def main(
         metric_labels=metric_labels,
     )
     
-    plot_antibiotic_classification_pipeline(
-        ax=a_clas,
-        x_adder=0.3,
-    )
+    # plot_antibiotic_classification_pipeline(
+    #     ax=a_clas,
+    #     x_adder=0.3,
+    # )
 
-    plot_antibiotic_regression_pipeline(
-        ax=a_regr,
-        h_box=0.3,
-        w_box=0.6,
-        p_right=0.15,
-    )
+    # plot_antibiotic_regression_pipeline(
+    #     ax=a_regr,
+    #     h_box=0.3,
+    #     w_box=0.6,
+    #     p_right=0.15,
+    # )
 
     xes = [0.15, 0.65]
     axes_for_kyeri = [p_clas, p_regr]
@@ -158,27 +159,28 @@ def main(
         ax=axes_for_kyeri[0],
         xticks_major=[0, 2000, 4000],
         xticks_minor=[500, 1000, 1500, 2500, 3000, 3500,],
-        yticks_major=[0.6, 0.7, 0.8, 0.9,],
-        yticks_minor=[0.55, 0.65, 0.75, 0.85,],
+        yticks_major=[0.6, 0.8, 1.0,],
+        yticks_minor=[0.5, 0.7, 0.9,],
         xlabel="Train size",
-        ylabel="Classification accuracy",
+        ylabel="Classification Accuracy",
+        ylim=(0.4, 1.0,),
     )
 
     format_axes_for_kyeri(
         ax=axes_for_kyeri[1],
         xticks_major=[0, 2500, 5000],
         xticks_minor=[500, 1000, 1500, 2000, 3000, 3500, 4000, 4500,],
-        yticks_major=[0.4, 0.6, 0.8,],
-        yticks_minor=[0.5, 0.7,],
+        yticks_major=[0.2, 0.4, 0.6, 0.8, 1.0,],
+        yticks_minor=[0.1, 0.3, 0.5, 0.7, 0.9,],
         xlabel="Train size",
-        ylabel="Regression accuracy",
-        ylim=(0.35, 0.85,),
+        ylabel="Regression R²",
+        ylim=(0.0, 1.0,),
     )
 
     for x, y, label in [
-        (0.02, 0.97, "A",),
-        (0.02, 0.65, "C",),
-        (0.02, 0.33, "E",),
+        # (0.02, 0.97, "A",),
+        # (0.02, 0.65, "C",),
+        # (0.02, 0.33, "E",),
         (0.46, 0.97, "B",),
         (0.46, 0.65, "D",),
         (0.46, 0.33, "F",),
@@ -192,6 +194,8 @@ def main(
             fontsize=fs_panel,
             fontweight=fw_panel,
         )
+    
+    os.makedirs(DIR_FIGS_MANUSCRIPT, exist_ok=True)
     
     plt.savefig(
         DIR_FIGS_MANUSCRIPT

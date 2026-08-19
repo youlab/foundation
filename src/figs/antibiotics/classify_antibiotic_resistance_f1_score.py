@@ -71,13 +71,32 @@ def main(
             antibiotic=antibiotic,
             model_name=model_name,
         )
+        
+        # for label in metric_labels:
+        #     ax[i_ax].plot(
+        #         data.train_size.to_numpy(),
+        #         data.loc[:, label].to_numpy(),
+        #         label=LEGEND_LABELS[label],
+        #         marker="o",
+        #         alpha=alpha,
+        #     )
+        
+        std_key = {
+            "raw_accuracy": "raw_accuracy_std",
+            "latent_accuracy": "latent_accuracy_std",
+        }
+
         for label in metric_labels:
-            ax[i_ax].plot(
+            ax[i_ax].errorbar(
                 data.train_size.to_numpy(),
-                data.loc[:, label].to_numpy(),
+                data[label].to_numpy(),
+                yerr=data[std_key[label]].to_numpy(),
                 label=LEGEND_LABELS[label],
                 marker="o",
+                markersize=4,
                 alpha=alpha,
+                capsize=3,
+                elinewidth=1,
             )
 
         if add_formatting:
@@ -126,24 +145,36 @@ def plot_resistance_panels(
 ):
     y_specs = {
         "CIP": {
-            "y_lim": (0.68, 0.92,),
-            "y_ticks": [0.7, 0.8, 0.9,],
-            "y_ticks_minor": [0.75, 0.85,],
+            # "y_lim": (0.68, 0.92,),
+            "y_lim": (0.15, 0.95,),
+            # "y_ticks": [0.7, 0.8, 0.9,],
+            # "y_ticks_minor": [0.75, 0.85,],
+            "y_ticks": [0.3, 0.6, 0.9,],
+            "y_ticks_minor": [0.15, 0.45, 0.75,],
         },
         "GM": {
-            "y_lim": (0.43, 0.69,),
-            "y_ticks": [0.45, 0.55, 0.65,],
-            "y_ticks_minor": [0.5, 0.6,],
+            # "y_lim": (0.43, 0.69,),
+            "y_lim": (0.15, 0.95,),
+            # "y_ticks": [0.45, 0.55, 0.65,],
+            # "y_ticks_minor": [0.5, 0.6,],
+            "y_ticks": [0.3, 0.6, 0.9,],
+            "y_ticks_minor": [0.15, 0.45, 0.75,],
         },
         "SAM": {
-            "y_lim": (0.68, 0.92,),
-            "y_ticks": [0.7, 0.8, 0.9,],
-            "y_ticks_minor": [0.75, 0.85,],
+            # "y_lim": (0.68, 0.92,),
+            "y_lim": (0.15, 0.95,),
+            # "y_ticks": [0.7, 0.8, 0.9,],
+            # "y_ticks_minor": [0.75, 0.85,],
+            "y_ticks": [0.3, 0.6, 0.9,],
+            "y_ticks_minor": [0.15, 0.45, 0.75,],
         },
         "SXT": {
-            "y_lim": (0.68, 0.92,),
-            "y_ticks": [0.7, 0.8, 0.9,],
-            "y_ticks_minor": [0.75, 0.85,],
+            # "y_lim": (0.68, 0.92,),
+            "y_lim": (0.15, 0.95,),
+            # "y_ticks": [0.7, 0.8, 0.9,],
+            # "y_ticks_minor": [0.75, 0.85,],
+            "y_ticks": [0.3, 0.6, 0.9,],
+            "y_ticks_minor": [0.15, 0.45, 0.75,],
         },
     }
     for i, antibiotic in enumerate([
@@ -201,7 +232,7 @@ def plot_resistance_panels(
             a.spines[spine].set_visible(False)
         a.text(
             x=3_000,
-            y=y_specs[antibiotic]["y_ticks_minor"][0],
+            y=y_specs[antibiotic]["y_ticks"][0],
             s=antibiotic,
             fontsize=fs_text,
             horizontalalignment="center",

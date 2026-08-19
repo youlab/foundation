@@ -52,12 +52,29 @@ def main(
         )
         ax_existed = False
 
+    # for label in metric_labels:
+    #     ax.plot(
+    #         data.train_size.to_numpy(),
+    #         data.loc[:, label].to_numpy(),
+    #         label=legend_key[label],
+    #         marker="o",
+    #     )
+
+    std_key = {
+        "raw_accuracy": "raw_accuracy_std",
+        "latent_accuracy": "latent_accuracy_std",
+    }
+
     for label in metric_labels:
-        ax.plot(
+        ax.errorbar(
             data.train_size.to_numpy(),
-            data.loc[:, label].to_numpy(),
+            data[label].to_numpy(),
+            yerr=data[std_key[label]].to_numpy(),
             label=legend_key[label],
             marker="o",
+            markersize=5,
+            capsize=3,
+            elinewidth=1,
         )
 
     if add_legend:
@@ -68,7 +85,7 @@ def main(
     if add_formatting:
         if not ax_existed:
             ax.set_title(f"Classification Accuracy", fontsize=fs_title,)
-        ax.set_ylabel("Classification Accuracy", fontsize=fs_labels,)
+        ax.set_ylabel("Classification R²", fontsize=fs_labels,)
         ax.set_xlabel("Training Curves", fontsize=fs_labels,)
         ax.set_xticks(
             [0, 2000, 4000,],
@@ -76,15 +93,15 @@ def main(
             fontsize=fs_ticks,
         )
         ax.set_yticks(
-            [0.6, 0.7, 0.8, 0.9,],
-            labels=[0.6, 0.7, 0.8, 0.9,],
+            [0.2, 0.4, 0.6, 0.8, 1.0,],
+            labels=[0.2, 0.4, 0.6, 0.8, 1.0,],
             fontsize=fs_ticks,
         )
     for spine in ["top", "right",]:
         ax.spines[spine].set_visible(False)
     ax.text(
         100,
-        0.9,
+        0.95,
         "using latent",
         color="tab:orange",
         fontsize=14,

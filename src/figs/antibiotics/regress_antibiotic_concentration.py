@@ -50,12 +50,29 @@ def main(
         )
         plt.ion()
 
+    # for label in metric_labels:
+    #     ax.plot(
+    #         data.train_size.to_numpy(),
+    #         data.loc[:, label].to_numpy(),
+    #         label=legend_key[label],
+    #         marker="o",
+    #     )
+    
+    std_key = {
+        "raw_accuracy": "raw_accuracy_std",
+        "latent_accuracy": "latent_accuracy_std",
+    }
+
     for label in metric_labels:
-        ax.plot(
+        ax.errorbar(
             data.train_size.to_numpy(),
-            data.loc[:, label].to_numpy(),
+            data[label].to_numpy(),
+            yerr=data[std_key[label]].to_numpy(),
             label=legend_key[label],
             marker="o",
+            markersize=5,
+            capsize=3,
+            elinewidth=1,
         )
 
     if add_legend:
@@ -74,8 +91,8 @@ def main(
             fontsize=fs_ticks,
         )
         ax.set_yticks(
-            [0.4, 0.6, 0.8,],
-            labels=[0.4, 0.6, 0.8,],
+            [0.2, 0.4, 0.6, 0.8, 1.0,],
+            labels=[0.2, 0.4, 0.6, 0.8, 1.0,],
             fontsize=fs_ticks,
         )
     for spine in ["top", "right",]:

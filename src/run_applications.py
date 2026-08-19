@@ -2,10 +2,14 @@ import warnings
 import logging
 import os
 import traceback
+from pathlib import Path
 
 from config import (
     MODEL_TYPE,
+    SEQ_LEN,
     Z_DIM,
+    DIR_SRC,
+    DIR_RESULTS,
 )
 warnings.filterwarnings("ignore", category=RuntimeWarning)
 
@@ -45,10 +49,22 @@ if __name__ == "__main__":
         RUN_CONSORTIA_SIM_V2 = False  # Run with array 0-19
         RUN_CONSORTIA_SIM_FORECAST_V2 = False  # Run with array 0-19 
 
-        RUN_ANTIBIOTIC_MAIN = False  
-        RUN_ANTIBIOTIC_SUMMARIES = False 
+        # ===========================================================================
+        # MUST BE SET TO FALSE
+        # not supported by codebase currently; not used by analysis in paper
 
-        RUN_CONSORTIA_EXP = True  # Run with array 0-479
+        RUN_CONSORTIA_SIM_FOCAL_BACKGROUND_ANALYSIS = False
+        RUN_CONSORTIA_FOCAL_BACKGROUND_ANALYSIS = False
+        RUN_CONSORTIA_FOCAL_BACKGROUND_ANALYSIS_FIGS = False
+        # ===========================================================================
+        
+        RUN_CONSORTIA_FOCAL_BACKGROUND_ANALYSIS_OLD_DATA = False
+        RUN_CONSORTIA_FOCAL_BACKGROUND_ANALYSIS_OLD_DATA_FIGS = True
+
+        RUN_ANTIBIOTIC_MAIN = False
+        RUN_ANTIBIOTIC_SUMMARIES = False
+
+        RUN_CONSORTIA_EXP = False  # Run with array 0-479
         # TODO: Remove the cache files and retry it again.
 
         RUN_CONSORTIA_SIM_FOCUSED_SUMMARY = False # no array needed
@@ -154,6 +170,138 @@ if __name__ == "__main__":
             logger.info(f"")
             
             main(task_id=task_id)
+
+
+        DIR_FOCAL_BACKGROUND = Path(DIR_RESULTS) / "consortia_focal_background"
+
+        if RUN_CONSORTIA_SIM_FOCAL_BACKGROUND_ANALYSIS:
+            logger.info("Starting RUN_CONSORTIA_SIM_FOCAL_BACKGROUND_ANALYSIS, i.e. the data generation via simulation.")
+            from applications.consortia.focal_background_sensitivity import generate_data
+            output_directory = DIR_FOCAL_BACKGROUND / "new_data_files"
+            generate_data(
+                output_directory=output_directory,
+                bgLV_community_sizes=(20, 100),
+                dgLV_community_sizes=(20, 100),
+                bgLV_focal_sizes=((20,), (100,)),
+                dgLV_focal_sizes=((20,), (100,)),
+                n_sim=10000,
+                model_index=1,
+                param_sampling_seed=1,
+                bgLV_abundance_threshold=0.10,
+                dgLV_abundance_threshold=0.05,
+                t_background=294.0,
+                t_simulation=300.0,
+                dt=6.0,
+            )
+        
+        if RUN_CONSORTIA_FOCAL_BACKGROUND_ANALYSIS:
+            logger.info("Starting RUN_CONSORTIA_FOCAL_BACKGROUND_ANALYSIS, i.e. the analysis given generated data.")
+            from applications.consortia.focal_background_sensitivity import main
+            data_directory = DIR_FOCAL_BACKGROUND / "new_data_files"
+            result_directory = DIR_FOCAL_BACKGROUND / "focal_background"
+            figure_directory = result_directory / "figures"
+
+            summary = main(
+                data_directory=data_directory,
+                result_directory=result_directory,
+                figure_directory=figure_directory,
+                target_mode="multi_target", # "single_target" predicts one fixed species among focal species, "multi_target" predicts every focal species
+                observed_counts={
+                    20: (1, 2, 3, 5, 7, 10, 15), 
+                    100: (1, 2, 4, 8, 12, 18, 25)
+                },
+                n_subsample=4000, # simulations kept before the split, None uses all 10000
+                interp_len=SEQ_LEN * 6, # 384, gives two non-overlapping window pairs per simulation
+                window_size=SEQ_LEN,
+                stride=SEQ_LEN, # stride equal to the window size gives non-overlapping windows
+                representations=(
+                    ("raw", "raw"), 
+                    ("latent", "raw")
+                ), # (input_type, target_type) pairs, add ("pca", "raw") for the PCA control
+                append_max=True,
+                n_repeats=1,
+                base_split_seed=501,
+                train_size=0.8,
+                max_depth=15,
+                n_estimators=25, # reduced from 100 to bound multi output leaf storage
+                n_jobs=8,
+                make_plots=True,
+            )
+
+        if RUN_CONSORTIA_FOCAL_BACKGROUND_ANALYSIS_FIGS:
+            logger.info("Starting RUN_CONSORTIA_FOCAL_BACKGROUND_ANALYSIS_FIGS, i.e. redrawing the summary figures from finished runs.")
+            import pandas as pd
+            from applications.consortia.focal_background_sensitivity import plot_summary
+            result_directory = DIR_FOCAL_BACKGROUND / "focal_background"
+            figure_directory = result_directory / "figures"
+
+            for target_mode in ["single_target", "multi_target"]:
+                summary_path = result_directory / f"summary_{target_mode}.csv"
+                if not summary_path.exists():
+                    logger.warning(f"Skipping {target_mode}, {summary_path.name} does not exist.")
+                    continue
+
+                plot_summary(
+                    pd.read_csv(summary_path),
+                    figure_directory,
+                    target_mode=target_mode,
+                )
+                logger.info(f"Redrew {target_mode} figures in {figure_directory}")
+
+        if RUN_CONSORTIA_FOCAL_BACKGROUND_ANALYSIS_OLD_DATA:
+            logger.info("Starting RUN_CONSORTIA_FOCAL_BACKGROUND_ANALYSIS_OLD_DATA, i.e. the sweep on the original manuscript data.")
+            from applications.consortia.focal_background_sensitivity_old_data import main
+            data_directory = Path(DIR_SRC) / "applications" / "consortia" / "data_files"
+            result_directory = DIR_FOCAL_BACKGROUND / "focal_background_FINAL"
+            figure_directory = result_directory / "figures"
+
+            summary = main(
+                data_directory=data_directory,
+                result_directory=result_directory,
+                figure_directory=figure_directory,
+                target_mode="single_target", # "single_target" predicts one fixed focal population, "multi_target" predicts every observed one
+                observed_counts={
+                    20: (1, 2, 3, 4, 5),
+                    100: (1, 2, 3, 4, 5, 6, 7, 8)
+                },
+                n_subsample=None, # simulations kept before the split, None uses all 10000
+                n_sim=10000, # simulations stored in each text file
+                interp_len=SEQ_LEN * 6, # 768
+                window_size=SEQ_LEN,
+                stride=SEQ_LEN,
+                representations=(
+                    ("raw", "raw"),
+                    ("latent", "raw")
+                ), # (input_type, target_type) pairs, add ("pca", "raw") for the PCA control
+                append_max=True,
+                n_repeats=5,
+                base_split_seed=501,
+                train_size=0.8,
+                max_depth=15,
+                n_estimators=50, # reduced from 100 to bound multi output leaf storage
+                n_jobs=8,
+                make_plots=True,
+            )
+
+        if RUN_CONSORTIA_FOCAL_BACKGROUND_ANALYSIS_OLD_DATA_FIGS:
+            logger.info("Starting RUN_CONSORTIA_FOCAL_BACKGROUND_ANALYSIS_OLD_DATA_FIGS, i.e. redrawing the summary figures from finished runs.")
+            import pandas as pd
+            from applications.consortia.focal_background_sensitivity_old_data import plot_summary
+            result_directory = DIR_FOCAL_BACKGROUND / "focal_background_FINAL"
+            figure_directory = result_directory / "figures"
+
+            for target_mode in ["single_target", "multi_target"]:
+                summary_path = result_directory / f"summary_{target_mode}.csv"
+                if not summary_path.exists():
+                    logger.warning(f"Skipping {target_mode}, {summary_path.name} does not exist.")
+                    continue
+
+                plot_summary(
+                    pd.read_csv(summary_path),
+                    figure_directory,
+                    target_mode=target_mode,
+                )
+                logger.info(f"Redrew {target_mode} figures in {figure_directory}")
 
         if RUN_ANTIBIOTIC_SUMMARIES:
             logger.info("Starting RUN_ANTIBIOTIC_SUMMARIES")

@@ -6,6 +6,8 @@ Use this directory to run the applications for the paper. Each sub-directory sho
 * `consortia`: simulated consortia tasks
 * `consortia_exp`: experimental consortia tasks
 * `datasets`: classes related to data
+* `karlsson`: tasks involving forecasting using the external-to-corpus Karlsson dataset
+* `super_resolution`: super resolution tasks
 * `utils`: utility functions for the tasks
 
 ## Files
