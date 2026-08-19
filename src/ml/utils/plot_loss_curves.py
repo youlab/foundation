@@ -5,6 +5,7 @@ from pathlib import Path
 from config import (
     DIR_RESULTS_MODEL,
     DIR_RESULTS_MODEL_NEW_SPLITS,
+    DIR_RESULTS_MODEL_PERC_SIM_SENSITIVITY,
 )
 
 
@@ -48,7 +49,7 @@ def plot_loss_curve(
 def main(n_epochs=None):
     # n_epochs optional, stores number of epochs to plot
     
-    model_dirs = [DIR_RESULTS_MODEL, DIR_RESULTS_MODEL_NEW_SPLITS]
+    model_dirs = [DIR_RESULTS_MODEL, DIR_RESULTS_MODEL_NEW_SPLITS, DIR_RESULTS_MODEL_PERC_SIM_SENSITIVITY]
 
     for model_dir in model_dirs:
 

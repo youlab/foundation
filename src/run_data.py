@@ -2,8 +2,11 @@ if __name__ == "__main__":
 
     RUN_COMPILE = False
     RUN_NORMALIZE = False
-    RUN_PLOT_SPLIT_ANALYSIS = True
+    RUN_PLOT_SPLIT_ANALYSIS = False
     RUN_INTRINSIC_DIMENSION_ESTIMATION = False
+
+    RUN_PERC_SIM_SENSITIVITY = True
+
     RUN_WRITE_DATA_SOURCES = False
     RUN_UPLOAD_DATA_EXPERIMENTAL = False
     RUN_UPLOAD_DATA_SIMULATION = False
@@ -23,6 +26,11 @@ if __name__ == "__main__":
     if RUN_PLOT_SPLIT_ANALYSIS:
         print(f"\nRunning RUN_PLOT_SPLIT_ANALYSIS")
         from data.plot_split_analysis import main
+        main()
+    
+    if RUN_PERC_SIM_SENSITIVITY:
+        print(f"\nRunning RUN_PERC_SIM_SENSITIVITY")
+        from data.perc_sim_sensitivity import main
         main()
 
     if RUN_INTRINSIC_DIMENSION_ESTIMATION:

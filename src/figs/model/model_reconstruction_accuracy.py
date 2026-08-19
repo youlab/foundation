@@ -281,4 +281,5 @@ def plot_model_reconstruction_accuracy(
     fig = ax[0].get_figure()
     fig.savefig(res_dir / "reconstruction_new.png", dpi=100, bbox_inches="tight")
     fig.savefig(res_dir / "reconstruction_new.svg", dpi=100, bbox_inches="tight")
+    fig.savefig(res_dir / "reconstruction_new.pdf", dpi=100, bbox_inches="tight")
     print(f"Saved reconstruction figure to {res_dir / 'reconstruction.png'}")

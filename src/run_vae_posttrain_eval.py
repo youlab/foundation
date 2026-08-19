@@ -1,8 +1,9 @@
 if __name__ == "__main__":
 
-    RUN_PLOT_LOSS_CURVES = False
+    RUN_PLOT_LOSS_CURVES = True
     RUN_PLOT_LATENT_DISTRIBUTION = False
-    RUN_PLOT_R2 = True
+    RUN_PLOT_R2 = False
+    RUN_PLOT_PERC_SIM_SENSITIVITY = True
 
     if RUN_PLOT_LOSS_CURVES:
         print("Running RUN_PLOT_LOSS_CURVES")
@@ -40,4 +41,8 @@ if __name__ == "__main__":
             model_dir=model_dir,
             fs_ticks=20,
         )
-        
+    
+    if RUN_PLOT_PERC_SIM_SENSITIVITY:
+        print("Running RUN_PLOT_PERC_SIM_SENSITIVITY")
+        from ml.perc_sim_sensitivity import main
+        main()

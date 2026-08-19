@@ -69,10 +69,16 @@ CONFIG_MNM = {
     "lr": 4e-5,
 }
 
+# empirically, training usually converges well within 1000 epochs
 TRAINING_EPOCHS = 1000
 
 OPTUNA_DATABASE = "sqlite:///core2.db"
 OPTUNA_STUDY_NAMES = []
 
-DATA_RUN_DIR = "run_2026-05-05T01:11:54.987230"
+# this determines the directory containing the processed corpus (post train/test split)
+# used when training models, i.e. running run_train_ml.sh, which runs run_ml.py with RUN_TRAIN=True
+DATA_RUN_DIR = "perc_sim_100"
+
+# this determines the directory containing the trained model
+# used when evaluating models, i.e. running run_vae_posttrain_eval.sh, which runs run_vae_posttrain_eval.py
 MODEL_RUN_DIR = "a7x_08_run_2026-05-05T01:11:54.987230_all_1000epochs"

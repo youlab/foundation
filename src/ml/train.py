@@ -5,7 +5,7 @@ from datetime import datetime
 import numpy as np
 import torch
 
-from config import DIR_RESULTS_MODEL, DIR_RESULTS_MODEL_NEW_SPLITS
+from config import DIR_RESULTS_MODEL, DIR_RESULTS_MODEL_NEW_SPLITS, DIR_RESULTS_MODEL_PERC_SIM_SENSITIVITY
 from data.utils import get_data
 from ml.config import (
     CONFIG_A7X,
@@ -27,8 +27,9 @@ def run_trainer(
     trainer=None,
     model=None,
 ):
-
-    dir_model = DIR_RESULTS_MODEL_NEW_SPLITS / model_name
+    #FIXME: this is hardcoded to models trained for simulation fraction sensitivity
+    # ideally this needs to be generalized; would require some structural changes to codebase
+    dir_model = DIR_RESULTS_MODEL_PERC_SIM_SENSITIVITY / model_name
     if not os.path.exists(dir_model):
         os.makedirs(dir_model)
 
