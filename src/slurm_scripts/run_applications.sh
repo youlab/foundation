@@ -5,7 +5,8 @@
 #SBATCH --partition=youlab-gpu
 #SBATCH --gres=gpu:1
 #SBATCH --cpus-per-task=8
-#SBATCH --mem=64G
+#SBATCH -t 12:00:00
+#SBATCH --mem=128G
 
 nvidia-smi
 

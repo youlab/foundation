@@ -59,10 +59,11 @@ if __name__ == "__main__":
         # ===========================================================================
         
         RUN_CONSORTIA_FOCAL_BACKGROUND_ANALYSIS_OLD_DATA = False
-        RUN_CONSORTIA_FOCAL_BACKGROUND_ANALYSIS_OLD_DATA_FIGS = True
+        RUN_CONSORTIA_FOCAL_BACKGROUND_ANALYSIS_OLD_DATA_FIGS = False
 
         RUN_ANTIBIOTIC_MAIN = False
         RUN_ANTIBIOTIC_SUMMARIES = False
+        RUN_ANTIBIOTIC_MODEL_COMPARISON_NEW = True
 
         RUN_CONSORTIA_EXP = False  # Run with array 0-479
         # TODO: Remove the cache files and retry it again.
@@ -79,6 +80,7 @@ if __name__ == "__main__":
         if RUN_CONSORTIA_SIM_FORECAST_V2: enabled_apps.append("RUN_CONSORTIA_SIM_FORECAST_V2")
         if RUN_ANTIBIOTIC_MAIN: enabled_apps.append("RUN_ANTIBIOTIC_MAIN")
         if RUN_ANTIBIOTIC_SUMMARIES: enabled_apps.append("RUN_ANTIBIOTIC_SUMMARIES")
+        if RUN_ANTIBIOTIC_MODEL_COMPARISON_NEW: enabled_apps.append("RUN_ANTIBIOTIC_MODEL_COMPARISON_NEW")
         logger.info(f"Enabled applications: {enabled_apps}")
 
         if RUN_CONSORTIA_SIM_V2:
@@ -335,6 +337,14 @@ if __name__ == "__main__":
                     z_dim=Z_DIM,
                     cross_val=cross_val,
                 )
+
+        if RUN_ANTIBIOTIC_MODEL_COMPARISON_NEW:
+            logger.info("Starting RUN_ANTIBIOTIC_MODEL_COMPARISON_NEW")
+            from applications.antibiotics.new_model_comparison import main as run_new_model_comparison
+            print("Running RUN_ANTIBIOTIC_MODEL_COMPARISON_NEW")
+            run_new_model_comparison(
+                z_dim=8,
+            )
 
         if RUN_CONSORTIA_SIM_FOCUSED_SUMMARY:
             logger.info("Starting RUN_CONSORTIA_SIM_FOCUSED_SUMMARY")

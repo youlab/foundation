@@ -9,7 +9,7 @@ if __name__ == "__main__":
 
     RUN_DATA_FIG_1 = False  
     RUN_MODEL_FIG_2 = False
-    RUN_ANTIBIOTICS_FIG_3 = True
+    RUN_ANTIBIOTICS_FIG_3 = False
     RUN_CONSORTIA_SIM_FIG_4 = False
     RUN_CONSORTIA_EXP_FIG_5 = False
 
@@ -20,7 +20,8 @@ if __name__ == "__main__":
     RUN_ANTIBIOTICS_KYERI_KEIO_FIG_S5 = False
     RUN_ANTIBIOTICS_KYERI_TIMER_FIG_S6 = False 
     RUN_ANTIBIOTICS_CAROLYN_ALL_FIG_S7 = False
-    RUN_ANTIBIOTICS_MODEL_COMPARISON_FIG_S8 = False  
+    RUN_ANTIBIOTICS_MODEL_COMPARISON_FIG_S8 = False
+    RUN_ANTIBIOTIC_MODEL_COMPARISON_FIG_S8_NEW = True
     RUN_CONSORTIA_SIM_SUPPLEMENTAL_OVERVIEW_FIG_S9 = False  
     RUN_CONSORTIA_SIM_SUPPLEMENTAL_FIG_S10 = False  
     RUN_CONSORTIA_EXP_FOCAL_COMMUNITIES_FIG_S11 = False  
@@ -109,6 +110,14 @@ if __name__ == "__main__":
     if RUN_ANTIBIOTICS_MODEL_COMPARISON_FIG_S8:
         print("Running RUN_ANTIBIOTICS_MODEL_COMPARISON_FIG_S8")
         from figs.antibiotics.plot_antibiotics_summary import main
+        main(
+            fs_panel=FS_PANEL,
+            fw_panel=FW_PANEL,
+        )
+
+    if RUN_ANTIBIOTIC_MODEL_COMPARISON_FIG_S8_NEW:
+        print("Running RUN_ANTIBIOTIC_MODEL_COMPARISON_FIG_S8_NEW")
+        from figs.antibiotics.new_model_comparison import main
         main(
             fs_panel=FS_PANEL,
             fw_panel=FW_PANEL,
