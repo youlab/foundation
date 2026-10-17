@@ -12,20 +12,26 @@ if __name__ == "__main__":
     RUN_ANTIBIOTICS_FIG_3 = False
     RUN_CONSORTIA_SIM_FIG_4 = False
     RUN_CONSORTIA_EXP_FIG_5 = False
+    RUN_KARLSSON_FORECAST_FIG_6 = False
 
     RUN_MODEL_TRAINING_DATASET_COMPARISON_FIG_S1 = False 
     RUN_MODEL_SUPPLEMENTAL_FIG_S2 = False 
-    RUN_MODEL_INTRINSIC_DIMENSIONS_FIG_S3 = False  
+    RUN_MODEL_SIM_FRACTION_SENSITIVITY_FIG_S2_NEW = False
+    RUN_MODEL_INTRINSIC_DIMENSIONS_FIG_S3 = False
+    RUN_MODEL_DATASET_LEVEL_SPLITS_FIG_S3_NEW = False
     RUN_ANTIBIOTICS_KYERI_TOP10F_FIG_S4 = False 
     RUN_ANTIBIOTICS_KYERI_KEIO_FIG_S5 = False
     RUN_ANTIBIOTICS_KYERI_TIMER_FIG_S6 = False 
     RUN_ANTIBIOTICS_CAROLYN_ALL_FIG_S7 = False
     RUN_ANTIBIOTICS_MODEL_COMPARISON_FIG_S8 = False
-    RUN_ANTIBIOTIC_MODEL_COMPARISON_FIG_S8_NEW = True
+    RUN_ANTIBIOTIC_MODEL_COMPARISON_FIG_S8_NEW = False
     RUN_CONSORTIA_SIM_SUPPLEMENTAL_OVERVIEW_FIG_S9 = False  
     RUN_CONSORTIA_SIM_SUPPLEMENTAL_FIG_S10 = False  
     RUN_CONSORTIA_EXP_FOCAL_COMMUNITIES_FIG_S11 = False  
     RUN_CONSORTIA_EXP_SUPPLEMENTAL_FIG_S12 = False 
+    RUN_CONSORTIA_SIM_FOCAL_BACKGROUND_FIG_S14_NEW = False
+
+    RUN_MODEL_DATASET_LEVEL_SPLITS_TABLE_S14 = True
 
     if RUN_PRESENTATION:
         from figs.presentation import main
@@ -72,9 +78,22 @@ if __name__ == "__main__":
             fs_panel=FS_PANEL,
         )
 
+    if RUN_KARLSSON_FORECAST_FIG_6:
+        print("Running RUN_KARLSSON_FORECAST_FIG_6")
+        from figs.karlsson.fig_6 import main
+        main(
+            fw_panel=FW_PANEL,
+            fs_panel=FS_PANEL,
+        )
+
     if RUN_MODEL_TRAINING_DATASET_COMPARISON_FIG_S1:
         from figs.model.training_dataset_comparison import main
         print("Running RUN_MODEL_TRAINING_DATASET_COMPARISON")
+        main()
+
+    if RUN_MODEL_SIM_FRACTION_SENSITIVITY_FIG_S2_NEW:
+        print("Running RUN_MODEL_SIM_FRACTION_SENSITIVITY_FIG_S2_NEW")
+        from figs.model.sim_fraction_sensitivity import main
         main()
 
     if RUN_MODEL_SUPPLEMENTAL_FIG_S2:
@@ -85,6 +104,11 @@ if __name__ == "__main__":
     if RUN_MODEL_INTRINSIC_DIMENSIONS_FIG_S3:
         from figs.model.plot_intrinsic_dimensions import main
         print("Running RUN_MODEL_INTRINSIC_DIMENSIONS_FIG_S3")
+        main()
+
+    if RUN_MODEL_DATASET_LEVEL_SPLITS_FIG_S3_NEW:
+        print("Running RUN_MODEL_DATASET_LEVEL_SPLITS_FIG_S3_NEW")
+        from figs.model.dataset_level_splits import main
         main()
 
     if RUN_ANTIBIOTICS_KYERI_TOP10F_FIG_S4:
@@ -148,3 +172,16 @@ if __name__ == "__main__":
             fs_panel=FS_PANEL,
             fw_panel=FW_PANEL,
         )
+
+    if RUN_CONSORTIA_SIM_FOCAL_BACKGROUND_FIG_S14_NEW:
+        print("Running RUN_CONSORTIA_SIM_FOCAL_BACKGROUND_FIG_S14_NEW")
+        from figs.consortia.focal_background import main
+        main(
+            fw_panel=FW_PANEL,
+            fs_panel=FS_PANEL,
+        )
+
+    if RUN_MODEL_DATASET_LEVEL_SPLITS_TABLE_S14:
+        print("Running RUN_MODEL_DATASET_LEVEL_SPLITS_TABLE_S14")
+        from figs.model.supp_table_14 import main
+        main()

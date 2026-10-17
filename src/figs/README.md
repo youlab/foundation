@@ -3,11 +3,12 @@ Use this directory to create the figures for the paper. Each sub-directory shoul
 
 ## Directories
 * `antibiotics`: figures pertaining to antibiotic tasks
-* `consortia`: figures pertaining to the simulated consortia tasks
+* `consortia`: figures pertaining to the simulated consortia tasks; `focal_background.py` creates Supp. Fig. S14 (rebuttal Figure R4) from cached results in `results/consortia_focal_background/focal_background_FINAL`
 * `consortia_exp`: figures pertaining to the experimental consortia tasks
 * `data`: figures pertaining to the data collected for the paper
 * `fig_utils`: utility functions for the figures
 * `introduction`: figures pertaining to the introduction
+* `karlsson`: figures pertaining to the external Karlsson dataset; `fig_6.py` creates revised Figure 6 (rebuttal Figure R3) from cached results of `applications/karlsson/forecast_sample_size.py`
 * `model`: figures pertaining ot the model
 
 ## Files
