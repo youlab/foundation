@@ -1,0 +1,18 @@
+# Raw data
+data/
+
+# Generated outputs
+outputs/
+!outputs/.gitkeep
+
+# macOS metadata
+.DS_Store
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Python cache
+__pycache__/
+
+# Allow Karlsson analysis notebooks
+!*.ipynb

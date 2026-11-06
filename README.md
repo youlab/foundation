@@ -226,6 +226,11 @@ These require all previous steps to be completed:
   * **Purpose:** Applies super-resolution techniques to enhance data resolution
   * **Dependency:** Uses task_id from SLURM environment
 
+# Additional Analyses
+## Karlsson revision analyses
+
+See [`analyses/karlsson/README.md`](analyses/karlsson/README.md) for the Karlsson OmniLog dark-condition A7X analyses supporting revision Figures R2 and R5.
+
 ## Troubleshooting Missing Files
 
 ### Quick Reference: Task ID Mappings
