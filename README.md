@@ -326,3 +326,53 @@ These rely solely on existing data and can be run independently:
 
 ### Model Comparison Figures
 * `RUN_ANTIBIOTICS_MODEL_COMPARISON_FIG_S8` (requires all models to be completed)
+
+## Strain-level antibiotic resistance analysis
+
+Run from `src` (inside the project's Python environment):
+
+```bash
+python -m applications.antibiotics.carolyn.strain_level
+```
+
+The default is A7X with eight latent dimensions. Encoding uses batches of 64
+curves to limit memory use (`--latent-batch-size` changes this). All replicate and condition
+curves from an isolate share a deterministic `GroupKFold` fold. The command
+runs five folds for SAM, GM, SXT, and CIP with the existing ExtraTrees classifiers,
+seed 42, no augmentation, and all configured training sizes. The summary uses
+the largest training size in each fold, reports curve-level binary F1, and uses
+population standard deviation (`np.std`, `ddof=0`) across folds. Class balance is
+counted once per isolate. Smaller training sizes subsample curves within the
+training fold, as in the original pipeline.
+
+Outputs are saved separately in `results/antibiotics/strain_level/`: 20 fold
+result JSON files, `strain_split_data_verification.json`,
+`strain_split_summary_with_balance_A7X_8.json`, and a two-panel PNG/PDF figure.
+The verification report records strain IDs per fold, checks label consistency
+and zero train/test overlap, and compares class counts with 158, 50, 155, and
+163 resistant isolates out of 277.
+
+Use `--verify-only` to check data and balance without model inference, or
+`--output-dir PATH`, `--model-type A7X`, and `--z-dim 8` to change settings.
+Carolyn data default to `src/applications/antibiotics/carolyn/data`; set
+`FOUNDATION_CAROLYN_DATA` to use another data directory. The model is loaded
+through the existing Hugging Face loader. Exact comparison with a prior run
+requires the same checkpoint, software versions, and group-fold assignments.
+
+On HPC, explicitly bind the checkout so the container can read the data and
+write results (from `src`):
+
+```bash
+apptainer exec --nv --bind /absolute/path/to/foundation:/absolute/path/to/foundation \
+  /hpc/group/youlab/you-lab-deep-learning.sif \
+  python -m applications.antibiotics.carolyn.strain_level
+```
+
+The clinical-isolate curves were included without labels in A7X pretraining.
+This analysis holds out isolates from supervised classifier fitting only.
+
+Run split regression checks from `src`:
+
+```bash
+python -m unittest discover -s ../tests -p 'test_strain_split.py'
+```

@@ -1,0 +1,129 @@
+{
+    "44": {
+        "raw_accuracy": {
+            "accuracy": 0.7568181818181818,
+            "precision": 0.05,
+            "recall": 0.01875,
+            "f1_score": 0.027272727272727268
+        },
+        "latent_accuracy": {
+            "accuracy": 0.7886363636363637,
+            "precision": 0.20454545454545456,
+            "recall": 0.05625,
+            "f1_score": 0.08823529411764706
+        }
+    },
+    "444": {
+        "raw_accuracy": {
+            "accuracy": 0.7897727272727273,
+            "precision": 0.0967741935483871,
+            "recall": 0.01875,
+            "f1_score": 0.031413612565445025
+        },
+        "latent_accuracy": {
+            "accuracy": 0.8102272727272727,
+            "precision": 0.29411764705882354,
+            "recall": 0.03125,
+            "f1_score": 0.05649717514124294
+        }
+    },
+    "888": {
+        "raw_accuracy": {
+            "accuracy": 0.8102272727272727,
+            "precision": 0.4,
+            "recall": 0.0875,
+            "f1_score": 0.14358974358974355
+        },
+        "latent_accuracy": {
+            "accuracy": 0.8159090909090909,
+            "precision": 0.4642857142857143,
+            "recall": 0.08125,
+            "f1_score": 0.13829787234042554
+        }
+    },
+    "1331": {
+        "raw_accuracy": {
+            "accuracy": 0.7886363636363637,
+            "precision": 0.2833333333333333,
+            "recall": 0.10625,
+            "f1_score": 0.15454545454545454
+        },
+        "latent_accuracy": {
+            "accuracy": 0.8193181818181818,
+            "precision": 0.5185185185185185,
+            "recall": 0.0875,
+            "f1_score": 0.1497326203208556
+        }
+    },
+    "1776": {
+        "raw_accuracy": {
+            "accuracy": 0.7988636363636363,
+            "precision": 0.34545454545454546,
+            "recall": 0.11875,
+            "f1_score": 0.17674418604651163
+        },
+        "latent_accuracy": {
+            "accuracy": 0.8147727272727273,
+            "precision": 0.42857142857142855,
+            "recall": 0.05625,
+            "f1_score": 0.09944751381215469
+        }
+    },
+    "2220": {
+        "raw_accuracy": {
+            "accuracy": 0.8011363636363636,
+            "precision": 0.3684210526315789,
+            "recall": 0.13125,
+            "f1_score": 0.1935483870967742
+        },
+        "latent_accuracy": {
+            "accuracy": 0.8159090909090909,
+            "precision": 0.47058823529411764,
+            "recall": 0.1,
+            "f1_score": 0.16494845360824742
+        }
+    },
+    "2663": {
+        "raw_accuracy": {
+            "accuracy": 0.7943181818181818,
+            "precision": 0.3157894736842105,
+            "recall": 0.1125,
+            "f1_score": 0.16589861751152074
+        },
+        "latent_accuracy": {
+            "accuracy": 0.8193181818181818,
+            "precision": 0.5151515151515151,
+            "recall": 0.10625,
+            "f1_score": 0.1761658031088083
+        }
+    },
+    "3107": {
+        "raw_accuracy": {
+            "accuracy": 0.8,
+            "precision": 0.3709677419354839,
+            "recall": 0.14375,
+            "f1_score": 0.20720720720720723
+        },
+        "latent_accuracy": {
+            "accuracy": 0.8204545454545454,
+            "precision": 0.5263157894736842,
+            "recall": 0.125,
+            "f1_score": 0.20202020202020202
+        }
+    },
+    "3552": {
+        "raw_accuracy": {
+            "accuracy": 0.7965909090909091,
+            "precision": 0.3582089552238806,
+            "recall": 0.15,
+            "f1_score": 0.21145374449339208
+        },
+        "latent_accuracy": {
+            "accuracy": 0.8147727272727273,
+            "precision": 0.4594594594594595,
+            "recall": 0.10625,
+            "f1_score": 0.17258883248730963
+        }
+    },
+    "test_size": 880
+}

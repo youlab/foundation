@@ -1,0 +1,164 @@
+{
+    "model_type": "A7X",
+    "z_dim": 8,
+    "metric": "f1_score",
+    "split": "strain_level_group_kfold",
+    "std_ddof": 0,
+    "evaluation_unit": "curve",
+    "train_sizes": [
+        0.01,
+        0.1,
+        0.2,
+        0.3,
+        0.4,
+        0.5,
+        0.6,
+        0.7,
+        0.8
+    ],
+    "classifier": {
+        "type": "ExtraTreesClassifier",
+        "random_state": 42,
+        "n_estimators": 100,
+        "max_depth": null
+    },
+    "pretraining_note": "Unlabeled clinical-isolate curves were included in A7X pretraining; isolates are held out only from supervised classifier fitting.",
+    "versions": {
+        "python": "3.10.13",
+        "numpy": "1.26.4",
+        "sklearn": "1.5.0",
+        "torch": "2.3.0",
+        "huggingface_hub": "0.30.2"
+    },
+    "antibiotics": {
+        "SAM": {
+            "performance": {
+                "raw_scores": [
+                    0.6921641791044776,
+                    0.6520912547528517,
+                    0.6527777777777778,
+                    0.6985559566787003,
+                    0.6647230320699709
+                ],
+                "raw_mean": 0.6720624400767556,
+                "raw_std": 0.019649934793752107,
+                "latent_scores": [
+                    0.6932344763670065,
+                    0.6703910614525139,
+                    0.6878727634194831,
+                    0.7703180212014135,
+                    0.6697848456501403
+                ],
+                "latent_mean": 0.6983202336181116,
+                "latent_std": 0.03718333767051283
+            },
+            "class_balance_by_strain": {
+                "n_inconsistent_strains": 0,
+                "inconsistent_strains": [],
+                "total_strains": 277,
+                "resistant_strains": 158,
+                "susceptible_strains": 119,
+                "resistant_fraction": 0.5703971119133574,
+                "matches_reported_balance": true
+            }
+        },
+        "GM": {
+            "performance": {
+                "raw_scores": [
+                    0.140625,
+                    0.08583690987124462,
+                    0.15920398009950248,
+                    0.21145374449339208,
+                    0.12021857923497269
+                ],
+                "raw_mean": 0.14346764273982238,
+                "raw_std": 0.04180823671888726,
+                "latent_scores": [
+                    0.08219178082191782,
+                    0.1552511415525114,
+                    0.12834224598930483,
+                    0.17258883248730963,
+                    0.1509433962264151
+                ],
+                "latent_mean": 0.13786347941549176,
+                "latent_std": 0.031206592491279515
+            },
+            "class_balance_by_strain": {
+                "n_inconsistent_strains": 0,
+                "inconsistent_strains": [],
+                "total_strains": 277,
+                "resistant_strains": 50,
+                "susceptible_strains": 227,
+                "resistant_fraction": 0.18050541516245489,
+                "matches_reported_balance": true
+            }
+        },
+        "SXT": {
+            "performance": {
+                "raw_scores": [
+                    0.611328125,
+                    0.5961904761904762,
+                    0.6153846153846154,
+                    0.6078619367209971,
+                    0.5963114754098361
+                ],
+                "raw_mean": 0.605415325741185,
+                "raw_std": 0.007852538143110214,
+                "latent_scores": [
+                    0.6161321671525752,
+                    0.6386404293381038,
+                    0.6140845070422536,
+                    0.6059443911792906,
+                    0.6325301204819277
+                ],
+                "latent_mean": 0.6214663230388302,
+                "latent_std": 0.01217565058729114
+            },
+            "class_balance_by_strain": {
+                "n_inconsistent_strains": 0,
+                "inconsistent_strains": [],
+                "total_strains": 277,
+                "resistant_strains": 155,
+                "susceptible_strains": 122,
+                "resistant_fraction": 0.5595667870036101,
+                "matches_reported_balance": true
+            }
+        },
+        "CIP": {
+            "performance": {
+                "raw_scores": [
+                    0.735171261487051,
+                    0.65625,
+                    0.6817752596789424,
+                    0.7065317387304507,
+                    0.700374531835206
+                ],
+                "raw_mean": 0.69602055834633,
+                "raw_std": 0.026255838969357417,
+                "latent_scores": [
+                    0.7353951890034365,
+                    0.6892018779342723,
+                    0.6989935956084172,
+                    0.7172538392050588,
+                    0.6691380908248378
+                ],
+                "latent_mean": 0.7019965185152045,
+                "latent_std": 0.022806374849488716
+            },
+            "class_balance_by_strain": {
+                "n_inconsistent_strains": 0,
+                "inconsistent_strains": [],
+                "total_strains": 277,
+                "resistant_strains": 163,
+                "susceptible_strains": 114,
+                "resistant_fraction": 0.5884476534296029,
+                "matches_reported_balance": true
+            }
+        }
+    },
+    "model_provenance": {
+        "repo_id": "you-lab/autoencoder7x-08",
+        "cached_revision": "0224021dae301fe5a637068446f2886287da9190",
+        "latent_batch_size": 64
+    }
+}

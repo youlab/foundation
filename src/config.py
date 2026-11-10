@@ -11,7 +11,10 @@ DIR_LOGS = home_dir / "foundation" / "logs"
 
 DIR_DATA_KARLSSON = DIR_SRC / "applications" / "karlsson" / "data"
 
-DIR_DATA_CAROLYN = DIR_SRC / "applications" / "antibiotics" / "carolyn" / "data"
+DIR_DATA_CAROLYN = Path(os.environ.get(
+    "FOUNDATION_CAROLYN_DATA",
+    Path(__file__).resolve().parent / "applications" / "antibiotics" / "carolyn" / "data",
+))
 DIR_DATA_CHAOTIC = DIR_SRC / "data" / "simulation" / "chaotic"
 DIR_DATA_EXP_PROC = DIR_SRC / "data" / "experimental" / "processed"
 DIR_DATA_KYERI = DIR_SRC / "data" / "experimental" / "kyeri"

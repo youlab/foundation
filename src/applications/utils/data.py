@@ -1,6 +1,6 @@
 import numpy as np
 from scipy.interpolate import interp1d
-from sklearn.model_selection import train_test_split
+from sklearn.model_selection import GroupKFold, train_test_split
 
 from config import SEQ_LEN
 
@@ -59,3 +59,17 @@ def cross_val_data_split(
     processed.append(x_train)
     x_train = np.concatenate(processed)
     return x_train, x_test
+
+
+def group_cross_val_data_split(x, groups, n_cross_val, k_fold=5):
+    """Deterministic GroupKFold: all curves from an isolate share a fold."""
+    groups = np.asarray(groups)
+    if groups.ndim != 1 or len(groups) != len(x):
+        raise ValueError("groups must be one-dimensional and aligned with x")
+    if not 0 <= n_cross_val < k_fold:
+        raise ValueError("n_cross_val must be between 0 and k_fold - 1")
+    for fold, (train_idx, test_idx) in enumerate(
+        GroupKFold(n_splits=k_fold).split(x, groups=groups)
+    ):
+        if fold == n_cross_val:
+            return x[train_idx], x[test_idx]

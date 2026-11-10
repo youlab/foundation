@@ -2,7 +2,7 @@ import logging
 
 from applications.antibiotics.loop_for_results import loop_for_results
 from applications.utils.latents import get_latents
-from applications.utils.data import cross_val_data_split
+from applications.utils.data import cross_val_data_split, group_cross_val_data_split
 from ml.utils.load_models import load_model
 from config import SEQ_LEN
 
@@ -30,6 +30,7 @@ def main(
     prediction_model_cache_dir=None,
     name_suffix=None,
     max_depth=None,
+    groups=None,
 ):
     if not isinstance(stack, int):
         raise TypeError(f"stack should be int but is {type(stack)}")
@@ -57,10 +58,11 @@ def main(
     (
         x_raw_train_original,
         _,
-    ) = cross_val_data_split(
+    ) = _split(
         x=x_raw,
         n_cross_val=cross_val,
         k_fold=k_fold,
+        groups=groups,
     )
     
     if stack != 1:
@@ -81,6 +83,8 @@ def main(
                 classify=classify,
                 detailed_binary=detailed_binary,
                 cross_val=cross_val,
+                k_fold=k_fold,
+                groups=groups,
                 prediction_model_cache_dir=prediction_model_cache_dir,
                 name_suffix=name_suffix,
                 max_depth=max_depth,
@@ -100,6 +104,8 @@ def main(
         classify=classify,
         detailed_binary=detailed_binary,
         cross_val=cross_val,
+        k_fold=k_fold,
+        groups=groups,
         prediction_model_cache_dir=prediction_model_cache_dir,
         name_suffix=name_suffix,
         train_sizes=train_sizes,
@@ -123,23 +129,26 @@ def split_data_and_get_results(
     name_suffix=None,
     max_depth=None,
     return_regressors=False,
+    groups=None,
 ):
     (
         x_raw_train_original,
         x_raw_test,
-    ) = cross_val_data_split(
+    ) = _split(
         x=x_raw,
         n_cross_val=cross_val,
         k_fold=k_fold,
+        groups=groups,
     )
 
     (
         x_latent_train_original,
         x_latent_test,
-    ) = cross_val_data_split(
+    ) = _split(
         x=x_latents,
         n_cross_val=cross_val,
         k_fold=k_fold,
+        groups=groups,
     )
 
     x_latent_fine_tuned_train_original = None
@@ -150,10 +159,11 @@ def split_data_and_get_results(
     (
         tgt_train_original,
         tgt_test,
-    ) = cross_val_data_split(
+    ) = _split(
         x=tgt,
         n_cross_val=cross_val,
         k_fold=k_fold,
+        groups=groups,
     )
 
     logger.info("Looping for results")
@@ -177,3 +187,9 @@ def split_data_and_get_results(
         max_depth=max_depth,
         return_regressors=return_regressors,
     )
+
+
+def _split(x, n_cross_val, k_fold, groups=None):
+    if groups is None:
+        return cross_val_data_split(x, n_cross_val, k_fold)
+    return group_cross_val_data_split(x, groups, n_cross_val, k_fold)
