@@ -57,7 +57,7 @@ def main():
     fig.text(
         0.05,
         0.95,
-        "A",
+        "a",
         verticalalignment="top",
         horizontalalignment="left",
         fontsize=fs_label,
@@ -66,7 +66,7 @@ def main():
     fig.text(
         0.4,
         0.95,
-        "B",
+        "b",
         verticalalignment="top",
         horizontalalignment="left",
         fontsize=fs_label,
@@ -75,7 +75,7 @@ def main():
     fig.text(
         0.4,
         0.5,
-        "C",
+        "c",
         verticalalignment="top",
         horizontalalignment="left",
         fontsize=fs_label,

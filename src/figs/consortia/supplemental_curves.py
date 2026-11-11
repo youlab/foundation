@@ -162,7 +162,7 @@ def main(
         fig.text(
             x=x,
             y=y,
-            s=label,
+            s=label.lower(),
             verticalalignment="top",
             horizontalalignment="left",
             fontsize=fs_panel,

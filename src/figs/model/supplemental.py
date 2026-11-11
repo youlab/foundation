@@ -17,7 +17,7 @@ def get_original_and_reconstruction(
     n_curves,
 ):
     model = load_default_model()
-    data, _ = get_data()
+    data, _ = get_data(run_dir="figure_inputs")
     data, _ = train_test_split(
         data["y"][data["test_idx"]],
         train_size=n_curves,

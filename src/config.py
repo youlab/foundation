@@ -2,12 +2,13 @@ import os
 from pathlib import Path
 
 home_dir = Path("/hpc/group/youlab/xw262")
+foundation_dir = Path(os.environ.get("FOUNDATION_HOME", home_dir / "foundation")).resolve()
 
-DIR_RESULTS = home_dir / "foundation" / "results"
-DIR_SRC = home_dir / "foundation" / "src"
+DIR_RESULTS = foundation_dir / "results"
+DIR_SRC = foundation_dir / "src"
 DIR_DATA = DIR_SRC / "data"
 DIR_MODELS = Path("/work/zah8/best_models/models")
-DIR_LOGS = home_dir / "foundation" / "logs"
+DIR_LOGS = foundation_dir / "logs"
 
 DIR_DATA_KARLSSON = DIR_SRC / "applications" / "karlsson" / "data"
 

@@ -7,7 +7,7 @@ def get_mapping_and_samples_for_experimental(
     consortia_names,
 ):
     category = "experimental"
-    data, idx = get_data(category=category)
+    data, idx = get_data(run_dir="figure_inputs", category=category)
     samples = {}
     
     keys = sorted(list(idx[category].keys()))
@@ -47,7 +47,7 @@ def get_mapping_and_samples_for_simulation(
     consortia_names,
 ):
     category = "simulation"
-    data, idx = get_data(category=category)
+    data, idx = get_data(run_dir="figure_inputs", category=category)
     samples = {}
     
     keys = sorted(list(idx[category].keys()))

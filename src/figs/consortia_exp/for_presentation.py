@@ -174,6 +174,6 @@ def main():
 
     plt.savefig(
         DIR_FIGS_MANUSCRIPT
-        / "supp_fig_11.png",
+        / "supp_fig_11.svg",
     )
     plt.close()
