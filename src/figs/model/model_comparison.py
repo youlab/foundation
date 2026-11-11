@@ -31,7 +31,7 @@ def plot_model_comparison(
             df.loc[mask, "r2_test_all"].to_numpy(),
             color=colors[i],
             ls="-",
-            label=f"{model_type}",
+            label="PCA" if model_type == "PR" else model_type,
             marker="o",
             alpha=0.7,
             lw=4,

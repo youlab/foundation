@@ -28,7 +28,7 @@ def main(
     fw_panel,
 ):
     model = load_default_model()
-    data, idx = get_data(category="all")
+    data, idx = get_data(run_dir="figure_inputs", category="all")
     fig, ax_dict = get_axes()
 
     ax = ax_dict["A"].inset_axes([0.1, 0.0, 0.9, 0.9,])
@@ -54,6 +54,7 @@ def main(
     ax = ax_dict["B"].inset_axes([0.1, 0.0, 0.9, 1.0,])
     ax_dict["B"].axis("off")
     plot_model_reconstruction_accuracy(
+        data_run_dir="figure_inputs",
         ax=ax,
         fs_ticks=14,
         fs_label=16,
@@ -109,7 +110,7 @@ def main(
         fig.text(
             x=x,
             y=y,
-            s=label,
+            s=label.lower(),
             verticalalignment="top",
             horizontalalignment="left",
             fontsize=fs_panel,

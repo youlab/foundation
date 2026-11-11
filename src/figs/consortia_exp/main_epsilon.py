@@ -195,7 +195,7 @@ def plot_forecasts(
                     fontsize=FS_LABELS,
                 )
                 a.set_xlabel(
-                    "Time (days)",
+                    "Time",
                     fontsize=FS_LABELS,
                 )
             else:
@@ -355,7 +355,7 @@ def main(
         fig.text(
             x=x,
             y=y,
-            s=label,
+            s=label.lower(),
             verticalalignment="top",
             horizontalalignment="left",
             fontsize=fs_panel,

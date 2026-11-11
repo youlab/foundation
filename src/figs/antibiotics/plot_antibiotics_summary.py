@@ -83,7 +83,7 @@ def main(
                 x,
                 y,
                 color=colors[i],
-                label=f"{model_type}",
+                label="PCA" if model_type == "PR" else model_type,
                 marker="o",
                 alpha=0.7,
                 lw=3,
@@ -148,7 +148,7 @@ def main(
         fig.text(
             x=x,
             y=y,
-            s=label,
+            s=label.lower(),
             verticalalignment="top",
             horizontalalignment="left",
             fontsize=fs_panel,

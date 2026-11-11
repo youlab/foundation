@@ -168,7 +168,7 @@ def main(
     model,
     ax=None,
 ):
-    data, _ = get_data()
+    data, _ = get_data(run_dir="figure_inputs")
 
     try:
         print("Trying to open t-SNE Model")

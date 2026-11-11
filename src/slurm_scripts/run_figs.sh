@@ -9,4 +9,4 @@
 
 nvidia-smi
 
-apptainer exec --nv --bind /hpc/group/youlab/zah8/foundations /hpc/group/youlab/you-lab-deep-learning.sif python src/run_figs.py
+apptainer exec --nv --bind /hpc/group/youlab/zah8/foundations /hpc/group/youlab/you-lab-deep-learning.sif python src/run_figs.py "$@"

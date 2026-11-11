@@ -1,30 +1,54 @@
+import argparse
+import os
+from pathlib import Path
+
+
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Generate one manuscript figure per invocation.")
+    parser.add_argument("--figure", required=True, choices=['presentation', '1', '2', '3', '4', '5', 's1', 's2', 's3', 's4', 's5', 's6', 's7', 's8', 's9', 's10', 's11', 's12'])
+    parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[1],
+                        help="Foundation checkout containing the input data and results")
+    parser.add_argument("--output-dir", type=Path,
+                        default=Path(__file__).resolve().parents[1] / "results/figs/manuscript",
+                        help="Directory for regenerated figures")
+    parser.add_argument("--processed-dir", type=Path, help="Directory containing compiled figure_inputs")
+    parser.add_argument("--forecast-dir", type=Path, help="Directory containing consortia forecast caches")
+    args = parser.parse_args()
+    os.environ["FOUNDATION_HOME"] = str(args.root.resolve())
+    import config
+    if args.processed_dir:
+        config.DIR_DATA_PROCESSED = args.processed_dir.resolve()
+    if args.forecast_dir:
+        config.DIR_CACHE_CONSORTIA = args.forecast_dir.resolve()
+        config.DIR_CACHE_CONSORTIA_EXP = args.forecast_dir.resolve()
+    config.DIR_FIGS_MANUSCRIPT = args.output_dir.resolve()
+    config.DIR_FIGS_MANUSCRIPT.mkdir(parents=True, exist_ok=True)
     from figs.utils.fonts import initialize_fonts
     initialize_fonts()
 
     FW_PANEL = "bold"
     FS_PANEL = 28
 
-    RUN_PRESENTATION = False 
+    RUN_PRESENTATION = args.figure == "presentation"
 
-    RUN_DATA_FIG_1 = False  
-    RUN_MODEL_FIG_2 = False
-    RUN_ANTIBIOTICS_FIG_3 = True
-    RUN_CONSORTIA_SIM_FIG_4 = False
-    RUN_CONSORTIA_EXP_FIG_5 = False
+    RUN_DATA_FIG_1 = args.figure == "1"
+    RUN_MODEL_FIG_2 = args.figure == "2"
+    RUN_ANTIBIOTICS_FIG_3 = args.figure == "3"
+    RUN_CONSORTIA_SIM_FIG_4 = args.figure == "4"
+    RUN_CONSORTIA_EXP_FIG_5 = args.figure == "5"
 
-    RUN_MODEL_TRAINING_DATASET_COMPARISON_FIG_S1 = False 
-    RUN_MODEL_SUPPLEMENTAL_FIG_S2 = False 
-    RUN_MODEL_INTRINSIC_DIMENSIONS_FIG_S3 = False  
-    RUN_ANTIBIOTICS_KYERI_TOP10F_FIG_S4 = False 
-    RUN_ANTIBIOTICS_KYERI_KEIO_FIG_S5 = False
-    RUN_ANTIBIOTICS_KYERI_TIMER_FIG_S6 = False 
-    RUN_ANTIBIOTICS_CAROLYN_ALL_FIG_S7 = False
-    RUN_ANTIBIOTICS_MODEL_COMPARISON_FIG_S8 = False  
-    RUN_CONSORTIA_SIM_SUPPLEMENTAL_OVERVIEW_FIG_S9 = False  
-    RUN_CONSORTIA_SIM_SUPPLEMENTAL_FIG_S10 = False  
-    RUN_CONSORTIA_EXP_FOCAL_COMMUNITIES_FIG_S11 = False  
-    RUN_CONSORTIA_EXP_SUPPLEMENTAL_FIG_S12 = False 
+    RUN_MODEL_TRAINING_DATASET_COMPARISON_FIG_S1 = args.figure == "s1"
+    RUN_MODEL_SUPPLEMENTAL_FIG_S2 = args.figure == "s2"
+    RUN_MODEL_INTRINSIC_DIMENSIONS_FIG_S3 = args.figure == "s3"
+    RUN_ANTIBIOTICS_KYERI_TOP10F_FIG_S4 = args.figure == "s4"
+    RUN_ANTIBIOTICS_KYERI_KEIO_FIG_S5 = args.figure == "s5"
+    RUN_ANTIBIOTICS_KYERI_TIMER_FIG_S6 = args.figure == "s6"
+    RUN_ANTIBIOTICS_CAROLYN_ALL_FIG_S7 = args.figure == "s7"
+    RUN_ANTIBIOTICS_MODEL_COMPARISON_FIG_S8 = args.figure == "s8"
+    RUN_CONSORTIA_SIM_SUPPLEMENTAL_OVERVIEW_FIG_S9 = args.figure == "s9"
+    RUN_CONSORTIA_SIM_SUPPLEMENTAL_FIG_S10 = args.figure == "s10"
+    RUN_CONSORTIA_EXP_FOCAL_COMMUNITIES_FIG_S11 = args.figure == "s11"
+    RUN_CONSORTIA_EXP_SUPPLEMENTAL_FIG_S12 = args.figure == "s12"
 
     if RUN_PRESENTATION:
         from figs.presentation import main

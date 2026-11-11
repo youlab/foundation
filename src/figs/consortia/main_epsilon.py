@@ -315,13 +315,13 @@ def plot_forecasts(
                 ls="-",
                 lw=2,
             )
-            # plot_r2(
-            #     a=a,
-            #     data=df.loc[mask_train_size & (df.input_type == "raw"), "r2_test"].iloc[0],
-            #     color="firebrick",
-            #     ls=":",
-            #     lw=2,
-            # )
+            plot_r2(
+                a=a,
+                data=df.loc[mask_train_size & (df.input_type == "raw"), "r2_test"].iloc[0],
+                color="firebrick",
+                ls=":",
+                lw=2,
+            )
             plot_rmse(
                 a=a,
                 data=df.loc[mask_train_size & (df.input_type == "latent"), "rmse_test"].iloc[0],
@@ -329,13 +329,13 @@ def plot_forecasts(
                 ls="-",
                 lw=2,
             )
-            # plot_rmse(
-            #     a=a,
-            #     data=df.loc[mask_train_size & (df.input_type == "raw"), "rmse_test"].iloc[0],
-            #     color="cornflowerblue",
-            #     ls=":",
-            #     lw=2,
-            # )
+            plot_rmse(
+                a=a,
+                data=df.loc[mask_train_size & (df.input_type == "raw"), "rmse_test"].iloc[0],
+                color="cornflowerblue",
+                ls=":",
+                lw=2,
+            )
             if side_legend:
                 a.legend(
                     bbox_to_anchor=(1.05, 1,),
@@ -370,7 +370,7 @@ def plot_forecasts(
                 fontsize=FS_LABELS,
             )
             a.set_xlabel(
-                "Time (days)",
+                "Time",
                 fontsize=FS_LABELS,
             )
         elif i == n_members[consortium]:
@@ -409,9 +409,9 @@ def plot_forecasts(
 
 
 def initialize():
-    df = load_data()
     consortia = get_consortia_for_plotting()
     train_size = 12800
+    df = load_data(consortia=consortia, train_size=train_size)
     input_type = "latent"
     tgt_type = "latent"
     cross_val = 0
@@ -474,7 +474,7 @@ def main(
         fig.text(
             x=x,
             y=y,
-            s=label,
+            s=label.lower(),
             verticalalignment="top",
             horizontalalignment="left",
             fontsize=fs_panel,
